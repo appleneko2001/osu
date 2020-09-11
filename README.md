@@ -1,110 +1,124 @@
-<p align="center">
+﻿<p align="center">
   <img width="500px" src="assets/lazer.png">
 </p>
 
-# osu!
+# osu! 非官方中文化翻譯
+  
+免費 開源的節奏遊戲 節奏只需*點擊*即可! 
 
-[![Build status](https://ci.appveyor.com/api/projects/status/u2p01nx7l6og8buh?svg=true)](https://ci.appveyor.com/project/peppy/osu)
-[![GitHub release](https://img.shields.io/github/release/ppy/osu.svg)]()
-[![CodeFactor](https://www.codefactor.io/repository/github/ppy/osu/badge)](https://www.codefactor.io/repository/github/ppy/osu)
-[![dev chat](https://discordapp.com/api/guilds/188630481301012481/widget.png?style=shield)](https://discord.gg/ppy)
+*非官方中文化由我一人完成 有的時候還需要感謝 Google翻譯 如果想要幫助我翻譯的話歡迎提交 issue 並告訴我 在一些翻譯不太好的地方我都在註釋後面加了 [RequestImprove] 作爲標記.*
+*下面的部分地方我標記了 "ppy官方團隊" 來避免 "我們" 當中會把我本人誤認爲是官方團隊的一員 我提供中文化只是爲了做我喜歡做的事情*
 
-A free-to-win rhythm game. Rhythm is just a *click* away!
+## 關於翻譯進度 
 
-The future of [osu!](https://osu.ppy.sh) and the beginning of an open era! Commonly known by the codename *osu!lazer*. Pew pew.
+幾乎已完成所有界面的翻譯 但還有一些地方沒有翻譯到 比如全熒幕那裏還是Fullscreen, Borderless什麼的 代碼都寫在osuFramework裏面 所以可能會找個機會 中文化一下osuFramework.
+遊戲模式只翻譯了osu! Standard模式 其他模式還在完成中, 用戶註冊和登入界面已經完全翻譯完成, osu!做圖 的界面還沒有碰 不過個人建議是用正常版做圖先啦 
 
-## Status
+# 官方Readme內容大致翻譯:
+> 注意 部分地方我改動了網址導向 比如下載組建的地方 但大部分網址導向我都沒有碰
 
-This project is under heavy development, but is in a stable state. Users are encouraged to try it out and keep it installed alongside the stable *osu!* client. It will continue to evolve to the point of eventually replacing the existing stable client as an update.
+未來的 [osu!](https://osu.ppy.sh) 的計畫藍圖就在這裏! 目前 衆所周知已知的開發代碼爲 *osu!lazer*.
 
-**IMPORTANT:** Gameplay mechanics (and other features which you may have come to know and love) are in a constant state of flux. Game balance and final quality-of-life passses come at the end of development, preceeded by experimentation and changes which may potentially **reduce playability or usability**. This is done in order to allow us to move forward as developers and designers more efficiently. If this offends you, please consider sticking to the stable releases of osu! (found on the website). We are not yet open to heated discussion over game mechanics and will not be using github as a forum for such discussions just yet.
+## 狀態 
 
-We are accepting bug reports (please report with as much detail as possible and follow the existing issue templates). Feature requests are also welcome, but understand that our focus is on completing the game to feature parity before adding new features. A few resources are available as starting points to getting involved and understanding the project:
+該專案處於一個非常艱鉅的開發階段中 但已經在穩定階段 用戶們可以嘗試使用該版本 但要跟正常版 *osu!* 共存. 在本專案完成多次進化後會變成更新替換原本的正常版本 
+ 
+我們 (ppy官方團隊) 接受臭蟲提交 (請儘可能詳細解釋並跟隨現有的 Issue 模板) 同時也接受新的功能建議 但需要理解的是我們對新功能加入的平衡影響非常重要.
+可以參考以下資訊了解更多 關於 osu!lazer 專案:
+ 
+- 更詳細的變動日誌 [官方 osu! 頁面](https://osu.ppy.sh/home/changelog/lazer).
+- 可以了解更多關於我們對本 [專案的管理 官方頁面](https://github.com/ppy/osu/wiki/Project-management).
+- 查看 peppy [部落格po文](https://blog.ppy.sh/a-definitive-lazer-faq/) 探索專案目前的狀態和未來的發展方向.
 
-- Detailed release changelogs are available on the [official osu! site](https://osu.ppy.sh/home/changelog/lazer).
-- You can learn more about our approach to [project management](https://github.com/ppy/osu/wiki/Project-management).
-- Read peppy's [latest blog post](https://blog.ppy.sh/a-definitive-lazer-faq/) exploring where lazer is currently and the roadmap going forward.
+## 運行 osu!
 
-## Running osu!
+如果想要不設定開發環境就運行 osu!lazer 可以看一下 [已編譯的發行](https://github.com/appleneko2001/osu/releases). 下面請根據你/妳的作業系統安裝所需版本:
 
-If you are looking to install or test osu! without setting up a development environment, you can consume our [binary releases](https://github.com/ppy/osu/releases). Handy links below will download the latest version for your operating system of choice:
+**最新組建:**
 
-**Latest build:**
-
-| [Windows (x64)](https://github.com/ppy/osu/releases/latest/download/install.exe)  | [macOS 10.12+](https://github.com/ppy/osu/releases/latest/download/osu.app.zip) | [Linux (x64)](https://github.com/ppy/osu/releases/latest/download/osu.AppImage) | [iOS(iOS 10+)](https://osu.ppy.sh/home/testflight) | [Android (5+)](https://github.com/ppy/osu/releases/latest/download/sh.ppy.osulazer.apk)
+| [Windows (x64)](https://github.com/appleneko2001/osu/releases/latest/download/install.exe)  | [macOS 10.12+](https://github.com/appleneko2001/osu/releases/latest/download/osu.app.zip) | [Linux (x64)](https://github.com/appleneko2001/osu/releases/latest/download/osu.AppImage) | [iOS(iOS 10+, 官方版本)](https://osu.ppy.sh/home/testflight) | [Android (5+)](https://github.com/appleneko2001/osu/releases/latest/download/appleneko2001.osulazer_zhtw.apk)
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 
-- When running on Windows 7 or 8.1, **[additional prerequisites](https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?tabs=netcore31&pivots=os-windows)** may be required to correctly run .NET Core applications if your operating system is not up-to-date with the latest service packs.
+- 在運行 Windows 7 或者 8.1 作業系統時, **[附加需求](https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?tabs=netcore31&pivots=os-windows)** 可能會被要求.
+爲了能夠正確運行 .NET Core 應用程式 請確保作業系統已經使用了最新的服務包 (Service packs) 
 
-If your platform is not listed above, there is still a chance you can manually build it by following the instructions below.
+如果上述平台表中沒有你/妳需要的 可以按照下面的教程去自己組建它
 
-## Developing or debugging
+## 開發或除錯
 
-Please make sure you have the following prerequisites:
+請確保已滿足下面的幾個要求:
 
-- A desktop platform with the [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download) or higher installed.
-- When developing with mobile, [Xamarin](https://docs.microsoft.com/en-us/xamarin/) is required, which is shipped together with Visual Studio or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/).
-- When working with the codebase, we recommend using an IDE with intelligent code completion and syntax highlighting, such as [Visual Studio 2019+](https://visualstudio.microsoft.com/vs/), [JetBrains Rider](https://www.jetbrains.com/rider/) or [Visual Studio Code](https://code.visualstudio.com/).
-- When running on Linux, please have a system-wide FFmpeg installation available to support video decoding.
+- 至少安裝了桌面版 [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download) 或者最新的.
+- 開發行動設備版, [Xamarin](https://docs.microsoft.com/en-us/xamarin/) 是必須的, 應該與 Visual Studio 或者 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) 一起安裝.
+- 編輯代碼庫的時候, 我們建議使用有代碼高亮或者定位物件定義功能的 IDE, 比如 [Visual Studio 2019+](https://visualstudio.microsoft.com/vs/), [JetBrains Rider](https://www.jetbrains.com/rider/) 或者 [Visual Studio Code](https://code.visualstudio.com/).
+- 在Linux運行的時候 請確保作業系統已經安裝了 FFmpeg 用於支援影像解碼
 
-### Downloading the source code
+### 下載源代碼
 
-Clone the repository:
+拷貝資料到本地:
 
 ```shell
-git clone https://github.com/ppy/osu
+git clone https://github.com/ppy/osu 
 cd osu
 ```
 
-To update the source code to the latest commit, run the following command inside the `osu` directory:
+如果要將本地代碼更新到最新的提交, 在 osu 目錄下運行下面的指令:
 
 ```shell
 git pull
 ```
 
-### Building
+### 組建
 
-Build configurations for the recommended IDEs (listed above) are included. You should use the provided Build/Run functionality of your IDE to get things going. When testing or building new components, it's highly encouraged you use the `VisualTests` project/configuration. More information on this is provided [below](#contributing).
+下面指出的推薦 IDE 已經自身附帶了組建專案功能. 你/妳應使用 IDE 提供的 組建/運行 功能確保不會搞砸一切. 在測試或者組建新的組件時 非常建議使用
+`VisualTests` 專案預設 關於更多可以 [瀏覽下方](#貢獻). 
 
-- Visual Studio / Rider users should load the project via one of the platform-specific `.slnf` files, rather than the main `.sln.` This will allow access to template run configurations.
-- Visual Studio Code users must run the `Restore` task before any build attempt.
-
-You can also build and run *osu!* from the command-line with a single command:
+- Visual Studio / Rider 用戶應去使用特定平台的 `.slnf` 檔案去載入專案, 相比主要的 `.sln.` 它會直接載入所有子專案.
+- Visual Studio Code 用戶需要在組建之前運行一次 `Restore`.
+ 
+當然也可以使用下面的指令去組建並運行 *osu!* 只需一行搞定:
 
 ```shell
 dotnet run --project osu.Desktop
 ```
 
-If you are not interested in debugging *osu!*, you can add `-c Release` to gain performance. In this case, you must replace `Debug` with `Release` in any commands mentioned in this document.
+如果你/妳對 osu! 除錯不感興趣的話 可以在上面的命令加一個 `-c Release` 來進行最佳化. 在這個情況下 應將在該文檔中提到的任何指令中 `Debug` 換成 `Release`  
 
-If the build fails, try to restore NuGet packages with `dotnet restore`.
+如果組建失敗 試着復原 NuGet 包去解決 (`dotnet restore`). 
 
-_Due to a historical feature gap between .NET Core and Xamarin, running `dotnet` CLI from the root directory will not work for most commands. This can be resolved by specifying a target `.csproj` or the helper project at `build/Desktop.proj`. Configurations have been provided to work around this issue for all supported IDEs mentioned above._
+_因爲 .NET Core 和 Xamarin 的歷史特徵差距 有些情況下運行 `dotnet` 可能不會正常運作. 該問題的解決方式可以是指定 `.csproj` 或者使用專案助手在 `build/Desktop.proj`.
+該預設的提供已經解決下方所有已支援的 IDE 提到的問題_  
 
-### Testing with resource/framework modifications
+### 測試資源/框架修改
 
-Sometimes it may be necessary to cross-test changes in [osu-resources](https://github.com/ppy/osu-resources) or [osu-framework](https://github.com/ppy/osu-framework). This can be achieved by running some commands as documented on the [osu-resources](https://github.com/ppy/osu-resources/wiki/Testing-local-resources-checkout-with-other-projects) and [osu-framework](https://github.com/ppy/osu-framework/wiki/Testing-local-framework-checkout-with-other-projects) wiki pages.
+有些時候 交叉測試變更 [osu-resources](https://github.com/ppy/osu-resources) 或者 [osu-framework](https://github.com/ppy/osu-framework) 顯爲非常重要. 
+可以使用該文檔 [osu-resources](https://github.com/ppy/osu-resources/wiki/Testing-local-resources-checkout-with-other-projects) 中的指令去執行 以及在 [osu-framework](https://github.com/ppy/osu-framework/wiki/Testing-local-framework-checkout-with-other-projects) 百科頁面中.
 
-### Code analysis
+### 代碼分析
 
-Before committing your code, please run a code formatter. This can be achieved by running `dotnet format` in the command line, or using the `Format code` command in your IDE.
+在提交代碼前 先運行一次代碼格式化. 可以使用 `dotnet format` 在控制台中 或者使用 IDE 提供的格式化代碼功能.
 
-We have adopted some cross-platform, compiler integrated analyzers. They can provide warnings when you are editing, building inside IDE or from command line, as-if they are provided by the compiler itself.
+我們 (ppy官方團隊) 使用了一些有跨平台, 編譯器整合的分析器. 在編輯的時候他們可以提供警告和建議, 甚至在 IDE 或者 控制台 中組建的時候也會, 如果他們是編譯器本身提供的. 
 
-JetBrains ReSharper InspectCode is also used for wider rule sets. You can run it from PowerShell with `.\InspectCode.ps1`, which is [only supported on Windows](https://youtrack.jetbrains.com/issue/RSRP-410004). Alternatively, you can install ReSharper or use Rider to get inline support in your IDE of choice.
+JetBrains ReSharper InspectCode 也提供了更廣泛的分析功能和規則. 可以在 PowerShell 中運行 `.\InspectCode.ps1`,
+僅限 [Windows 支援](https://youtrack.jetbrains.com/issue/RSRP-410004). 另類的方案是可以安裝 ReSharper
+或者使用 Rider 獲得編輯器內的代碼分析建議.
 
-## Contributing
+## 貢獻
 
-When it comes to contributing to the project, the two main things you can do to help out are reporting issues and submitting pull requests. Based on past experiences, we have prepared a [list of contributing guidelines](CONTRIBUTING.md) that should hopefully ease you into our collaboration process and answer the most frequently-asked questions.
+如果想要提供一些貢獻到該專案, 可以用提交 issues 的方式或者提交 pull 請求. 按照過去的經驗, 我們準備了 [貢獻指導 (暫未翻譯)](CONTRIBUTING.md) 來幫助你/妳與我們 (ppy官方團隊) 的合作過程並回答近期經常被詢問的問題 
 
-Note that while we already have certain standards in place, nothing is set in stone. If you have an issue with the way code is structured, with any libraries we are using, or with any processes involved with contributing, *please* bring it up. We welcome all feedback so we can make contributing to this project as painless as possible.
+由於我們 (ppy官方團隊) 已經定義了太多的標準在這裏, 沒有什麼東西是一成不變的. 如果有關於我們 (ppy官方團隊) 提供的代碼庫的代碼結構化的問題, 或者在貢獻過程中的任何問題 *請提出*他們. 我們 (ppy官方團隊) 接受所有的反饋 這樣在貢獻過程中減少更多的麻煩.
 
-For those interested, we love to reward quality contributions via [bounties](https://docs.google.com/spreadsheets/d/1jNXfj_S3Pb5PErA-czDdC9DUu4IgUbe1Lt8E7CYUJuE/view?&rm=minimal#gid=523803337), paid out via PayPal or osu!supporter tags. Don't hesitate to [request a bounty](https://docs.google.com/forms/d/e/1FAIpQLSet_8iFAgPMG526pBZ2Kic6HSh7XPM3fE8xPcnWNkMzINDdYg/viewform) for your work on this project.
+給那些對本專案感興趣並提供了很多的貢獻的用戶, 我們 (ppy官方團隊) 會提供
+[賞金](https://docs.google.com/spreadsheets/d/1jNXfj_S3Pb5PErA-czDdC9DUu4IgUbe1Lt8E7CYUJuE/view?&rm=minimal#gid=523803337), 
+透過 PayPal 或者 osu!supporter 標籤. 不要猶豫 [請求賞金](https://docs.google.com/forms/d/e/1FAIpQLSet_8iFAgPMG526pBZ2Kic6HSh7XPM3fE8xPcnWNkMzINDdYg/viewform) 爲你/妳對專案獻出的工作和努力.
 
-## Licence
+## 協議聲明
 
-*osu!*'s code and framework are licensed under the [MIT licence](https://opensource.org/licenses/MIT). Please see [the licence file](LICENCE) for more information. [tl;dr](https://tldrlegal.com/license/mit-license) you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.
+*osu!* 的框架和代碼透過 [MIT 協議](https://opensource.org/licenses/MIT) 發行. 關於更多請閱覽 [協議檔案](LICENCE). 
+[tl;dr](https://tldrlegal.com/license/mit-license) 只要在軟體/源代碼的任何副本中包含原始版權和許可聲明, 就可以做任何你/妳想做的事情.
 
-Please note that this *does not cover* the usage of the "osu!" or "ppy" branding in any software, resources, advertising or promotion, as this is protected by trademark law.
+注意! 這 *不包含* 使用 "osu!" 或者 "ppy" 商標在任何軟體, 資源, 推廣或者盈利, 因爲他們受商標法律保護.
 
-Please also note that game resources are covered by a separate licence. Please see the [ppy/osu-resources](https://github.com/ppy/osu-resources) repository for clarifications.
+另外 本遊戲的資源受單獨的協議保護. 請閱覽 [ppy/osu-resources](https://github.com/ppy/osu-resources) 用於正確理解.
