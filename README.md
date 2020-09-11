@@ -14,6 +14,12 @@
 幾乎已完成所有界面的翻譯 但還有一些地方沒有翻譯到 比如全熒幕那裏還是Fullscreen, Borderless什麼的 代碼都寫在osuFramework裏面 所以可能會找個機會 中文化一下osuFramework.
 遊戲模式只翻譯了osu! Standard模式 其他模式還在完成中, 用戶註冊和登入界面已經完全翻譯完成, osu!做圖 的界面還沒有碰 不過個人建議是用正常版做圖先啦 
 
+## 關於提交翻譯 issues
+
+如果有任何想要提交的翻譯建議和糾錯 issues 可以提交到 [這個Repository](https://github.com/appleneko2001/osu-zhtw-translate-issues).
+
+如果是遊戲本身的問題, 我更建議去官方 repository, 提交任何遊戲本身問題和建議的issues 並且儘可能跟隨官方issues模板 語言只用英語.
+
 # 官方Readme內容大致翻譯:
 > 注意 部分地方我改動了網址導向 比如下載組建的地方 但大部分網址導向我都沒有碰
 
