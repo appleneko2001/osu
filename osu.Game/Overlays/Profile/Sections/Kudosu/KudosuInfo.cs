@@ -55,20 +55,22 @@ namespace osu.Game.Overlays.Profile.Sections.Kudosu
         private class CountAvailable : CountSection
         {
             public CountAvailable()
-                : base("Kudosu Avaliable")
+                : base("Kudosu 可用")
             {
-                DescriptionText.Text = "Kudosu can be traded for kudosu stars, which will help your beatmap get more attention. This is the number of kudosu you haven't traded in yet.";
+                DescriptionText.Text = "Kudosu 可以拿來交換 kudosu 星數 來幫助你/妳的圖譜有更多的關注量. 這裏顯示沒有被交換過的 Kudosu 數量";
+//"Kudosu can be traded for kudosu stars, which will help your beatmap get more attention. This is the number of kudosu you haven't traded in yet.";
             }
         }
 
         private class CountTotal : CountSection
         {
             public CountTotal()
-                : base("Total Kudosu Earned")
+                : base("總共已賺取的 Kudosu")
             {
-                DescriptionText.AddText("Based on how much of a contribution the user has made to beatmap moderation. See ");
-                DescriptionText.AddLink("this link", "https://osu.ppy.sh/wiki/Kudosu");
-                DescriptionText.AddText(" for more information.");
+                DescriptionText.AddText("根據該用戶已完成了多少的圖譜審核. 關於更多可以查看");
+                    //Based on how much of a contribution the user has made to beatmap moderation. See ");
+                DescriptionText.AddLink("這裏", "https://osu.ppy.sh/wiki/Kudosu");
+                //DescriptionText.AddText(" for more information.");
             }
         }
 

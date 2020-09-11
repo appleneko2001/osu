@@ -136,7 +136,7 @@ namespace osu.Game.Screens.Select
                                 },
                                 new OsuSpriteText
                                 {
-                                    Text = "Sort by",
+                                    Text = "排序方式",
                                     Font = OsuFont.GetFont(size: 14),
                                     Margin = new MarginPadding(5),
                                     Anchor = Anchor.BottomRight,

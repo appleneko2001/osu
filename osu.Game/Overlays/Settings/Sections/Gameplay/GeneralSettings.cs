@@ -11,7 +11,7 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
 {
     public class GeneralSettings : SettingsSubsection
     {
-        protected override string Header => "General";
+        protected override string Header => "一般設定";
 
         [BackgroundDependencyLoader]
         private void load(OsuConfigManager config)
@@ -20,62 +20,62 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
             {
                 new SettingsSlider<double>
                 {
-                    LabelText = "Background dim",
+                    LabelText = "背景亮度",
                     Bindable = config.GetBindable<double>(OsuSetting.DimLevel),
                     KeyboardStep = 0.01f,
                     DisplayAsPercentage = true
                 },
                 new SettingsSlider<double>
                 {
-                    LabelText = "Background blur",
+                    LabelText = "背景模糊",
                     Bindable = config.GetBindable<double>(OsuSetting.BlurLevel),
                     KeyboardStep = 0.01f,
                     DisplayAsPercentage = true
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Lighten playfield during breaks",
+                    LabelText = "休息片刻時背景變亮",
                     Bindable = config.GetBindable<bool>(OsuSetting.LightenDuringBreaks)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Show score overlay",
+                    LabelText = "顯示分數圖層",
                     Bindable = config.GetBindable<bool>(OsuSetting.ShowInterface)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Show difficulty graph on progress bar",
+                    LabelText = "在進度上顯示區域難度",
                     Bindable = config.GetBindable<bool>(OsuSetting.ShowProgressGraph)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Show health display even when you can't fail",
+                    LabelText = "強制顯示體力值",
                     Bindable = config.GetBindable<bool>(OsuSetting.ShowHealthDisplayWhenCantFail),
                     Keywords = new[] { "hp", "bar" }
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Fade playfield to red when health is low",
+                    LabelText = "體力值低時遊戲區域漸變到紅",
                     Bindable = config.GetBindable<bool>(OsuSetting.FadePlayfieldWhenHealthLow),
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Always show key overlay",
+                    LabelText = "顯示按鍵圖層",
                     Bindable = config.GetBindable<bool>(OsuSetting.KeyOverlay)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Positional hitsounds",
+                    LabelText = "立體打擊音效",
                     Bindable = config.GetBindable<bool>(OsuSetting.PositionalHitSounds)
                 },
                 new SettingsEnumDropdown<ScoreMeterType>
                 {
-                    LabelText = "Score meter type",
+                    LabelText = "分數計數器類型",
                     Bindable = config.GetBindable<ScoreMeterType>(OsuSetting.ScoreMeter)
                 },
                 new SettingsEnumDropdown<ScoringMode>
                 {
-                    LabelText = "Score display mode",
+                    LabelText = "分數顯示模式",
                     Bindable = config.GetBindable<ScoringMode>(OsuSetting.ScoreDisplayMode)
                 }
             };
@@ -84,7 +84,7 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
             {
                 Add(new SettingsCheckbox
                 {
-                    LabelText = "Disable Windows key during gameplay",
+                    LabelText = "遊戲中禁用Win鍵",
                     Bindable = config.GetBindable<bool>(OsuSetting.GameplayDisableWinKey)
                 });
             }

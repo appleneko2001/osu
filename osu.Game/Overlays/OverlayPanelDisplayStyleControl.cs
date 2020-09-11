@@ -11,6 +11,8 @@ using osu.Game.Graphics.UserInterface;
 using osu.Framework.Allocation;
 using osuTK.Graphics;
 using osu.Framework.Graphics.Cursor;
+using System.ComponentModel;
+using osu.Framework.Extensions;
 
 namespace osu.Game.Overlays
 {
@@ -56,7 +58,7 @@ namespace osu.Game.Overlays
             [Resolved]
             private OverlayColourProvider colourProvider { get; set; }
 
-            public string TooltipText => $@"{Value} view";
+            public string TooltipText => $@"{Value.GetDescription()}檢視";
 
             private readonly SpriteIcon icon;
 
@@ -99,8 +101,11 @@ namespace osu.Game.Overlays
 
     public enum OverlayPanelDisplayStyle
     {
+        [Description("卡片")]
         Card,
+        [Description("列表")]
         List,
+        [Description("磚塊")]
         Brick
     }
 }

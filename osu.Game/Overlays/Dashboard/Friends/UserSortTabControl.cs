@@ -11,9 +11,11 @@ namespace osu.Game.Overlays.Dashboard.Friends
 
     public enum UserSortCriteria
     {
-        [Description(@"Recently Active")]
+        [Description(@"近期在線")]
         LastVisit,
+        [Description(@"排名")]
         Rank,
+        [Description(@"暱稱")]
         Username
     }
 }

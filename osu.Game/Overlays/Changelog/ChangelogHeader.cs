@@ -114,8 +114,8 @@ namespace osu.Game.Overlays.Changelog
         {
             public ChangelogHeaderTitle()
             {
-                Title = "changelog";
-                Description = "track recent dev updates in the osu! ecosystem";
+                Title = "更新日誌";
+                Description = "追蹤近期的 osu! 生態開發資訊";
                 IconTexture = "Icons/Hexacons/devtools";
             }
         }

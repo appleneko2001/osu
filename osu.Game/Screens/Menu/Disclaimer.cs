@@ -90,8 +90,8 @@ namespace osu.Game.Screens.Menu
                 }
             };
 
-            textFlow.AddText("This project is an ongoing ", t => t.Font = t.Font.With(Typeface.Torus, 30, FontWeight.Light));
-            textFlow.AddText("work in progress", t => t.Font = t.Font.With(Typeface.Torus, 30, FontWeight.SemiBold));
+            textFlow.AddText("該項目仍在 ", t => t.Font = t.Font.With(Typeface.Torus, 30, FontWeight.Light));
+            textFlow.AddText("完成中", t => t.Font = t.Font.With(Typeface.Torus, 30, FontWeight.SemiBold));
 
             textFlow.NewParagraph();
 
@@ -111,13 +111,13 @@ namespace osu.Game.Screens.Menu
 
                 if (e.NewValue.IsSupporter)
                 {
-                    supportFlow.AddText("Eternal thanks to you for supporting osu!", format);
+                    supportFlow.AddText("我們永遠不會忘記你/妳對 osu! 的支持", format);
                 }
                 else
                 {
-                    supportFlow.AddText("Consider becoming an ", format);
+                    supportFlow.AddText("成爲 ", format);
                     supportFlow.AddLink("osu!supporter", "https://osu.ppy.sh/home/support", creationParameters: format);
-                    supportFlow.AddText(" to help support the game", format);
+                    supportFlow.AddText(" 幫助支持這個遊戲", format);
                 }
 
                 heart = supportFlow.AddIcon(FontAwesome.Solid.Heart, t =>
@@ -188,22 +188,23 @@ namespace osu.Game.Screens.Menu
         {
             string[] tips =
             {
-                "You can press Ctrl-T anywhere in the game to toggle the toolbar!",
-                "You can press Ctrl-O anywhere in the game to access options!",
-                "All settings are dynamic and take effect in real-time. Try pausing and changing the skin while playing!",
-                "New features are coming online every update. Make sure to stay up-to-date!",
-                "If you find the UI too large or small, try adjusting UI scale in settings!",
-                "Try adjusting the \"Screen Scaling\" mode to change your gameplay or UI area, even in fullscreen!",
-                "For now, osu!direct is available to all users on lazer. You can access it anywhere using Ctrl-D!",
-                "Seeking in replays is available by dragging on the difficulty bar at the bottom of the screen!",
-                "Multithreading support means that even with low \"FPS\" your input and judgements will be accurate!",
-                "Try scrolling down in the mod select panel to find a bunch of new fun mods!",
-                "Most of the web content (profiles, rankings, etc.) are available natively in-game from the icons on the toolbar!",
-                "Get more details, hide or delete a beatmap by right-clicking on its panel at song select!",
-                "All delete operations are temporary until exiting. Restore accidentally deleted content from the maintenance settings!",
-                "Check out the \"timeshift\" multiplayer system, which has local permanent leaderboards and playlist support!",
-                "Toggle advanced frame / thread statistics with Ctrl-F11!",
-                "Take a look under the hood at performance counters and enable verbose performance logging with Ctrl-F2!",
+                "可以按 Ctrl-T 在遊戲中的任意位置切換工具欄!",
+                "可以按 Ctrl-O 在遊戲中的任意位置去變動遊戲設定!",
+                "所有設定都會實時動態變更. 試着在遊戲中選擇別的皮膚!",
+                "每次更新都會加入一些新的東西, 記得保持關注!",
+                "如果覺得界面太小了, 試着將 \"界面縮放\" 設定在合適的範圍!",
+                "試着調整 \"畫面縮放\" 模式去變動你/妳的遊戲中和界面縮放, 甚至在全螢幕模式中!",
+                "osu!direct 已適用於所有 lazer 玩家! 需要的時候在任意地方按 Ctrl-D!",
+                "在回放中的進度條 (畫面下方) 可被拖動!",
+                "多執行緒會在 \"FPS\" 過低的時候保持輸入控制不會被影響!",
+                "試着在 Mods 面板中往下翻, 會有很好玩的東西!",
+                "大部分線上頁面 (個人資訊, 排名或者其他) 可以在遊戲中顯示 (非網頁瀏覽器顯示!)",
+                "試着對圖譜右鍵進行更多操作 比如瀏覽圖譜資訊, 編輯圖譜, 遊玩圖譜以及隱藏!",
+                "所有的刪除圖譜操作在遊戲關閉之前都是暫時的 如果改變主意了可以回到維護選項中復原他們!",
+                "查看 \"時移 (Timeshift)\" 多人遊戲系統，該系統具有本地永久排行榜和播放列表支持!", // [RequestImprove] 不知道怎麼翻譯 用了Google translate 不要打我
+                "切換影格 / 執行緒資訊可以按 Ctrl-F11!",
+                "如果想要知道更詳細的日誌 可以按 Ctrl-F2 在遊戲中顯示他們! (暫未翻譯)",
+                "中文化由 github@appleneko2001 提供! 記得支持一下 osu! 遊戲很棒 不是支持我!",
             };
 
             return tips[RNG.Next(0, tips.Length)];

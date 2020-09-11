@@ -114,7 +114,7 @@ namespace osu.Game
             get
             {
                 if (!IsDeployedBuild)
-                    return @"local " + (DebugUtils.IsDebugBuild ? @"debug" : @"release");
+                    return @"本地" + (DebugUtils.IsDebugBuild ? @"測試版" : @"發行版");
 
                 var version = AssemblyVersion;
                 return $@"{version.Major}.{version.Minor}.{version.Build}";

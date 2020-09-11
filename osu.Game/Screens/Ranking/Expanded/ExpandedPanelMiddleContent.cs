@@ -166,7 +166,7 @@ namespace osu.Game.Screens.Ranking.Expanded
                                     {
                                         if (!string.IsNullOrEmpty(creator))
                                         {
-                                            t.AddText("mapped by ");
+                                            t.AddText("°µ¹ÏªÌ: ");
                                             t.AddText(creator, s => s.Font = s.Font.With(weight: FontWeight.SemiBold));
                                         }
                                     })

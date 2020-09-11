@@ -9,7 +9,7 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
 {
     public class DetailSettings : SettingsSubsection
     {
-        protected override string Header => "Detail Settings";
+        protected override string Header => "細節設定";
 
         [BackgroundDependencyLoader]
         private void load(OsuConfigManager config)
@@ -18,22 +18,22 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
             {
                 new SettingsCheckbox
                 {
-                    LabelText = "Storyboard / Video",
+                    LabelText = "故事板 / 影片",
                     Bindable = config.GetBindable<bool>(OsuSetting.ShowStoryboard)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Hit Lighting",
+                    LabelText = "打擊光亮",
                     Bindable = config.GetBindable<bool>(OsuSetting.HitLighting)
                 },
                 new SettingsEnumDropdown<ScreenshotFormat>
                 {
-                    LabelText = "Screenshot format",
+                    LabelText = "截圖格式",
                     Bindable = config.GetBindable<ScreenshotFormat>(OsuSetting.ScreenshotFormat)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Show menu cursor in screenshots",
+                    LabelText = "截圖時拍下光標",
                     Bindable = config.GetBindable<bool>(OsuSetting.ScreenshotCaptureMenuCursor)
                 }
             };

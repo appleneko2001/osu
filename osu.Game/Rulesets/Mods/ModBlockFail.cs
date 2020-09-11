@@ -13,6 +13,7 @@ namespace osu.Game.Rulesets.Mods
 
         /// <summary>
         /// We never fail, 'yo.
+        /// 我們死不了!
         /// </summary>
         public bool PerformFail() => false;
 

@@ -13,6 +13,7 @@ using osuTK.Graphics;
 using osu.Framework.Graphics.Effects;
 using osu.Framework.Graphics.Sprites;
 using osu.Game.Graphics;
+using osu.Framework.Extensions;
 
 namespace osu.Game.Overlays.BeatmapSet
 {
@@ -50,8 +51,8 @@ namespace osu.Game.Overlays.BeatmapSet
 
             fields.Children = new Drawable[]
             {
-                new Field("mapped by", BeatmapSet.Metadata.Author.Username, OsuFont.GetFont(weight: FontWeight.Regular, italics: true)),
-                new Field("submitted", online.Submitted, OsuFont.GetFont(weight: FontWeight.Bold))
+                new Field("做圖者:", BeatmapSet.Metadata.Author.Username, OsuFont.GetFont(weight: FontWeight.Regular, italics: true)),
+                new Field("已提交", online.Submitted, OsuFont.GetFont(weight: FontWeight.Bold))
                 {
                     Margin = new MarginPadding { Top = 5 },
                 },
@@ -59,11 +60,11 @@ namespace osu.Game.Overlays.BeatmapSet
 
             if (online.Ranked.HasValue)
             {
-                fields.Add(new Field(online.Status.ToString().ToLowerInvariant(), online.Ranked.Value, OsuFont.GetFont(weight: FontWeight.Bold)));
+                fields.Add(new Field(((online.Status as Enum).GetDescription().ToString().ToLowerInvariant()), online.Ranked.Value, OsuFont.GetFont(weight: FontWeight.Bold)));
             }
             else if (online.LastUpdated.HasValue)
             {
-                fields.Add(new Field("last updated", online.LastUpdated.Value, OsuFont.GetFont(weight: FontWeight.Bold)));
+                fields.Add(new Field("上一次更新", online.LastUpdated.Value, OsuFont.GetFont(weight: FontWeight.Bold)));
             }
         }
 

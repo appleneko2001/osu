@@ -23,17 +23,17 @@ namespace osu.Game.Screens.Select
             BodyText = $@"{beatmap.Metadata?.Artist} - {beatmap.Metadata?.Title}";
 
             Icon = FontAwesome.Regular.TrashAlt;
-            HeaderText = @"Confirm deletion of";
+            HeaderText = @"確認刪除圖譜包";
             Buttons = new PopupDialogButton[]
             {
                 new PopupDialogOkButton
                 {
-                    Text = @"Yes. Totally. Delete it.",
+                    Text = @"是, 把它扔掉!",
                     Action = () => manager.Delete(beatmap),
                 },
                 new PopupDialogCancelButton
                 {
-                    Text = @"Firetruck, I didn't mean to!",
+                    Text = @"沒有, 我不是這個意思!",
                 },
             };
         }

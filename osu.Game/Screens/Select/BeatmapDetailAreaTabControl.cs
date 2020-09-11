@@ -67,7 +67,7 @@ namespace osu.Game.Screens.Select
                 {
                     Anchor = Anchor.BottomRight,
                     Origin = Anchor.BottomRight,
-                    Text = @"Selected Mods",
+                    Text = @"排除 Mods 成績",
                     Alpha = 0,
                 },
             };

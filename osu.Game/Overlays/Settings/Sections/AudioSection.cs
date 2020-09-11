@@ -11,7 +11,7 @@ namespace osu.Game.Overlays.Settings.Sections
 {
     public class AudioSection : SettingsSection
     {
-        public override string Header => "Audio";
+        public override string Header => "聲音";
 
         public override Drawable CreateIcon() => new SpriteIcon
         {

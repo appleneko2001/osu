@@ -1,8 +1,10 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System;
 using System.Linq;
 using osu.Framework.Allocation;
+using osu.Framework.Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Sprites;
@@ -128,39 +130,39 @@ namespace osu.Game.Overlays.Profile.Sections.Recent
             {
                 case RecentActivityType.Achievement:
                     addUserLink();
-                    addText($" unlocked the \"{activity.Achievement.Name}\" medal!");
+                    addText($" 解鎖了 \"{activity.Achievement.Name}\" 獎盃!");
                     break;
 
                 case RecentActivityType.BeatmapPlaycount:
                     addBeatmapLink();
-                    addText($" has been played {activity.Count} times!");
+                    addText($" 已到達總共遊玩 {activity.Count} 次數!");
                     break;
 
                 case RecentActivityType.BeatmapsetApprove:
                     addBeatmapsetLink();
-                    addText($" has been {activity.Approval.ToString().ToLowerInvariant()}!");
+                    addText($" 已經被 {(activity.Approval as Enum).GetDescription().ToString().ToLowerInvariant()}!");
                     break;
 
                 case RecentActivityType.BeatmapsetDelete:
                     addBeatmapsetLink();
-                    addText(" has been deleted.");
+                    addText(" 已被刪除.");
                     break;
 
                 case RecentActivityType.BeatmapsetRevive:
                     addBeatmapsetLink();
-                    addText(" has been revived from eternal slumber by ");
+                    addText(" 已從死神中救出, 拯救者: ");
                     addUserLink();
                     break;
 
                 case RecentActivityType.BeatmapsetUpdate:
                     addUserLink();
-                    addText(" has updated the beatmap ");
+                    addText(" 更新了圖譜 ");
                     addBeatmapsetLink();
                     break;
 
                 case RecentActivityType.BeatmapsetUpload:
                     addUserLink();
-                    addText(" has submitted a new beatmap ");
+                    addText(" 提交了新圖譜 ");
                     addBeatmapsetLink();
                     break;
 
@@ -170,35 +172,35 @@ namespace osu.Game.Overlays.Profile.Sections.Recent
 
                 case RecentActivityType.Rank:
                     addUserLink();
-                    addText($" achieved rank #{activity.Rank} on ");
+                    addText($" 到達排名 #{activity.Rank} 在 ");
                     addBeatmapLink();
                     addText($" ({getRulesetName()})");
                     break;
 
                 case RecentActivityType.RankLost:
                     addUserLink();
-                    addText(" has lost first place on ");
+                    addText(" 已失去榜首在該圖譜 ");
                     addBeatmapLink();
                     addText($" ({getRulesetName()})");
                     break;
 
                 case RecentActivityType.UserSupportAgain:
                     addUserLink();
-                    addText(" has once again chosen to support osu! - thanks for your generosity!");
+                    addText(" 再一次贊助了 osu! - 感謝你/妳的贊助!");
                     break;
 
                 case RecentActivityType.UserSupportFirst:
                     addUserLink();
-                    addText(" has become an osu!supporter - thanks for your generosity!");
+                    addText(" 已成爲 osu!supporter - 感謝你/妳的贊助!");
                     break;
 
                 case RecentActivityType.UserSupportGift:
                     addUserLink();
-                    addText(" has received the gift of osu!supporter!");
+                    addText(" 已獲得 osu!supporter 禮物!");
                     break;
 
                 case RecentActivityType.UsernameChange:
-                    addText($"{activity.User?.PreviousUsername} has changed their username to ");
+                    addText($"{activity.User?.PreviousUsername} 已變更暱稱爲 ");
                     addUserLink();
                     break;
             }

@@ -12,16 +12,16 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModHalfTime : ModRateAdjust
     {
-        public override string Name => "Half Time";
+        public override string Name => "減速";
         public override string Acronym => "HT";
         public override IconUsage? Icon => OsuIcon.ModHalftime;
         public override ModType Type => ModType.DifficultyReduction;
-        public override string Description => "Less zoom...";
+        public override string Description => "縮圈慢下來...";
         public override bool Ranked => true;
 
         public override Type[] IncompatibleMods => base.IncompatibleMods.Append(typeof(ModDoubleTime)).ToArray();
 
-        [SettingSource("Speed decrease", "The actual decrease to apply")]
+        [SettingSource("速度降低", "實際減速率")]
         public override BindableNumber<double> SpeedChange { get; } = new BindableDouble
         {
             MinValue = 0.5,

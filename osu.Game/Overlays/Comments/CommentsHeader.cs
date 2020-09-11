@@ -87,7 +87,7 @@ namespace osu.Game.Overlays.Comments
                             Anchor = Anchor.CentreLeft,
                             Origin = Anchor.CentreLeft,
                             Font = OsuFont.GetFont(size: 12, weight: FontWeight.SemiBold),
-                            Text = @"Show deleted"
+                            Text = @"顯示已刪除的評論"
                         }
                     },
                 });
@@ -109,9 +109,11 @@ namespace osu.Game.Overlays.Comments
 
     public enum CommentsSortCriteria
     {
-        [System.ComponentModel.Description(@"Recent")]
+        [System.ComponentModel.Description(@"近期")]
         New,
+        [System.ComponentModel.Description(@"舊留言")]
         Old,
+        [System.ComponentModel.Description(@"讚數最多")]
         Top
     }
 }

@@ -375,7 +375,7 @@ namespace osu.Game.Screens.Select
                 {
                     new OsuSpriteText
                     {
-                        Text = "mapped by ",
+                        Text = "做圖者: ",
                         Font = OsuFont.GetFont(size: 15),
                     },
                     new OsuSpriteText

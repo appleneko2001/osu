@@ -269,8 +269,8 @@ namespace osu.Game.Online.Leaderboards
 
         protected virtual IEnumerable<LeaderboardScoreStatistic> GetStatistics(ScoreInfo model) => new[]
         {
-            new LeaderboardScoreStatistic(FontAwesome.Solid.Link, "Max Combo", model.MaxCombo.ToString()),
-            new LeaderboardScoreStatistic(FontAwesome.Solid.Crosshairs, "Accuracy", model.DisplayAccuracy)
+            new LeaderboardScoreStatistic(FontAwesome.Solid.Link, "最高連擊數", model.MaxCombo.ToString()),
+            new LeaderboardScoreStatistic(FontAwesome.Solid.Crosshairs, "準確率", model.DisplayAccuracy)
         };
 
         protected override bool OnHover(HoverEvent e)

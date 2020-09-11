@@ -9,7 +9,7 @@ namespace osu.Game.Overlays.Settings.Sections
 {
     public class DebugSection : SettingsSection
     {
-        public override string Header => "Debug";
+        public override string Header => "除錯";
 
         public override Drawable CreateIcon() => new SpriteIcon
         {

@@ -63,6 +63,7 @@ namespace osu.Game.Overlays.Settings
                 {
                     Anchor = Anchor.TopCentre,
                     Origin = Anchor.TopCentre,
+                    Margin = new MarginPadding { Top = 8 },
                 }
             };
         }
@@ -82,7 +83,7 @@ namespace osu.Game.Overlays.Settings
 
                 Content.RelativeSizeAxes = Axes.Y;
                 Content.AutoSizeAxes = AutoSizeAxes = Axes.X;
-                Height = 20;
+                Height = 60;
             }
 
             [BackgroundDependencyLoader(true)]
@@ -98,6 +99,18 @@ namespace osu.Game.Overlays.Settings
                     Text = version,
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
+                    Y = -10,
+                    Padding = new MarginPadding(5),
+                    Colour = isDebug ? colours.Red : Color4.White,
+                });
+                Add(new OsuSpriteText
+                {
+                    Font = OsuFont.GetFont(size: 16),
+
+                    Text = "中文化 by github@appleneko2001", 
+                    Anchor = Anchor.Centre,
+                    Origin = Anchor.Centre,
+                    Y = 10,
                     Padding = new MarginPadding(5),
                     Colour = isDebug ? colours.Red : Color4.White,
                 });

@@ -9,7 +9,7 @@ namespace osu.Game.Overlays.Settings.Sections.General
 {
     public class LanguageSettings : SettingsSubsection
     {
-        protected override string Header => "Language";
+        protected override string Header => "語言設定";
 
         [BackgroundDependencyLoader]
         private void load(FrameworkConfigManager frameworkConfig)
@@ -18,8 +18,9 @@ namespace osu.Game.Overlays.Settings.Sections.General
             {
                 new SettingsCheckbox
                 {
-                    LabelText = "Prefer metadata in original language",
-                    Bindable = frameworkConfig.GetBindable<bool>(FrameworkSetting.ShowUnicode)
+                    LabelText = "以原始語言顯示歌曲資訊",
+                    Bindable = frameworkConfig.GetBindable<bool>(FrameworkSetting.ShowUnicode),
+                    TooltipText = "如歌曲有提供原始語言資訊, 則使用原始語言顯示歌曲資訊."
                 },
             };
         }

@@ -15,11 +15,11 @@ namespace osu.Game.Rulesets.Osu.Mods
 {
     internal class OsuModTransform : Mod, IApplicableToDrawableHitObjects
     {
-        public override string Name => "Transform";
+        public override string Name => "位移";
         public override string Acronym => "TR";
         public override IconUsage? Icon => FontAwesome.Solid.ArrowsAlt;
         public override ModType Type => ModType.Fun;
-        public override string Description => "Everything rotates. EVERYTHING.";
+        public override string Description => "天旋地轉!";
         public override double ScoreMultiplier => 1;
         public override Type[] IncompatibleMods => new[] { typeof(OsuModWiggle) };
 

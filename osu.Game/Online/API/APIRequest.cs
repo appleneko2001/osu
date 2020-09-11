@@ -153,22 +153,22 @@ namespace osu.Game.Online.API
 
             cancelled = true;
             WebRequest?.Abort();
-
-            string responseString = WebRequest?.GetResponseString();
-
-            if (!string.IsNullOrEmpty(responseString))
+             
+            try
             {
-                try
+                string responseString = WebRequest?.GetResponseString();
+
+                if (!string.IsNullOrEmpty(responseString))
                 {
                     // attempt to decode a displayable error string.
                     var error = JsonConvert.DeserializeObject<DisplayableError>(responseString);
                     if (error != null)
                         e = new APIException(error.ErrorMessage, e);
                 }
-                catch
-                {
-                }
             }
+            catch
+            {
+            } 
 
             Logger.Log($@"Failing request {this} ({e})", LoggingTarget.Network);
             pendingFailure = () => TriggerFailure(e);

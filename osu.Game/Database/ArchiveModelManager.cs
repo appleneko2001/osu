@@ -125,32 +125,35 @@ namespace osu.Game.Database
             int current = 0;
 
             var imported = new List<TModel>();
-
+             
             await Task.WhenAll(paths.Select(async path =>
             {
-                notification.CancellationToken.ThrowIfCancellationRequested();
-
-                try
+                if (!notification.CancellationToken.IsCancellationRequested)
                 {
-                    var model = await Import(path, notification.CancellationToken);
+                    notification.CancellationToken.ThrowIfCancellationRequested();
 
-                    lock (imported)
+                    try
                     {
-                        if (model != null)
-                            imported.Add(model);
-                        current++;
+                        var model = await Import(path, notification.CancellationToken);
 
-                        notification.Text = $"Imported {current} of {paths.Length} {HumanisedModelName}s";
-                        notification.Progress = (float)current / paths.Length;
+                        lock (imported)
+                        {
+                            if (model != null)
+                                imported.Add(model);
+                            current++;
+
+                            notification.Text = $"Imported {current} of {paths.Length} {HumanisedModelName}s";
+                            notification.Progress = (float)current / paths.Length;
+                        }
                     }
-                }
-                catch (TaskCanceledException)
-                {
-                    throw;
-                }
-                catch (Exception e)
-                {
-                    Logger.Error(e, $@"Could not import ({Path.GetFileName(path)})", LoggingTarget.Database);
+                    catch (TaskCanceledException)
+                    {
+                        throw;
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Error(e, $@"Could not import ({Path.GetFileName(path)})", LoggingTarget.Database);
+                    }
                 }
             }));
 

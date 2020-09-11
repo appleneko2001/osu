@@ -14,7 +14,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
     {
         public readonly BindableBool DetailsVisible = new BindableBool();
 
-        public override string TooltipText => DetailsVisible.Value ? "collapse" : "expand";
+        public override string TooltipText => DetailsVisible.Value ? "收起" : "展開";
 
         private SpriteIcon icon;
 

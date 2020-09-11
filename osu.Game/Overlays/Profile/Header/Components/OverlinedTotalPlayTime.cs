@@ -22,7 +22,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
         {
             AutoSizeAxes = Axes.Both;
 
-            TooltipText = "0 hours";
+            TooltipText = "0 個小時";
         }
 
         [BackgroundDependencyLoader]
@@ -30,7 +30,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
         {
             InternalChild = info = new OverlinedInfoContainer
             {
-                Title = "Total Play Time",
+                Title = "總遊玩時間",
                 LineColour = colourProvider.Highlight1,
             };
 
@@ -39,13 +39,13 @@ namespace osu.Game.Overlays.Profile.Header.Components
 
         private void updateTime(ValueChangedEvent<User> user)
         {
-            TooltipText = (user.NewValue?.Statistics?.PlayTime ?? 0) / 3600 + " hours";
+            TooltipText = (user.NewValue?.Statistics?.PlayTime ?? 0) / 3600 + " 個小時";
             info.Content = formatTime(user.NewValue?.Statistics?.PlayTime);
         }
 
         private string formatTime(int? secondsNull)
         {
-            if (secondsNull == null) return "0h 0m";
+            if (secondsNull == null) return "0分鐘";
 
             int seconds = secondsNull.Value;
             string time = "";
@@ -53,14 +53,14 @@ namespace osu.Game.Overlays.Profile.Header.Components
             int days = seconds / 86400;
             seconds -= days * 86400;
             if (days > 0)
-                time += days + "d ";
+                time += days + "天 ";
 
             int hours = seconds / 3600;
             seconds -= hours * 3600;
-            time += hours + "h ";
+            time += hours + "小時 ";
 
             int minutes = seconds / 60;
-            time += minutes + "m";
+            time += minutes + "分鐘";
 
             return time;
         }

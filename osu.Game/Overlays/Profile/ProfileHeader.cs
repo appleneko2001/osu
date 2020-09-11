@@ -27,8 +27,8 @@ namespace osu.Game.Overlays.Profile
 
             User.ValueChanged += e => updateDisplay(e.NewValue);
 
-            TabControl.AddItem("info");
-            TabControl.AddItem("modding");
+            TabControl.AddItem("資訊");
+            TabControl.AddItem("摸圖 (modding)");
 
             centreHeaderContainer.DetailsVisible.BindValueChanged(visible => detailHeaderContainer.Expanded = visible.NewValue, true);
         }
@@ -96,7 +96,7 @@ namespace osu.Game.Overlays.Profile
         {
             public ProfileHeaderTitle()
             {
-                Title = "player info";
+                Title = "玩家資訊";
                 IconTexture = "Icons/Hexacons/profile";
             }
         }

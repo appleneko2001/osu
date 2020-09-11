@@ -39,7 +39,7 @@ namespace osu.Game.Screens.Ranking
                 },
             };
 
-            TooltipText = "retry";
+            TooltipText = "重新開始";
         }
 
         [BackgroundDependencyLoader]

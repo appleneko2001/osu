@@ -57,14 +57,14 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                         {
                             Anchor = Anchor.Centre,
                             Origin = Anchor.Centre,
-                            Text = "Migration in progress",
+                            Text = "正在遷移中",
                             Font = OsuFont.Default.With(size: 40)
                         },
                         new OsuSpriteText
                         {
                             Anchor = Anchor.Centre,
                             Origin = Anchor.Centre,
-                            Text = "This could take a few minutes depending on the speed of your disk(s).",
+                            Text = "根據硬碟的處理速度決定所需時間.",
                             Font = OsuFont.Default.With(size: 30)
                         },
                         new LoadingSpinner(true)
@@ -75,7 +75,7 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                         {
                             Anchor = Anchor.Centre,
                             Origin = Anchor.Centre,
-                            Text = "Please avoid interacting with the game!",
+                            Text = "請靜置遊戲 不要互動!",
                             Font = OsuFont.Default.With(size: 30)
                         },
                     }
@@ -88,7 +88,7 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                                 .ContinueWith(t =>
                                 {
                                     if (t.IsFaulted)
-                                        Logger.Log($"Error during migration: {t.Exception?.Message}", level: LogLevel.Error);
+                                        Logger.Log($"遷移失敗: {t.Exception?.Message}", level: LogLevel.Error);
 
                                     Schedule(this.Exit);
                                 });

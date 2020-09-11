@@ -7,7 +7,7 @@ namespace osu.Game.Overlays.Settings.Sections.Input
 {
     public class KeyboardSettings : SettingsSubsection
     {
-        protected override string Header => "Keyboard";
+        protected override string Header => "鍵盤設定";
 
         public KeyboardSettings(KeyBindingPanel keyConfig)
         {
@@ -15,8 +15,8 @@ namespace osu.Game.Overlays.Settings.Sections.Input
             {
                 new SettingsButton
                 {
-                    Text = "Key configuration",
-                    TooltipText = "change global shortcut keys and gameplay bindings",
+                    Text = "按鍵映射",
+                    TooltipText = "變動每個按鍵的操作和遊戲中按鍵功能",
                     Action = keyConfig.ToggleVisibility
                 },
             };

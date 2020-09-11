@@ -29,7 +29,7 @@ namespace osu.Game.Screens.Play.Break
                     {
                         Anchor = Anchor.TopCentre,
                         Origin = Anchor.TopCentre,
-                        Text = "current progress".ToUpperInvariant(),
+                        Text = "當前進度".ToUpperInvariant(),
                         Font = OsuFont.GetFont(weight: FontWeight.Bold, size: 15),
                     },
                     new FillFlowContainer
@@ -40,9 +40,9 @@ namespace osu.Game.Screens.Play.Break
                         Direction = FillDirection.Vertical,
                         Children = new Drawable[]
                         {
-                            AccuracyDisplay = new PercentageBreakInfoLine("Accuracy"),
-                            RankDisplay = new BreakInfoLine<int>("Rank"),
-                            GradeDisplay = new BreakInfoLine<ScoreRank>("Grade"),
+                            AccuracyDisplay = new PercentageBreakInfoLine("準確率"),
+                            RankDisplay = new BreakInfoLine<int>("排名"),
+                            GradeDisplay = new BreakInfoLine<ScoreRank>("評等"),
                         },
                     }
                 },

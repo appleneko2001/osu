@@ -61,10 +61,10 @@ namespace osu.Game.Screens.Select.Details
                 Children = new[]
                 {
                     FirstValue = new StatisticRow(), // circle size/key amount
-                    HpDrain = new StatisticRow { Title = "HP Drain" },
-                    Accuracy = new StatisticRow { Title = "Accuracy" },
-                    ApproachRate = new StatisticRow { Title = "Approach Rate" },
-                    starDifficulty = new StatisticRow(10, true) { Title = "Star Difficulty" },
+                    HpDrain = new StatisticRow { Title = "掉血速度" }, //[RequestImprove] 用了個比較爛的譯文 如果可以的話告訴我怎麼翻譯比較好 我中文很爛xD
+                    Accuracy = new StatisticRow { Title = "準擊率" }, 
+                    ApproachRate = new StatisticRow { Title = "縮圈速度" },
+                    starDifficulty = new StatisticRow(10, true) { Title = "難度" },
                 },
             };
         }
@@ -131,12 +131,12 @@ namespace osu.Game.Screens.Select.Details
                 case 3:
                     // Account for mania differences locally for now
                     // Eventually this should be handled in a more modular way, allowing rulesets to return arbitrary difficulty attributes
-                    FirstValue.Title = "Key Count";
+                    FirstValue.Title = "鍵數量";
                     FirstValue.Value = (baseDifficulty?.CircleSize ?? 0, null);
                     break;
 
                 default:
-                    FirstValue.Title = "Circle Size";
+                    FirstValue.Title = "圓圈大小";
                     FirstValue.Value = (baseDifficulty?.CircleSize ?? 0, adjustedDifficulty?.CircleSize);
                     break;
             }

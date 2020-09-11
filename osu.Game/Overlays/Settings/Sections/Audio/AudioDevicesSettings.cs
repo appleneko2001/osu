@@ -12,7 +12,7 @@ namespace osu.Game.Overlays.Settings.Sections.Audio
 {
     public class AudioDevicesSettings : SettingsSubsection
     {
-        protected override string Header => "Devices";
+        protected override string Header => "輸出設備";
 
         [Resolved]
         private AudioManager audio { get; set; }

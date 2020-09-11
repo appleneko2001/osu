@@ -69,7 +69,7 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                                 {
                                     Anchor = Anchor.Centre,
                                     Origin = Anchor.Centre,
-                                    Text = "Please select a new location",
+                                    Text = "選擇一個位置",
                                     Font = OsuFont.Default.With(size: 40)
                                 },
                             },
@@ -87,7 +87,7 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                                     Anchor = Anchor.Centre,
                                     Origin = Anchor.Centre,
                                     Width = 300,
-                                    Text = "Begin folder migration",
+                                    Text = "開始遷移",
                                     Action = start
                                 },
                             }
@@ -115,7 +115,7 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
             }
             catch (Exception e)
             {
-                Logger.Log($"Error during migration: {e.Message}", level: LogLevel.Error);
+                Logger.Log($"遷移失敗: {e.Message}", level: LogLevel.Error);
                 return;
             }
 

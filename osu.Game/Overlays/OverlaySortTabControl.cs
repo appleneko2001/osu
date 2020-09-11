@@ -53,7 +53,7 @@ namespace osu.Game.Overlays
                         Anchor = Anchor.CentreLeft,
                         Origin = Anchor.CentreLeft,
                         Font = OsuFont.GetFont(size: 12, weight: FontWeight.SemiBold),
-                        Text = @"Sort by"
+                        Text = @"排序方式"
                     },
                     CreateControl().With(c =>
                     {

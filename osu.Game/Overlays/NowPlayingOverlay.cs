@@ -28,8 +28,8 @@ namespace osu.Game.Overlays
     public class NowPlayingOverlay : OsuFocusedOverlayContainer, INamedOverlayComponent
     {
         public string IconTexture => "Icons/Hexacons/music";
-        public string Title => "now playing";
-        public string Description => "manage the currently playing track";
+        public string Title => "正在播放";
+        public string Description => "控制現在播放的曲目";
 
         private const float player_height = 130;
         private const float transition_length = 800;

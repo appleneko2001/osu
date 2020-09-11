@@ -9,15 +9,15 @@ namespace osu.Game.Rulesets.Osu.Mods
 {
     internal class OsuModGrow : OsuModObjectScaleTween
     {
-        public override string Name => "Grow";
+        public override string Name => "從小變大";
 
         public override string Acronym => "GR";
 
         public override IconUsage? Icon => FontAwesome.Solid.ArrowsAltV;
 
-        public override string Description => "Hit them at the right size!";
+        public override string Description => "以正確的圓圈大小打擊!";
 
-        [SettingSource("Starting Size", "The initial size multiplier applied to all objects.")]
+        [SettingSource("開始大小", "初始大小乘數將應用於所有物件.")]
         public override BindableNumber<float> StartScale { get; } = new BindableFloat
         {
             MinValue = 0f,

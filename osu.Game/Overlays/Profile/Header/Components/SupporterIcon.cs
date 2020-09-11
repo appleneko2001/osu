@@ -18,7 +18,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
         private readonly FillFlowContainer iconContainer;
         private readonly CircularContainer content;
 
-        public string TooltipText => "osu!supporter";
+        public string TooltipText => "osu!supporter (贊助者)";
 
         public int SupportLevel
         {

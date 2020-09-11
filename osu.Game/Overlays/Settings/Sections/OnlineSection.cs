@@ -9,7 +9,7 @@ namespace osu.Game.Overlays.Settings.Sections
 {
     public class OnlineSection : SettingsSection
     {
-        public override string Header => "Online";
+        public override string Header => "線上";
 
         public override Drawable CreateIcon() => new SpriteIcon
         {

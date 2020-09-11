@@ -21,7 +21,7 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
 {
     public class LayoutSettings : SettingsSubsection
     {
-        protected override string Header => "Layout";
+        protected override string Header => "版圖設定";
 
         private FillFlowContainer<SettingsSlider<float>> scalingSettings;
 
@@ -61,7 +61,7 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
             {
                 windowModeDropdown = new SettingsDropdown<WindowMode>
                 {
-                    LabelText = "Screen mode",
+                    LabelText = "畫面模式",
                     Bindable = config.GetBindable<WindowMode>(FrameworkSetting.WindowMode),
                     ItemSource = windowModes,
                 },
@@ -72,7 +72,7 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
                 },
                 new SettingsSlider<float, UIScaleSlider>
                 {
-                    LabelText = "UI Scaling",
+                    LabelText = "界面縮放",
                     TransferValueOnCommit = true,
                     Bindable = osuConfig.GetBindable<float>(OsuSetting.UIScale),
                     KeyboardStep = 0.01f,
@@ -80,7 +80,7 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
                 },
                 new SettingsEnumDropdown<ScalingMode>
                 {
-                    LabelText = "Screen Scaling",
+                    LabelText = "畫面縮放",
                     Bindable = osuConfig.GetBindable<ScalingMode>(OsuSetting.Scaling),
                     Keywords = new[] { "scale", "letterbox" },
                 },
@@ -96,28 +96,28 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
                     {
                         new SettingsSlider<float>
                         {
-                            LabelText = "Horizontal position",
+                            LabelText = "水平位置",
                             Bindable = scalingPositionX,
                             KeyboardStep = 0.01f,
                             DisplayAsPercentage = true
                         },
                         new SettingsSlider<float>
                         {
-                            LabelText = "Vertical position",
+                            LabelText = "垂直位置",
                             Bindable = scalingPositionY,
                             KeyboardStep = 0.01f,
                             DisplayAsPercentage = true
                         },
                         new SettingsSlider<float>
                         {
-                            LabelText = "Horizontal scale",
+                            LabelText = "水平縮放",
                             Bindable = scalingSizeX,
                             KeyboardStep = 0.01f,
                             DisplayAsPercentage = true
                         },
                         new SettingsSlider<float>
                         {
-                            LabelText = "Vertical scale",
+                            LabelText = "垂直縮放",
                             Bindable = scalingSizeY,
                             KeyboardStep = 0.01f,
                             DisplayAsPercentage = true
@@ -134,7 +134,7 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
             {
                 resolutionSettingsContainer.Child = resolutionDropdown = new ResolutionSettingsDropdown
                 {
-                    LabelText = "Resolution",
+                    LabelText = "畫面解析度",
                     ShowsDefaultIndicator = false,
                     Items = resolutions,
                     Bindable = sizeFullscreen

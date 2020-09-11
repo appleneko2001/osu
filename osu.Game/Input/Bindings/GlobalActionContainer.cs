@@ -84,87 +84,87 @@ namespace osu.Game.Input.Bindings
 
     public enum GlobalAction
     {
-        [Description("Toggle chat overlay")]
+        [Description("切換聊天室圖層")]
         ToggleChat,
 
-        [Description("Toggle social overlay")]
+        [Description("切換社區圖層")]
         ToggleSocial,
 
-        [Description("Reset input settings")]
+        [Description("重設輸入設定")]
         ResetInputSettings,
 
-        [Description("Toggle toolbar")]
+        [Description("切換工具欄")]
         ToggleToolbar,
 
-        [Description("Toggle settings")]
+        [Description("切換設定")]
         ToggleSettings,
 
-        [Description("Toggle osu!direct")]
+        [Description("切換 osu!direct")]
         ToggleDirect,
 
-        [Description("Increase volume")]
+        [Description("增加音量")]
         IncreaseVolume,
 
-        [Description("Decrease volume")]
+        [Description("減少音量")]
         DecreaseVolume,
 
-        [Description("Toggle mute")]
+        [Description("切換靜音")]
         ToggleMute,
 
         // In-Game Keybindings
-        [Description("Skip cutscene")]
+        [Description("略過片場")]
         SkipCutscene,
 
-        [Description("Quick retry (hold)")]
+        [Description("快速重新開始 (按住)")]
         QuickRetry,
 
-        [Description("Take screenshot")]
+        [Description("截圖")]
         TakeScreenshot,
 
-        [Description("Toggle gameplay mouse buttons")]
+        [Description("切換遊戲中滑鼠按鍵")]
         ToggleGameplayMouseButtons,
 
-        [Description("Back")]
+        [Description("返回")]
         Back,
 
-        [Description("Increase scroll speed")]
+        [Description("增加滾動速度")]
         IncreaseScrollSpeed,
 
-        [Description("Decrease scroll speed")]
+        [Description("減少滾動速度")]
         DecreaseScrollSpeed,
 
-        [Description("Select")]
+        [Description("選擇")]
         Select,
 
-        [Description("Quick exit (Hold)")]
+        [Description("快速退出 (按住)")]
         QuickExit,
 
         // Game-wide beatmap msi ccotolle keybindings
-        [Description("Next track")]
+        [Description("下一首")]
         MusicNext,
 
-        [Description("Previous track")]
+        [Description("上一首")]
         MusicPrev,
 
-        [Description("Play / pause")]
+        [Description("播放 / 暫停")]
         MusicPlay,
 
-        [Description("Toggle now playing overlay")]
+        [Description("切換正在播放圖層")]
         ToggleNowPlaying,
 
-        [Description("Previous Selection")]
+        [Description("選擇上一個")]
         SelectPrevious,
 
-        [Description("Next Selection")]
+        [Description("選擇下一個")]
         SelectNext,
 
-        [Description("Home")]
+        [Description("主頁")]
         Home,
 
-        [Description("Toggle notifications")]
+        [Description("切換通知")]
         ToggleNotifications,
 
-        [Description("Pause")]
+        [Description("遊戲暫停")]
         PauseGameplay,
     }
 }

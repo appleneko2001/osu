@@ -1,6 +1,8 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.ComponentModel;
+
 namespace osu.Game.Overlays.Dashboard
 {
     public class DashboardOverlayHeader : TabControlOverlayHeader<DashboardOverlayTabs>
@@ -11,8 +13,8 @@ namespace osu.Game.Overlays.Dashboard
         {
             public DashboardTitle()
             {
-                Title = "dashboard";
-                Description = "view your friends and other information";
+                Title = "儀表板";
+                Description = "查看好友和其他的資訊";
                 IconTexture = "Icons/Hexacons/social";
             }
         }
@@ -20,6 +22,7 @@ namespace osu.Game.Overlays.Dashboard
 
     public enum DashboardOverlayTabs
     {
+        [Description("好友")]
         Friends
     }
 }

@@ -20,11 +20,11 @@ namespace osu.Game.Rulesets.Mods
 
     public abstract class ModAutoplay : Mod, IApplicableFailOverride
     {
-        public override string Name => "Autoplay";
+        public override string Name => "自動表演"; 
         public override string Acronym => "AT";
         public override IconUsage? Icon => OsuIcon.ModAuto;
         public override ModType Type => ModType.Automation;
-        public override string Description => "Watch a perfect automated play through the song.";
+        public override string Description => @"來看看精彩絕倫的自動表演.";
         public override double ScoreMultiplier => 1;
 
         public bool PerformFail() => false;

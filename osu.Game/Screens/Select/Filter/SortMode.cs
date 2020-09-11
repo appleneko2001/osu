@@ -7,28 +7,28 @@ namespace osu.Game.Screens.Select.Filter
 {
     public enum SortMode
     {
-        [Description("Artist")]
+        [Description("作曲者")]
         Artist,
 
-        [Description("Author")]
+        [Description("做圖者")]
         Author,
 
-        [Description("BPM")]
+        [Description("每分鐘節拍")]
         BPM,
 
-        [Description("Date Added")]
+        [Description("已安裝圖譜日期")]
         DateAdded,
 
-        [Description("Difficulty")]
+        [Description("難度")]
         Difficulty,
 
-        [Description("Length")]
+        [Description("長度")]
         Length,
 
         [Description("Rank Achieved")]
         RankAchieved,
 
-        [Description("Title")]
+        [Description("標題")]
         Title
     }
 }

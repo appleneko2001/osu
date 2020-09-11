@@ -23,7 +23,7 @@ namespace osu.Game.Screens.Select
             {
                 Anchor = Anchor.Centre,
                 Origin = Anchor.Centre,
-                Text = @"rewind",
+                Text = @"倒轉",
                 Alpha = 0,
             });
 
@@ -36,7 +36,7 @@ namespace osu.Game.Screens.Select
         {
             SelectedColour = colours.Green;
             DeselectedColour = SelectedColour.Opacity(0.5f);
-            Text = @"random";
+            Text = @"隨機選圖";
             Hotkey = Key.F2;
         }
 

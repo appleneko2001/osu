@@ -9,7 +9,7 @@ namespace osu.Game.Overlays.Settings.Sections
 {
     public class InputSection : SettingsSection
     {
-        public override string Header => "Input";
+        public override string Header => "輸入";
 
         public override Drawable CreateIcon() => new SpriteIcon
         {

@@ -8,7 +8,7 @@ namespace osu.Game.Overlays.Profile.Sections
 {
     public class RanksSection : ProfileSection
     {
-        public override string Title => "Ranks";
+        public override string Title => "排名";
 
         public override string Identifier => "top_ranks";
 
@@ -16,8 +16,8 @@ namespace osu.Game.Overlays.Profile.Sections
         {
             Children = new[]
             {
-                new PaginatedScoreContainer(ScoreType.Best, User, "Best Performance", "No performance records. :("),
-                new PaginatedScoreContainer(ScoreType.Firsts, User, "First Place Ranks", "No awesome performance records yet. :("),
+                new PaginatedScoreContainer(ScoreType.Best, User, "表現最佳", "沒有成績記錄. :("),
+                new PaginatedScoreContainer(ScoreType.Firsts, User, "排名榜首", "沒有極佳成績記錄. :("),
             };
         }
     }

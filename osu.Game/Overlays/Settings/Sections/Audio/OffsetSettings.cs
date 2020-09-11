@@ -10,7 +10,7 @@ namespace osu.Game.Overlays.Settings.Sections.Audio
 {
     public class OffsetSettings : SettingsSubsection
     {
-        protected override string Header => "Offset Adjustment";
+        protected override string Header => "偏移校正";
 
         [BackgroundDependencyLoader]
         private void load(OsuConfigManager config)
@@ -19,13 +19,13 @@ namespace osu.Game.Overlays.Settings.Sections.Audio
             {
                 new SettingsSlider<double, OffsetSlider>
                 {
-                    LabelText = "Audio offset",
+                    LabelText = "聲音偏移",
                     Bindable = config.GetBindable<double>(OsuSetting.AudioOffset),
                     KeyboardStep = 1f
                 },
                 new SettingsButton
                 {
-                    Text = "Offset wizard"
+                    Text = "校正助手"
                 }
             };
         }

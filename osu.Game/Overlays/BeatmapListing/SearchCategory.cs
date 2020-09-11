@@ -7,20 +7,22 @@ namespace osu.Game.Overlays.BeatmapListing
 {
     public enum SearchCategory
     {
-        Any,
-
-        [Description("Has Leaderboard")]
+        [Description("所有")]
+        Any, 
+        [Description("擁有排行榜")]
         Leaderboard,
+        [Description("已進榜")]
         Ranked,
         Qualified,
         Loved,
+        [Description("收藏")]
         Favourites,
 
-        [Description("Pending & WIP")]
+        [Description("待處理&製作中")]
         Pending,
-        Graveyard,
-
-        [Description("My Maps")]
+        [Description("拋棄")]
+        Graveyard, 
+        [Description("我的圖譜")]
         Mine,
     }
 }

@@ -152,7 +152,7 @@ namespace osu.Game.Overlays.Comments
                         Anchor = Anchor.CentreLeft,
                         Origin = Anchor.CentreLeft,
                         Margin = new MarginPadding { Left = 50 },
-                        Text = @"No comments yet."
+                        Text = @"還沒有任何留言."
                     }
                 });
             }

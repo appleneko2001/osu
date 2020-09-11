@@ -24,10 +24,10 @@ namespace osu.Game.Rulesets.Mods
 
     public class ModCinema : ModAutoplay, IApplicableToHUD, IApplicableToPlayer
     {
-        public override string Name => "Cinema";
+        public override string Name => "影院模式";
         public override string Acronym => "CN";
         public override IconUsage? Icon => OsuIcon.ModCinema;
-        public override string Description => "Watch the video without visual distractions.";
+        public override string Description => "觀看影片時不會有視覺干擾.";
 
         public void ApplyToHUD(HUDOverlay overlay)
         {

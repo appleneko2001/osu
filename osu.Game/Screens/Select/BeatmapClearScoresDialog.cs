@@ -21,12 +21,12 @@ namespace osu.Game.Screens.Select
         {
             BodyText = $@"{beatmap.Metadata?.Artist} - {beatmap.Metadata?.Title}";
             Icon = FontAwesome.Solid.Eraser;
-            HeaderText = @"Clearing all local scores. Are you sure?";
+            HeaderText = @"清理所有本地成績嗎?";
             Buttons = new PopupDialogButton[]
             {
                 new PopupDialogOkButton
                 {
-                    Text = @"Yes. Please.",
+                    Text = @"是的, 麻煩了.",
                     Action = () =>
                     {
                         Task.Run(() => scoreManager.Delete(scoreManager.QueryScores(s => !s.DeletePending && s.Beatmap.ID == beatmap.ID).ToList()))
@@ -35,7 +35,7 @@ namespace osu.Game.Screens.Select
                 },
                 new PopupDialogCancelButton
                 {
-                    Text = @"No, I'm still attached.",
+                    Text = @"不要清理!",
                 },
             };
         }

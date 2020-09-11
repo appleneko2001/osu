@@ -118,7 +118,7 @@ namespace osu.Game.Screens.Select.Carousel
                                         },
                                         new OsuSpriteText
                                         {
-                                            Text = "mapped by",
+                                            Text = "做圖者:",
                                             Anchor = Anchor.BottomLeft,
                                             Origin = Anchor.BottomLeft
                                         },
@@ -208,16 +208,16 @@ namespace osu.Game.Screens.Select.Carousel
                 List<MenuItem> items = new List<MenuItem>();
 
                 if (startRequested != null)
-                    items.Add(new OsuMenuItem("Play", MenuItemType.Highlighted, () => startRequested(beatmap)));
+                    items.Add(new OsuMenuItem("遊玩", MenuItemType.Highlighted, () => startRequested(beatmap)));
 
                 if (editRequested != null)
-                    items.Add(new OsuMenuItem("Edit", MenuItemType.Standard, () => editRequested(beatmap)));
+                    items.Add(new OsuMenuItem("編輯", MenuItemType.Standard, () => editRequested(beatmap)));
 
                 if (hideRequested != null)
-                    items.Add(new OsuMenuItem("Hide", MenuItemType.Destructive, () => hideRequested(beatmap)));
+                    items.Add(new OsuMenuItem("隱藏", MenuItemType.Destructive, () => hideRequested(beatmap)));
 
                 if (beatmap.OnlineBeatmapID.HasValue && beatmapOverlay != null)
-                    items.Add(new OsuMenuItem("Details", MenuItemType.Standard, () => beatmapOverlay.FetchAndShowBeatmap(beatmap.OnlineBeatmapID.Value)));
+                    items.Add(new OsuMenuItem("資訊", MenuItemType.Standard, () => beatmapOverlay.FetchAndShowBeatmap(beatmap.OnlineBeatmapID.Value)));
 
                 return items.ToArray();
             }

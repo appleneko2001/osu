@@ -9,11 +9,11 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModNoFail : ModBlockFail
     {
-        public override string Name => "No Fail";
+        public override string Name => "無失敗";
         public override string Acronym => "NF";
         public override IconUsage? Icon => OsuIcon.ModNofail;
         public override ModType Type => ModType.DifficultyReduction;
-        public override string Description => "You can't fail, no matter what.";
+        public override string Description => "沒有什麼是比遊戲過程中避免\"突然死掉\"的問題更好的了";
         public override double ScoreMultiplier => 0.5;
         public override bool Ranked => true;
         public override Type[] IncompatibleMods => new[] { typeof(ModRelax), typeof(ModSuddenDeath), typeof(ModAutoplay) };

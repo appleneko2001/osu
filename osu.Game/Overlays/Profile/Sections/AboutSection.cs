@@ -5,7 +5,7 @@ namespace osu.Game.Overlays.Profile.Sections
 {
     public class AboutSection : ProfileSection
     {
-        public override string Title => "me!";
+        public override string Title => "關於我!";
 
         public override string Identifier => "me";
     }

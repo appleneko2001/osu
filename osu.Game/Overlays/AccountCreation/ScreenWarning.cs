@@ -96,13 +96,13 @@ namespace osu.Game.Overlays.AccountCreation
                         },
                         new SettingsButton
                         {
-                            Text = "Help, I can't access my account!",
+                            Text = "幫幫我, 我沒有辦法訪問我的帳號!",
                             Margin = new MarginPadding { Top = 50 },
                             Action = () => game?.OpenUrlExternally(help_centre_url)
                         },
                         new DangerousSettingsButton
                         {
-                            Text = "I understand. This account isn't for me.",
+                            Text = "我知道, 那個不是我的帳號.",
                             Action = () => this.Push(new ScreenEntry())
                         },
                         furtherAssistance = new LinkFlowContainer(cp => cp.Font = cp.Font.With(size: 12))
@@ -116,16 +116,16 @@ namespace osu.Game.Overlays.AccountCreation
                 }
             };
 
-            multiAccountExplanationText.AddText("Are you ");
+            multiAccountExplanationText.AddText("你/妳是 ");
             multiAccountExplanationText.AddText(api.ProvidedUsername, cp => cp.Colour = colours.BlueLight);
-            multiAccountExplanationText.AddText("? osu! has a policy of ");
-            multiAccountExplanationText.AddText("one account per person!", cp => cp.Colour = colours.Yellow);
-            multiAccountExplanationText.AddText(" Please be aware that creating more than one account per person may result in ");
-            multiAccountExplanationText.AddText("permanent deactivation of accounts", cp => cp.Colour = colours.Yellow);
+            multiAccountExplanationText.AddText("嗎? osu! 有一條 ");
+            multiAccountExplanationText.AddText("每人只能有一個 osu! 帳號的規則!", cp => cp.Colour = colours.Yellow);
+            multiAccountExplanationText.AddText(" 請避免註冊多於一個帳號 否則帳號會被");
+            multiAccountExplanationText.AddText("永久禁止訪問", cp => cp.Colour = colours.Yellow);
             multiAccountExplanationText.AddText(".");
 
-            furtherAssistance.AddText("Need further assistance? Contact us via our ");
-            furtherAssistance.AddLink("support system", help_centre_url);
+            furtherAssistance.AddText("需要協助嗎? 使用");
+            furtherAssistance.AddLink("協助系統", help_centre_url);
             furtherAssistance.AddText(".");
         }
     }

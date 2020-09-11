@@ -169,7 +169,7 @@ namespace osu.Game.Overlays.Settings
                 UpdateState();
             }
 
-            public string TooltipText => "revert to default";
+            public string TooltipText => "復原設定";
 
             protected override bool OnClick(ClickEvent e)
             {

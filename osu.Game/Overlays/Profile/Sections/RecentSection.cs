@@ -7,7 +7,7 @@ namespace osu.Game.Overlays.Profile.Sections
 {
     public class RecentSection : ProfileSection
     {
-        public override string Title => "Recent";
+        public override string Title => "近期動態";
 
         public override string Identifier => "recent_activity";
 
@@ -15,7 +15,7 @@ namespace osu.Game.Overlays.Profile.Sections
         {
             Children = new[]
             {
-                new PaginatedRecentActivityContainer(User, null, @"This user hasn't done anything notable recently!"),
+                new PaginatedRecentActivityContainer(User, null, @"該用戶近期沒有任何動態!"),
             };
         }
     }

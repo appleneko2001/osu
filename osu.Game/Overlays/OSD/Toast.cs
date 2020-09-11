@@ -76,7 +76,7 @@ namespace osu.Game.Overlays.OSD
                     Alpha = 0.3f,
                     Margin = new MarginPadding { Bottom = 15 },
                     Font = OsuFont.GetFont(size: 12, weight: FontWeight.Bold),
-                    Text = string.IsNullOrEmpty(shortcut) ? "NO KEY BOUND" : shortcut.ToUpperInvariant()
+                    Text = string.IsNullOrEmpty(shortcut) ? "未綁定按鍵" : shortcut.ToUpperInvariant()
                 },
             };
         }

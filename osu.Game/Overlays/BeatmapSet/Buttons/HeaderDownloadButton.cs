@@ -26,7 +26,7 @@ namespace osu.Game.Overlays.BeatmapSet.Buttons
 
         private readonly bool noVideo;
 
-        public string TooltipText => button.Enabled.Value ? "download this beatmap" : "login to download";
+        public string TooltipText => button.Enabled.Value ? "下載該圖譜" : "已登入玩家可以下載圖譜";
 
         private readonly IBindable<User> localUser = new Bindable<User>();
 
@@ -120,7 +120,7 @@ namespace osu.Game.Overlays.BeatmapSet.Buttons
                         {
                             new OsuSpriteText
                             {
-                                Text = "Downloading...",
+                                Text = "下載中...",
                                 Font = OsuFont.GetFont(size: text_size, weight: FontWeight.Bold)
                             },
                         };
@@ -131,7 +131,7 @@ namespace osu.Game.Overlays.BeatmapSet.Buttons
                         {
                             new OsuSpriteText
                             {
-                                Text = "Importing...",
+                                Text = "匯入中...",
                                 Font = OsuFont.GetFont(size: text_size, weight: FontWeight.Bold)
                             },
                         };
@@ -146,7 +146,7 @@ namespace osu.Game.Overlays.BeatmapSet.Buttons
                         {
                             new OsuSpriteText
                             {
-                                Text = "Download",
+                                Text = "下載",
                                 Font = OsuFont.GetFont(size: text_size, weight: FontWeight.Bold)
                             },
                             new OsuSpriteText
@@ -170,7 +170,7 @@ namespace osu.Game.Overlays.BeatmapSet.Buttons
             if (!BeatmapSet.Value.OnlineInfo.HasVideo)
                 return string.Empty;
 
-            return noVideo ? "without Video" : "with Video";
+            return noVideo ? "不包括影像版本" : "完全版本";
         }
     }
 }

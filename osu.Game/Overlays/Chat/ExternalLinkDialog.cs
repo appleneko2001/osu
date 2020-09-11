@@ -11,8 +11,8 @@ namespace osu.Game.Overlays.Chat
     {
         public ExternalLinkDialog(string url, Action openExternalLinkAction)
         {
-            HeaderText = "Just checking...";
-            BodyText = $"You are about to leave osu! and open the following link in a web browser:\n\n{url}";
+            HeaderText = "只是確認一下...";
+            BodyText = $"你/妳現在在離開 osu! 並訪問下面的網址:\n\n{url}";
 
             Icon = FontAwesome.Solid.ExclamationTriangle;
 
@@ -20,12 +20,12 @@ namespace osu.Game.Overlays.Chat
             {
                 new PopupDialogOkButton
                 {
-                    Text = @"Yes. Go for it.",
+                    Text = @"我確認要訪問這個網址.",
                     Action = openExternalLinkAction
                 },
                 new PopupDialogCancelButton
                 {
-                    Text = @"No! Abort mission!"
+                    Text = @"不是! 取消任務!"
                 },
             };
         }

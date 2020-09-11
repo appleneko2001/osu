@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.ComponentModel;
 using System.Linq;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
@@ -133,6 +134,7 @@ namespace osu.Game.Screens.Select
 
         public enum TabType
         {
+            [Description("πœ√–∏Í∞T")]
             Details,
             Local,
             Country,

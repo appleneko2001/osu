@@ -21,16 +21,16 @@ namespace osu.Game.Rulesets.Mods
         /// </summary>
         private const double final_rate_progress = 0.75f;
 
-        [SettingSource("Initial rate", "The starting speed of the track")]
+        [SettingSource("基本速度", "曲目的基本速度")]
         public abstract BindableNumber<double> InitialRate { get; }
 
-        [SettingSource("Final rate", "The final speed to ramp to")]
+        [SettingSource("最大範圍", "速度調整的限制範圍")]
         public abstract BindableNumber<double> FinalRate { get; }
 
-        [SettingSource("Adjust pitch", "Should pitch be adjusted with speed")]
+        [SettingSource("調整音高", "音高是否跟速度一起變化")]
         public abstract BindableBool AdjustPitch { get; }
 
-        public override string SettingDescription => $"{InitialRate.Value:N2}x to {FinalRate.Value:N2}x";
+        public override string SettingDescription => $"{InitialRate.Value:N2}x 到 {FinalRate.Value:N2}x";
 
         private double finalRateTime;
         private double beginRampTime;

@@ -84,7 +84,7 @@ namespace osu.Game.Users
 
                 if (User.LastVisit.HasValue)
                 {
-                    text.AddText(@"Last seen ");
+                    text.AddText(@"上次在線於 ");
                     text.AddText(new DrawableDate(User.LastVisit.Value, italic: false)
                     {
                         Shadow = false

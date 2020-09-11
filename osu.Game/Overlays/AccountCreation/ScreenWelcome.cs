@@ -44,18 +44,18 @@ namespace osu.Game.Overlays.AccountCreation
                         Anchor = Anchor.TopCentre,
                         Origin = Anchor.TopCentre,
                         Font = OsuFont.GetFont(size: 24, weight: FontWeight.Light),
-                        Text = "New Player Registration",
+                        Text = "新玩家註冊",
                     },
                     new OsuSpriteText
                     {
                         Anchor = Anchor.TopCentre,
                         Origin = Anchor.TopCentre,
                         Font = OsuFont.GetFont(size: 12),
-                        Text = "let's get you started",
+                        Text = "讓我們開始註冊帳號吧 屬於你/妳的獨一無二的 osu! 帳號",
                     },
                     new SettingsButton
                     {
-                        Text = "Let's create an account!",
+                        Text = "創建 osu! 帳號!",
                         Margin = new MarginPadding { Vertical = 120 },
                         Action = () => this.Push(new ScreenWarning())
                     }

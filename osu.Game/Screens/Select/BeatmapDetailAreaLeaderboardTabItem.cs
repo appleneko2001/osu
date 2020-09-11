@@ -2,13 +2,14 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using osu.Framework.Extensions;
 
 namespace osu.Game.Screens.Select
 {
     public class BeatmapDetailAreaLeaderboardTabItem<TScope> : BeatmapDetailAreaTabItem
         where TScope : Enum
     {
-        public override string Name => Scope.ToString();
+        public override string Name => ((Scope as Enum).GetDescription()).ToString();
 
         public override bool FilterableByMods => true;
 

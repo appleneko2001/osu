@@ -78,10 +78,10 @@ namespace osu.Game.Overlays.Profile.Header
             if (user == null) return;
 
             if (user.JoinDate.ToUniversalTime().Year < 2008)
-                topLinkContainer.AddText("Here since the beginning");
+                topLinkContainer.AddText("從 osu! 一出生就加入了");
             else
             {
-                topLinkContainer.AddText("Joined ");
+                topLinkContainer.AddText("已加入 ");
                 topLinkContainer.AddText(new DrawableDate(user.JoinDate, italic: false), embolden);
             }
 
@@ -89,12 +89,12 @@ namespace osu.Game.Overlays.Profile.Header
 
             if (user.IsOnline)
             {
-                topLinkContainer.AddText("Currently online");
+                topLinkContainer.AddText("當前在線");
                 addSpacer(topLinkContainer);
             }
             else if (user.LastVisit.HasValue)
             {
-                topLinkContainer.AddText("Last seen ");
+                topLinkContainer.AddText("上次在線 ");
                 topLinkContainer.AddText(new DrawableDate(user.LastVisit.Value, italic: false), embolden);
 
                 addSpacer(topLinkContainer);
@@ -102,14 +102,14 @@ namespace osu.Game.Overlays.Profile.Header
 
             if (user.PlayStyles?.Length > 0)
             {
-                topLinkContainer.AddText("Plays with ");
+                topLinkContainer.AddText("使用 ");
                 topLinkContainer.AddText(string.Join(", ", user.PlayStyles.Select(style => style.GetDescription())), embolden);
-
+                topLinkContainer.AddText(" 設備遊玩");
                 addSpacer(topLinkContainer);
             }
 
-            topLinkContainer.AddText("Contributed ");
-            topLinkContainer.AddLink($@"{user.PostCount:#,##0} forum posts", $"https://osu.ppy.sh/users/{user.Id}/posts", creationParameters: embolden);
+            topLinkContainer.AddText("已發表 ");
+            topLinkContainer.AddLink($@"{user.PostCount:#,##0} 個論壇po文", $"https://osu.ppy.sh/users/{user.Id}/posts", creationParameters: embolden);
 
             string websiteWithoutProtocol = user.Website;
 

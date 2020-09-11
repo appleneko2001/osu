@@ -19,8 +19,8 @@ namespace osu.Game.Overlays
     public class NotificationOverlay : OsuFocusedOverlayContainer, INamedOverlayComponent
     {
         public string IconTexture => "Icons/Hexacons/notification";
-        public string Title => "notifications";
-        public string Description => "waiting for 'ya";
+        public string Title => "通知";
+        public string Description => "所有通知都在這裏";
 
         private const float width = 320;
 
@@ -60,11 +60,11 @@ namespace osu.Game.Overlays
                             RelativeSizeAxes = Axes.X,
                             Children = new[]
                             {
-                                new NotificationSection(@"Notifications", @"Clear All")
+                                new NotificationSection(@"通知", @"清除所有")
                                 {
                                     AcceptTypes = new[] { typeof(SimpleNotification) }
                                 },
-                                new NotificationSection(@"Running Tasks", @"Cancel All")
+                                new NotificationSection(@"執行中", @"取消所有")
                                 {
                                     AcceptTypes = new[] { typeof(ProgressNotification) }
                                 }

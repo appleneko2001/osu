@@ -1,7 +1,8 @@
 {
   "profiles": {
     "osu! Desktop": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "--sdl"
     },
     "osu! Tournament": {
       "commandName": "Project",

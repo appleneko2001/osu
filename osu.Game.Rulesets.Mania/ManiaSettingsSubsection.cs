@@ -28,12 +28,12 @@ namespace osu.Game.Rulesets.Mania
             {
                 new SettingsEnumDropdown<ManiaScrollingDirection>
                 {
-                    LabelText = "Scrolling direction",
+                    LabelText = "滾動方向",
                     Bindable = config.GetBindable<ManiaScrollingDirection>(ManiaRulesetSetting.ScrollDirection)
                 },
                 new SettingsSlider<double, TimeSlider>
                 {
-                    LabelText = "Scroll speed",
+                    LabelText = "滾動速度",
                     Bindable = config.GetBindable<double>(ManiaRulesetSetting.ScrollTime)
                 },
             };

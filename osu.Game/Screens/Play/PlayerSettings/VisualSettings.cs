@@ -23,7 +23,7 @@ namespace osu.Game.Screens.Play.PlayerSettings
             {
                 new OsuSpriteText
                 {
-                    Text = "Background dim:"
+                    Text = "背景暗度:"
                 },
                 dimSliderBar = new PlayerSliderBar<double>
                 {
@@ -31,7 +31,7 @@ namespace osu.Game.Screens.Play.PlayerSettings
                 },
                 new OsuSpriteText
                 {
-                    Text = "Background blur:"
+                    Text = "背景模糊:"
                 },
                 blurSliderBar = new PlayerSliderBar<double>
                 {
@@ -39,11 +39,11 @@ namespace osu.Game.Screens.Play.PlayerSettings
                 },
                 new OsuSpriteText
                 {
-                    Text = "Toggles:"
+                    Text = "切換:"
                 },
-                showStoryboardToggle = new PlayerCheckbox { LabelText = "Storyboard / Video" },
-                beatmapSkinsToggle = new PlayerCheckbox { LabelText = "Beatmap skins" },
-                beatmapHitsoundsToggle = new PlayerCheckbox { LabelText = "Beatmap hitsounds" }
+                showStoryboardToggle = new PlayerCheckbox { LabelText = "故事板 / 影片" },
+                beatmapSkinsToggle = new PlayerCheckbox { LabelText = "使用圖譜的皮膚" },
+                beatmapHitsoundsToggle = new PlayerCheckbox { LabelText = "使用圖譜的打擊音" }
             };
         }
 

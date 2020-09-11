@@ -51,7 +51,7 @@ namespace osu.Game.Overlays.Profile.Sections.Ranks
                 new OsuSpriteText
                 {
                     Font = OsuFont.GetFont(size: 12),
-                    Text = $@"weighted {weight:0%}"
+                    Text = $@"已權重 {weight:0%}"
                 }
             }
         };

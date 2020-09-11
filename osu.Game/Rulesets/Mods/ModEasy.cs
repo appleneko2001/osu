@@ -14,7 +14,7 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModEasy : Mod, IApplicableToDifficulty, IApplicableFailOverride, IApplicableToHealthProcessor
     {
-        public override string Name => "Easy";
+        public override string Name => "簡單模式";
         public override string Acronym => "EZ";
         public override IconUsage? Icon => OsuIcon.ModEasy;
         public override ModType Type => ModType.DifficultyReduction;
@@ -22,14 +22,14 @@ namespace osu.Game.Rulesets.Mods
         public override bool Ranked => true;
         public override Type[] IncompatibleMods => new[] { typeof(ModHardRock), typeof(ModDifficultyAdjust) };
 
-        [SettingSource("Extra Lives", "Number of extra lives")]
+        [SettingSource("機會數量", "給予總重生機會的次數")]
         public Bindable<int> Retries { get; } = new BindableInt(2)
         {
             MinValue = 0,
             MaxValue = 10
         };
 
-        public override string SettingDescription => Retries.IsDefault ? string.Empty : $"{"lives".ToQuantity(Retries.Value)}";
+        public override string SettingDescription => Retries.IsDefault ? string.Empty : $"{"機會".ToQuantity(Retries.Value)}";
 
         private int retries;
 

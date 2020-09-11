@@ -73,7 +73,7 @@ namespace osu.Game.Tournament.Screens
                                     {
                                         Anchor = Anchor.Centre,
                                         Origin = Anchor.Centre,
-                                        Text = "Please select a new location",
+                                        Text = "選擇新位置",
                                         Font = OsuFont.Default.With(size: 40)
                                     },
                                 },

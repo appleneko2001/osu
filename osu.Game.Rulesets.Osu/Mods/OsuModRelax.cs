@@ -18,7 +18,7 @@ namespace osu.Game.Rulesets.Osu.Mods
 {
     public class OsuModRelax : ModRelax, IUpdatableByPlayfield, IApplicableToDrawableRuleset<OsuHitObject>, IApplicableToPlayer
     {
-        public override string Description => @"You don't need to click. Give your clicking/tapping fingers a break from the heat of things.";
+        public override string Description => @"自動點擊模式. 讓你/妳的手指休息一下 只需要移動光標瞄準即可"; //@"You don't need to click. Give your clicking/tapping fingers a break from the heat of things.";
         public override Type[] IncompatibleMods => base.IncompatibleMods.Append(typeof(OsuModAutopilot)).ToArray();
 
         /// <summary>

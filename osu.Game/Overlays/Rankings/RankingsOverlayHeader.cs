@@ -5,6 +5,7 @@ using osu.Framework.Graphics;
 using osu.Framework.Bindables;
 using osu.Game.Rulesets;
 using osu.Game.Users;
+using System.ComponentModel;
 
 namespace osu.Game.Overlays.Rankings
 {
@@ -29,8 +30,8 @@ namespace osu.Game.Overlays.Rankings
         {
             public RankingsTitle()
             {
-                Title = "ranking";
-                Description = "find out who's the best right now";
+                Title = "排名";
+                Description = "來看看現在的最強的玩家是誰";
                 IconTexture = "Icons/Hexacons/rankings";
             }
         }
@@ -38,9 +39,13 @@ namespace osu.Game.Overlays.Rankings
 
     public enum RankingsScope
     {
+        [Description("成績")]
         Performance,
+        [Description("月賽")]
         Spotlights,
+        [Description("總分")]
         Score,
+        [Description("國家")]
         Country
     }
 }

@@ -15,11 +15,11 @@ namespace osu.Game.Rulesets.Osu.Mods
 {
     public class OsuModSpunOut : Mod, IApplicableToDrawableHitObjects
     {
-        public override string Name => "Spun Out";
+        public override string Name => "自動轉盤";
         public override string Acronym => "SO";
         public override IconUsage? Icon => OsuIcon.ModSpunout;
         public override ModType Type => ModType.Automation;
-        public override string Description => @"Spinners will be automatically completed.";
+        public override string Description => @"轉盤會自己旋轉喔!";
         public override double ScoreMultiplier => 0.9;
         public override bool Ranked => true;
         public override Type[] IncompatibleMods => new[] { typeof(ModAutoplay), typeof(OsuModAutopilot) };

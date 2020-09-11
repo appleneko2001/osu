@@ -5,11 +5,17 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Label="Nuget">
-    <Title>osu!</Title>
-    <PackageId>ppy.osu.Game</PackageId>
-    <Version>0.0.0</Version>
+    <Title>osu! 中文化</Title>
+    <PackageId>appleneko2001.osu.GameTranslateTw</PackageId>
+    <Version>2020.903.0</Version>
     <PackageIcon>icon.png</PackageIcon>
     <IsPackable>true</IsPackable>
+    <Copyright>Copyright (c) 2020 ppy Pty Ltd</Copyright>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageProjectUrl>https://github.com/appleneko2001/osu</PackageProjectUrl>
+    <Product>osu.Game (中文化)</Product>
+    <Authors>ppy Pty Ltd, translated by github@appleneko2001</Authors>
   </PropertyGroup>
   <ItemGroup Label="Icon">
     <None Include="..\assets\lazer-nuget.png">
@@ -21,6 +27,7 @@
     <PackageReference Include="Dapper" Version="2.0.35" />
     <PackageReference Include="DiffPlex" Version="1.6.3" />
     <PackageReference Include="Humanizer" Version="2.8.26" />
+    <PackageReference Include="Humanizer.Core.zh-Hant" Version="2.8.26" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="2.2.6" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />

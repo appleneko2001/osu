@@ -127,7 +127,7 @@ namespace osu.Game.Overlays.BeatmapListing.Panels
                                         }).With(d =>
                                         {
                                             d.AutoSizeAxes = Axes.Both;
-                                            d.AddText("mapped by ", t => t.Colour = colours.Gray5);
+                                            d.AddText("做圖者: ", t => t.Colour = colours.Gray5);
                                             d.AddUserLink(SetInfo.Metadata.Author);
                                         }),
                                         new Container

@@ -17,7 +17,7 @@ namespace osu.Game.Overlays.Settings.Sections.General
         [Resolved(CanBeNull = true)]
         private UpdateManager updateManager { get; set; }
 
-        protected override string Header => "Updates";
+        protected override string Header => "更新設定";
 
         private SettingsButton checkForUpdatesButton;
 
@@ -26,7 +26,7 @@ namespace osu.Game.Overlays.Settings.Sections.General
         {
             Add(new SettingsEnumDropdown<ReleaseStream>
             {
-                LabelText = "Release stream",
+                LabelText = "發行版本",
                 Bindable = config.GetBindable<ReleaseStream>(OsuSetting.ReleaseStream),
             });
 
@@ -34,7 +34,7 @@ namespace osu.Game.Overlays.Settings.Sections.General
             {
                 Add(checkForUpdatesButton = new SettingsButton
                 {
-                    Text = "Check for updates",
+                    Text = "檢查版本更新",
                     Action = () =>
                     {
                         checkForUpdatesButton.Enabled.Value = false;
@@ -47,13 +47,13 @@ namespace osu.Game.Overlays.Settings.Sections.General
             {
                 Add(new SettingsButton
                 {
-                    Text = "Open osu! folder",
+                    Text = "顯示 osu! 檔案夾",
                     Action = storage.OpenInNativeExplorer,
                 });
 
                 Add(new SettingsButton
                 {
-                    Text = "Change folder location...",
+                    Text = "修改目錄位置...",
                     Action = () => game?.PerformFromScreen(menu => menu.Push(new MigrationSelectScreen()))
                 });
             }

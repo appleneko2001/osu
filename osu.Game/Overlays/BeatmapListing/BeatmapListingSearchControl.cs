@@ -102,9 +102,9 @@ namespace osu.Game.Overlays.BeatmapListing
                                 Children = new Drawable[]
                                 {
                                     modeFilter = new BeatmapSearchRulesetFilterRow(),
-                                    categoryFilter = new BeatmapSearchFilterRow<SearchCategory>(@"Categories"),
-                                    genreFilter = new BeatmapSearchFilterRow<SearchGenre>(@"Genre"),
-                                    languageFilter = new BeatmapSearchFilterRow<SearchLanguage>(@"Language"),
+                                    categoryFilter = new BeatmapSearchFilterRow<SearchCategory>(@"類型"),
+                                    genreFilter = new BeatmapSearchFilterRow<SearchGenre>(@"曲風"),
+                                    languageFilter = new BeatmapSearchFilterRow<SearchLanguage>(@"語言"),
                                 }
                             }
                         }
@@ -129,7 +129,7 @@ namespace osu.Game.Overlays.BeatmapListing
 
             public BeatmapSearchTextBox()
             {
-                PlaceholderText = @"type in keywords...";
+                PlaceholderText = @"輸入關鍵字...";
             }
         }
     }

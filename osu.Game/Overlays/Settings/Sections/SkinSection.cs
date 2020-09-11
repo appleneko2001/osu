@@ -19,7 +19,7 @@ namespace osu.Game.Overlays.Settings.Sections
     {
         private SkinSettingsDropdown skinDropdown;
 
-        public override string Header => "Skin";
+        public override string Header => "皮膚";
 
         public override Drawable CreateIcon() => new SpriteIcon
         {
@@ -46,29 +46,29 @@ namespace osu.Game.Overlays.Settings.Sections
                 new ExportSkinButton(),
                 new SettingsSlider<float, SizeSlider>
                 {
-                    LabelText = "Menu cursor size",
+                    LabelText = "主選單光標大小",
                     Bindable = config.GetBindable<float>(OsuSetting.MenuCursorSize),
                     KeyboardStep = 0.01f
                 },
                 new SettingsSlider<float, SizeSlider>
                 {
-                    LabelText = "Gameplay cursor size",
+                    LabelText = "遊戲中光標大小",
                     Bindable = config.GetBindable<float>(OsuSetting.GameplayCursorSize),
                     KeyboardStep = 0.01f
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Adjust gameplay cursor size based on current beatmap",
+                    LabelText = "根據遊戲中的圓圈大小調整光標大小",
                     Bindable = config.GetBindable<bool>(OsuSetting.AutoCursorSize)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Beatmap skins",
+                    LabelText = "使用圖譜的皮膚",
                     Bindable = config.GetBindable<bool>(OsuSetting.BeatmapSkins)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Beatmap hitsounds",
+                    LabelText = "使用圖譜的打擊音",
                     Bindable = config.GetBindable<bool>(OsuSetting.BeatmapHitsounds)
                 },
             };
@@ -129,7 +129,7 @@ namespace osu.Game.Overlays.Settings.Sections
             [BackgroundDependencyLoader]
             private void load()
             {
-                Text = "Export selected skin";
+                Text = "匯出選擇的皮膚";
                 Action = export;
 
                 currentSkin = skins.CurrentSkin.GetBoundCopy();
@@ -144,7 +144,7 @@ namespace osu.Game.Overlays.Settings.Sections
                 }
                 catch (Exception e)
                 {
-                    Logger.Log($"Could not export current skin: {e.Message}", level: LogLevel.Error);
+                    Logger.Log($"無法匯出當前皮膚: {e.Message}", level: LogLevel.Error);
                 }
             }
         }

@@ -8,7 +8,7 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModRandom : Mod
     {
-        public override string Name => "Random";
+        public override string Name => "ÀH¾÷";
         public override string Acronym => "RD";
         public override ModType Type => ModType.Conversion;
         public override IconUsage? Icon => OsuIcon.Dice;

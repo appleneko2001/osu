@@ -166,8 +166,8 @@ namespace osu.Game.Configuration
 
         public override TrackedSettings CreateTrackedSettings() => new TrackedSettings
         {
-            new TrackedSetting<bool>(OsuSetting.MouseDisableButtons, v => new SettingDescription(!v, "gameplay mouse buttons", v ? "disabled" : "enabled")),
-            new TrackedSetting<ScalingMode>(OsuSetting.Scaling, m => new SettingDescription(m, "scaling", m.GetDescription())),
+            new TrackedSetting<bool>(OsuSetting.MouseDisableButtons, v => new SettingDescription(!v, "遊戲中滑鼠按鍵", v ? "已關閉" : "已啟用")),
+            new TrackedSetting<ScalingMode>(OsuSetting.Scaling, m => new SettingDescription(m, "縮放", m.GetDescription())),
         };
     }
 

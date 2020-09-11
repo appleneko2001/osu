@@ -26,7 +26,7 @@ namespace osu.Game.Screens.Play.PlayerSettings
         private readonly OsuSpriteText multiplierText;
 
         public PlaybackSettings()
-            : base("playback")
+            : base("回放設定")
         {
             Children = new Drawable[]
             {
@@ -41,7 +41,7 @@ namespace osu.Game.Screens.Play.PlayerSettings
                         {
                             Anchor = Anchor.CentreLeft,
                             Origin = Anchor.CentreLeft,
-                            Text = "Playback speed",
+                            Text = "回放速度",
                         },
                         multiplierText = new OsuSpriteText
                         {

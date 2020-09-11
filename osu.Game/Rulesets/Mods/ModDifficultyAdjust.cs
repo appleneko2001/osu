@@ -13,9 +13,9 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModDifficultyAdjust : Mod, IApplicableToDifficulty
     {
-        public override string Name => @"Difficulty Adjust";
+        public override string Name => @"難度調整";
 
-        public override string Description => @"Override a beatmap's difficulty settings.";
+        public override string Description => @"覆蓋圖譜原本的難度設定.";
 
         public override string Acronym => "DA";
 

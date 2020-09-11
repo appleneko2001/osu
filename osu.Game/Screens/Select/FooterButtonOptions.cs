@@ -15,7 +15,7 @@ namespace osu.Game.Screens.Select
         {
             SelectedColour = colours.Blue;
             DeselectedColour = SelectedColour.Opacity(0.5f);
-            Text = @"options";
+            Text = @"¿ï¶µ";
             Hotkey = Key.F3;
         }
     }

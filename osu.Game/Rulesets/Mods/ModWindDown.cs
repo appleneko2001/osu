@@ -11,13 +11,13 @@ namespace osu.Game.Rulesets.Mods
 {
     public class ModWindDown : ModTimeRamp
     {
-        public override string Name => "Wind Down";
+        public override string Name => "Wind Down"; // [RequestImprove] 不知道這個要怎麼翻譯比較好 如果有知道的朋友麻煩建立一個issue告訴我這個要怎麼翻譯比較好謝謝 :)
         public override string Acronym => "WD";
-        public override string Description => "Sloooow doooown...";
+        public override string Description => "慢 下 來...";
         public override IconUsage? Icon => FontAwesome.Solid.ChevronCircleDown;
         public override double ScoreMultiplier => 1.0;
 
-        [SettingSource("Initial rate", "The starting speed of the track")]
+        [SettingSource("基本速度", "曲目的起始速度")]
         public override BindableNumber<double> InitialRate { get; } = new BindableDouble
         {
             MinValue = 1,
@@ -27,7 +27,7 @@ namespace osu.Game.Rulesets.Mods
             Precision = 0.01,
         };
 
-        [SettingSource("Final rate", "The speed increase to ramp towards")]
+        [SettingSource("最低速度", "最低速度的限制")]
         public override BindableNumber<double> FinalRate { get; } = new BindableDouble
         {
             MinValue = 0.5,
@@ -37,7 +37,7 @@ namespace osu.Game.Rulesets.Mods
             Precision = 0.01,
         };
 
-        [SettingSource("Adjust pitch", "Should pitch be adjusted with speed")]
+        [SettingSource("調整音高", "音高是否跟速度一起變化")]
         public override BindableBool AdjustPitch { get; } = new BindableBool
         {
             Default = true,

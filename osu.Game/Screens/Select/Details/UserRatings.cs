@@ -70,7 +70,7 @@ namespace osu.Game.Screens.Select.Details
                         {
                             Anchor = Anchor.TopCentre,
                             Origin = Anchor.TopCentre,
-                            Text = "User Rating",
+                            Text = "玩家評分",
                             Font = OsuFont.GetFont(size: 12),
                             Margin = new MarginPadding { Bottom = 5 },
                         },
@@ -104,7 +104,7 @@ namespace osu.Game.Screens.Select.Details
                         {
                             Anchor = Anchor.TopCentre,
                             Origin = Anchor.TopCentre,
-                            Text = "Rating Spread",
+                            Text = "評級價差",  // [RequestImprove] 原詞: Rating Spread 不知道該怎麼翻譯 用了Google Translate 如果有更好的翻譯麻煩Issue叫我
                             Font = OsuFont.GetFont(size: 12),
                             Margin = new MarginPadding { Bottom = 5 },
                         },

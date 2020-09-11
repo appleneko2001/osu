@@ -96,7 +96,7 @@ namespace osu.Game.Overlays.Rankings.Tables
             }
         };
 
-        protected virtual string HighlightedColumn() => @"Performance";
+        protected virtual string HighlightedColumn() => @"表現點數";
 
         private class HeaderText : OsuSpriteText
         {

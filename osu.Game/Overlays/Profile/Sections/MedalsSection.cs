@@ -5,7 +5,7 @@ namespace osu.Game.Overlays.Profile.Sections
 {
     public class MedalsSection : ProfileSection
     {
-        public override string Title => "Medals";
+        public override string Title => "獎盃";
 
         public override string Identifier => "medals";
     }

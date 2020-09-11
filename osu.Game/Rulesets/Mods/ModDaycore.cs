@@ -10,10 +10,10 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModDaycore : ModHalfTime
     {
-        public override string Name => "Daycore";
+        public override string Name => "慢速硬核";
         public override string Acronym => "DC";
         public override IconUsage? Icon => null;
-        public override string Description => "Whoaaaaa...";
+        public override string Description => "哇啊哦哦哦哦...";
 
         private readonly BindableNumber<double> tempoAdjust = new BindableDouble(1);
         private readonly BindableNumber<double> freqAdjust = new BindableDouble(1);

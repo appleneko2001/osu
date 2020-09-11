@@ -26,7 +26,7 @@ namespace osu.Game.Rulesets.Osu.UI
 
         public override CursorContainer LocalCursor => State.Value == Visibility.Visible ? localCursorContainer : null;
 
-        protected override string Message => "Click the orange cursor to resume";
+        protected override string Message => "點擊橙色光標以繼續";
 
         [BackgroundDependencyLoader]
         private void load()

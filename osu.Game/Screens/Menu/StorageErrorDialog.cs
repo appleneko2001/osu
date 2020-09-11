@@ -20,7 +20,7 @@ namespace osu.Game.Screens.Menu
 
         public StorageErrorDialog(OsuStorage storage, OsuStorageError error)
         {
-            HeaderText = "osu! storage error";
+            HeaderText = "osu! 儲存錯誤";
             Icon = FontAwesome.Solid.ExclamationTriangle;
 
             var buttons = new List<PopupDialogButton>();
@@ -28,13 +28,13 @@ namespace osu.Game.Screens.Menu
             switch (error)
             {
                 case OsuStorageError.NotAccessible:
-                    BodyText = $"The specified osu! data location (\"{storage.CustomStoragePath}\") is not accessible. If it is on external storage, please reconnect the device and try again.";
+                    BodyText = $"指定的位置 (\"{storage.CustomStoragePath}\") 無法被訪問. 如果導向的目錄是外置硬碟, 請連接後再試一次.";
 
                     buttons.AddRange(new PopupDialogButton[]
                     {
                         new PopupDialogCancelButton
                         {
-                            Text = "Try again",
+                            Text = "再試一次",
                             Action = () =>
                             {
                                 if (!storage.TryChangeToCustomStorage(out var nextError))
@@ -43,29 +43,29 @@ namespace osu.Game.Screens.Menu
                         },
                         new PopupDialogCancelButton
                         {
-                            Text = "Use default location until restart",
+                            Text = "先用默認位置 直到下一次開始遊戲",
                         },
                         new PopupDialogOkButton
                         {
-                            Text = "Reset to default location",
+                            Text = "復原默認位置",
                             Action = storage.ResetCustomStoragePath
                         },
                     });
                     break;
 
                 case OsuStorageError.AccessibleButEmpty:
-                    BodyText = $"The specified osu! data location (\"{storage.CustomStoragePath}\") is empty. If you have moved the files, please close osu! and move them back.";
+                    BodyText = $"指定的位置 (\"{storage.CustomStoragePath}\") 已經一無所有, 如果把他們轉移到其他位置了, 關閉 osu! 把他們轉移回來後再試.";
 
                     // Todo: Provide the option to search for the files similar to migration.
                     buttons.AddRange(new PopupDialogButton[]
                     {
                         new PopupDialogCancelButton
                         {
-                            Text = "Start fresh at specified location"
+                            Text = "在當前位置重新開始"
                         },
                         new PopupDialogOkButton
                         {
-                            Text = "Reset to default location",
+                            Text = "復原默認位置",
                             Action = storage.ResetCustomStoragePath
                         },
                     });

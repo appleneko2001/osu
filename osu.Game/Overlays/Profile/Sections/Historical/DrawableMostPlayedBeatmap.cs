@@ -88,7 +88,7 @@ namespace osu.Game.Overlays.Profile.Sections.Historical
                                                         Direction = FillDirection.Horizontal,
                                                     }.With(d =>
                                                     {
-                                                        d.AddText("mapped by ");
+                                                        d.AddText("做圖者: ");
                                                         d.AddUserLink(beatmap.Metadata.Author);
                                                     }),
                                                 }
@@ -136,7 +136,7 @@ namespace osu.Game.Overlays.Profile.Sections.Historical
                 },
                 new OsuSpriteText
                 {
-                    Text = "by " + new LocalisedString((beatmap.Metadata.ArtistUnicode, beatmap.Metadata.Artist)),
+                    Text = "演唱者: " + new LocalisedString((beatmap.Metadata.ArtistUnicode, beatmap.Metadata.Artist)),
                     Font = OsuFont.GetFont(weight: FontWeight.Regular)
                 },
             };
@@ -144,7 +144,7 @@ namespace osu.Game.Overlays.Profile.Sections.Historical
 
         private class PlayCountText : CompositeDrawable, IHasTooltip
         {
-            public string TooltipText => "times played";
+            public string TooltipText => "已遊玩次數";
 
             public PlayCountText(int playCount)
             {

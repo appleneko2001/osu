@@ -11,7 +11,7 @@ namespace osu.Game.Screens.Play.PlayerSettings
     public class DiscussionSettings : PlayerSettingsGroup
     {
         public DiscussionSettings()
-            : base("discussions")
+            : base("討論區設定")
         {
         }
 
@@ -22,14 +22,14 @@ namespace osu.Game.Screens.Play.PlayerSettings
             {
                 new PlayerCheckbox
                 {
-                    LabelText = "Show floating comments",
+                    LabelText = "顯示留言",
                     Current = config.GetBindable<bool>(OsuSetting.FloatingComments)
                 },
                 new FocusedTextBox
                 {
                     RelativeSizeAxes = Axes.X,
                     Height = 30,
-                    PlaceholderText = "Add Comment",
+                    PlaceholderText = "發送留言",
                     HoldFocus = false,
                 },
             };

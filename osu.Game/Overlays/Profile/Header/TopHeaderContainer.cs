@@ -177,13 +177,13 @@ namespace osu.Game.Overlays.Profile.Header
 
             if (user?.Statistics != null)
             {
-                userStats.Add(new UserStatsLine("Ranked Score", user.Statistics.RankedScore.ToString("#,##0")));
-                userStats.Add(new UserStatsLine("Hit Accuracy", user.Statistics.DisplayAccuracy));
-                userStats.Add(new UserStatsLine("Play Count", user.Statistics.PlayCount.ToString("#,##0")));
-                userStats.Add(new UserStatsLine("Total Score", user.Statistics.TotalScore.ToString("#,##0")));
-                userStats.Add(new UserStatsLine("Total Hits", user.Statistics.TotalHits.ToString("#,##0")));
-                userStats.Add(new UserStatsLine("Maximum Combo", user.Statistics.MaxCombo.ToString("#,##0")));
-                userStats.Add(new UserStatsLine("Replays Watched by Others", user.Statistics.ReplaysWatched.ToString("#,##0")));
+                userStats.Add(new UserStatsLine("已進榜的總分數", user.Statistics.RankedScore.ToString("#,##0")));
+                userStats.Add(new UserStatsLine("打擊準確率", user.Statistics.DisplayAccuracy));
+                userStats.Add(new UserStatsLine("總遊玩次數", user.Statistics.PlayCount.ToString("#,##0")));
+                userStats.Add(new UserStatsLine("總分數", user.Statistics.TotalScore.ToString("#,##0")));
+                userStats.Add(new UserStatsLine("總共打擊數", user.Statistics.TotalHits.ToString("#,##0")));
+                userStats.Add(new UserStatsLine("最大連擊數", user.Statistics.MaxCombo.ToString("#,##0")));
+                userStats.Add(new UserStatsLine("已被觀看的回放數", user.Statistics.ReplaysWatched.ToString("#,##0")));
             }
         }
 

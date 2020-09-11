@@ -10,7 +10,7 @@ namespace osu.Game.Overlays.Settings.Sections
 {
     public class MaintenanceSection : SettingsSection
     {
-        public override string Header => "Maintenance";
+        public override string Header => "維護";
 
         public override Drawable CreateIcon() => new SpriteIcon
         {

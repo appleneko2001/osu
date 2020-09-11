@@ -10,7 +10,7 @@ namespace osu.Game.Overlays.Settings.Sections.Audio
 {
     public class VolumeSettings : SettingsSubsection
     {
-        protected override string Header => "Volume";
+        protected override string Header => "音量";
 
         [BackgroundDependencyLoader]
         private void load(AudioManager audio, OsuConfigManager config)
@@ -19,28 +19,28 @@ namespace osu.Game.Overlays.Settings.Sections.Audio
             {
                 new SettingsSlider<double>
                 {
-                    LabelText = "Master",
+                    LabelText = "主音量",
                     Bindable = audio.Volume,
                     KeyboardStep = 0.01f,
                     DisplayAsPercentage = true
                 },
                 new SettingsSlider<double>
                 {
-                    LabelText = "Master (window inactive)",
+                    LabelText = "主音量 (非活動狀態)",
                     Bindable = config.GetBindable<double>(OsuSetting.VolumeInactive),
                     KeyboardStep = 0.01f,
                     DisplayAsPercentage = true
                 },
                 new SettingsSlider<double>
                 {
-                    LabelText = "Effect",
+                    LabelText = "效果音量",
                     Bindable = audio.VolumeSample,
                     KeyboardStep = 0.01f,
                     DisplayAsPercentage = true
                 },
                 new SettingsSlider<double>
                 {
-                    LabelText = "Music",
+                    LabelText = "音樂音量",
                     Bindable = audio.VolumeTrack,
                     KeyboardStep = 0.01f,
                     DisplayAsPercentage = true

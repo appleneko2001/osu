@@ -9,7 +9,7 @@ namespace osu.Game.Overlays.Settings.Sections.Debug
 {
     public class GeneralSettings : SettingsSubsection
     {
-        protected override string Header => "General";
+        protected override string Header => "一般設定";
 
         [BackgroundDependencyLoader]
         private void load(FrameworkDebugConfigManager config, FrameworkConfigManager frameworkConfig)
@@ -18,12 +18,13 @@ namespace osu.Game.Overlays.Settings.Sections.Debug
             {
                 new SettingsCheckbox
                 {
-                    LabelText = "Show log overlay",
+                    LabelText = "顯示日誌圖層",
                     Bindable = frameworkConfig.GetBindable<bool>(FrameworkSetting.ShowLogOverlay)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Bypass front-to-back render pass",
+                    LabelText = "不使用\"前到後\"渲染設定",
+                    TooltipText = "禁用畫面Z軸 根據物件渲染順序決定物件前後",
                     Bindable = config.GetBindable<bool>(DebugSetting.BypassFrontToBackPass)
                 }
             };

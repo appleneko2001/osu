@@ -9,7 +9,7 @@ namespace osu.Game.Overlays.Settings.Sections.Online
 {
     public class WebSettings : SettingsSubsection
     {
-        protected override string Header => "Web";
+        protected override string Header => "網路";
 
         [BackgroundDependencyLoader]
         private void load(OsuConfigManager config)
@@ -18,12 +18,12 @@ namespace osu.Game.Overlays.Settings.Sections.Online
             {
                 new SettingsCheckbox
                 {
-                    LabelText = "Warn about opening external links",
+                    LabelText = "訪問外部鏈接時警告我",
                     Bindable = config.GetBindable<bool>(OsuSetting.ExternalLinkWarning)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Prefer downloads without video",
+                    LabelText = "默認下載沒有影像的圖譜",
                     Keywords = new[] { "no-video" },
                     Bindable = config.GetBindable<bool>(OsuSetting.PreferNoVideo)
                 },

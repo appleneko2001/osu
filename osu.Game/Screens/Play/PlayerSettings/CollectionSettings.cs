@@ -11,7 +11,7 @@ namespace osu.Game.Screens.Play.PlayerSettings
     public class CollectionSettings : PlayerSettingsGroup
     {
         public CollectionSettings()
-            : base("collections")
+            : base("收藏設定")
         {
         }
 
@@ -22,7 +22,7 @@ namespace osu.Game.Screens.Play.PlayerSettings
             {
                 new OsuSpriteText
                 {
-                    Text = @"Add current song to",
+                    Text = @"將當前曲目加入到",
                 },
                 new CollectionsDropdown<PlaylistCollection>
                 {

@@ -42,7 +42,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
                 {
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
-                    Text = "No recent plays",
+                    Text = "沒有近期遊玩",
                     Font = OsuFont.GetFont(size: 12, weight: FontWeight.Regular)
                 },
                 graph = new RankChartLineGraph
@@ -208,7 +208,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
                 return new TooltipDisplayContent
                 {
                     Rank = $"#{ranks[dayIndex].Value:#,##0}",
-                    Time = days == 0 ? "now" : $"{days} days ago"
+                    Time = days == 0 ? "現在" : $"{days} 天前"
                 };
             }
         }
@@ -248,7 +248,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
                                     new OsuSpriteText
                                     {
                                         Font = OsuFont.GetFont(size: 12, weight: FontWeight.Bold),
-                                        Text = "Global Ranking "
+                                        Text = "全球排名 "
                                     },
                                     globalRankingText = new OsuSpriteText
                                     {

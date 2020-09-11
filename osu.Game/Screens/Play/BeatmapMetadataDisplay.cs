@@ -145,12 +145,12 @@ namespace osu.Game.Screens.Play
                                 Bottom = 40
                             },
                         },
-                        new MetadataLine("Source", metadata.Source)
+                        new MetadataLine("來源", metadata.Source)
                         {
                             Origin = Anchor.TopCentre,
                             Anchor = Anchor.TopCentre,
                         },
-                        new MetadataLine("Mapper", metadata.AuthorString)
+                        new MetadataLine("作圖者", metadata.AuthorString)
                         {
                             Origin = Anchor.TopCentre,
                             Anchor = Anchor.TopCentre,

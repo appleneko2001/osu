@@ -10,7 +10,7 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
 {
     public class UserInterfaceSettings : SettingsSubsection
     {
-        protected override string Header => "User Interface";
+        protected override string Header => "界面設定";
 
         [BackgroundDependencyLoader]
         private void load(OsuConfigManager config)
@@ -19,17 +19,17 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
             {
                 new SettingsCheckbox
                 {
-                    LabelText = "Rotate cursor when dragging",
+                    LabelText = "拖動時旋轉指針",
                     Bindable = config.GetBindable<bool>(OsuSetting.CursorRotation)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Parallax",
+                    LabelText = "視差效果",
                     Bindable = config.GetBindable<bool>(OsuSetting.MenuParallax)
                 },
                 new SettingsSlider<float, TimeSlider>
                 {
-                    LabelText = "Hold-to-confirm activation time",
+                    LabelText = "按住確定操作用時",
                     Bindable = config.GetBindable<float>(OsuSetting.UIHoldActivationDelay),
                     KeyboardStep = 50
                 },

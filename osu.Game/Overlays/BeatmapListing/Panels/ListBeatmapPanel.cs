@@ -179,7 +179,7 @@ namespace osu.Game.Overlays.BeatmapListing.Panels
                                         }.With(d =>
                                         {
                                             d.AutoSizeAxes = Axes.Both;
-                                            d.AddText("mapped by ");
+                                            d.AddText("做圖者: ");
                                             d.AddUserLink(SetInfo.Metadata.Author);
                                         }),
                                         new OsuSpriteText

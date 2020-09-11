@@ -152,7 +152,7 @@ namespace osu.Game.Overlays.Mods
                                             {
                                                 RelativeSizeAxes = Axes.X,
                                                 AutoSizeAxes = Axes.Y,
-                                                Text = "Mods provide different ways to enjoy gameplay. Some have an effect on the score you can achieve during ranked play.\nOthers are just for fun.",
+                                                Text = "開啟 Mod 可以讓你以不同方式享受遊戲, 有些會影響你的分數, 其他的僅供娛樂.",
                                             },
                                         },
                                     },
@@ -231,7 +231,7 @@ namespace osu.Game.Overlays.Mods
                                             DeselectAllButton = new TriangleButton
                                             {
                                                 Width = 180,
-                                                Text = "Deselect All",
+                                                Text = "重設所有 Mod",
                                                 Action = DeselectAll,
                                                 Origin = Anchor.CentreLeft,
                                                 Anchor = Anchor.CentreLeft,
@@ -239,7 +239,7 @@ namespace osu.Game.Overlays.Mods
                                             CustomiseButton = new TriangleButton
                                             {
                                                 Width = 180,
-                                                Text = "Customisation",
+                                                Text = "自定義",
                                                 Action = () => ModSettingsContainer.Alpha = ModSettingsContainer.Alpha == 1 ? 0 : 1,
                                                 Enabled = { Value = false },
                                                 Origin = Anchor.CentreLeft,
@@ -248,7 +248,7 @@ namespace osu.Game.Overlays.Mods
                                             CloseButton = new TriangleButton
                                             {
                                                 Width = 180,
-                                                Text = "Close",
+                                                Text = "關閉",
                                                 Action = Hide,
                                                 Origin = Anchor.CentreLeft,
                                                 Anchor = Anchor.CentreLeft,
@@ -263,7 +263,7 @@ namespace osu.Game.Overlays.Mods
                                                 {
                                                     new OsuSpriteText
                                                     {
-                                                        Text = @"Score Multiplier:",
+                                                        Text = @"分數乘數:",
                                                         Font = OsuFont.GetFont(size: 30),
                                                         Origin = Anchor.CentreLeft,
                                                         Anchor = Anchor.CentreLeft,
