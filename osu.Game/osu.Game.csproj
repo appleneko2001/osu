@@ -7,7 +7,7 @@
   <PropertyGroup Label="Nuget">
     <Title>osu! 中文化</Title>
     <PackageId>appleneko2001.osu.GameTranslateTw</PackageId>
-    <Version>2020.903.0</Version>
+    <Version>2020.910.0</Version>
     <PackageIcon>icon.png</PackageIcon>
     <IsPackable>true</IsPackable>
     <Copyright>Copyright (c) 2020 ppy Pty Ltd</Copyright>
@@ -15,7 +15,7 @@
   <PropertyGroup>
     <PackageProjectUrl>https://github.com/appleneko2001/osu</PackageProjectUrl>
     <Product>osu.Game (中文化)</Product>
-    <Authors>ppy Pty Ltd, translated by github@appleneko2001</Authors>
+    <Authors>ppy Pty Ltd, Translation by github@appleneko2001</Authors>
   </PropertyGroup>
   <ItemGroup Label="Icon">
     <None Include="..\assets\lazer-nuget.png">
