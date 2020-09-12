@@ -13,7 +13,7 @@ namespace osu.Game.Rulesets.Mania.Mods
 {
     public class ManiaModRandom : ModRandom, IApplicableToBeatmap
     {
-        public override string Description => @"Shuffle around the keys!";
+        public override string Description => @"按鍵以隨機位置出現!";
 
         public void ApplyToBeatmap(IBeatmap beatmap)
         {

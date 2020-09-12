@@ -265,7 +265,7 @@ namespace osu.Game.Overlays.Profile.Sections.Ranks
                 {
                     Anchor = Anchor.BottomLeft,
                     Origin = Anchor.BottomLeft,
-                    Text = "演唱者: " + new LocalisedString((beatmap.Metadata.ArtistUnicode, beatmap.Metadata.Artist)),
+                    Text = "演出者: " + new LocalisedString((beatmap.Metadata.ArtistUnicode, beatmap.Metadata.Artist)),
                     Font = OsuFont.GetFont(size: 12, italics: true)
                 },
             };

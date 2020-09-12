@@ -21,7 +21,7 @@ namespace osu.Game.Overlays.Changelog
 
         public ChangelogUpdateStreamControl Streams;
 
-        private const string listing_string = "listing";
+        private const string listing_string = "資訊清單";
 
         private Box streamsBackground;
 

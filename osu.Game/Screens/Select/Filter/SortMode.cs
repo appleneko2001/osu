@@ -7,7 +7,7 @@ namespace osu.Game.Screens.Select.Filter
 {
     public enum SortMode
     {
-        [Description("作曲者")]
+        [Description("演出者")]
         Artist,
 
         [Description("做圖者")]
@@ -25,7 +25,7 @@ namespace osu.Game.Screens.Select.Filter
         [Description("長度")]
         Length,
 
-        [Description("Rank Achieved")]
+        [Description("進榜日期")]
         RankAchieved,
 
         [Description("標題")]

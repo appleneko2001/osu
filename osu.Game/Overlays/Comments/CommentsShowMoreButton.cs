@@ -18,7 +18,7 @@ namespace osu.Game.Overlays.Comments
 
         private void onCurrentChanged(ValueChangedEvent<int> count)
         {
-            Text = $@"Show More ({count.NewValue})".ToUpper();
+            Text = $"顯示更多留言 ({count.NewValue})";
         }
     }
 }

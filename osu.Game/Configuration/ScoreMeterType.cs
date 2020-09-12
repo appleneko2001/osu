@@ -7,25 +7,25 @@ namespace osu.Game.Configuration
 {
     public enum ScoreMeterType
     {
-        [Description("None")]
+        [Description("關閉")]
         None,
 
-        [Description("Hit Error (left)")]
+        [Description("打擊失誤計 (左)")]
         HitErrorLeft,
 
-        [Description("Hit Error (right)")]
+        [Description("打擊失誤計 (右)")]
         HitErrorRight,
 
-        [Description("Hit Error (both)")]
+        [Description("打擊失誤計 (雙)")]
         HitErrorBoth,
 
-        [Description("Colour (left)")]
+        [Description("彩塊 (左)")]
         ColourLeft,
 
-        [Description("Colour (right)")]
+        [Description("彩塊 (右)")]
         ColourRight,
 
-        [Description("Colour (both)")]
-        ColourBoth,
+        [Description("彩塊 (雙)")]
+        ColourBoth
     }
 }

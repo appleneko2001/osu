@@ -20,7 +20,7 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
             {
                 new SettingsSlider<double>
                 {
-                    LabelText = "背景亮度",
+                    LabelText = "背景暗度",
                     Bindable = config.GetBindable<double>(OsuSetting.DimLevel),
                     KeyboardStep = 0.01f,
                     DisplayAsPercentage = true
@@ -75,7 +75,7 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
                 },
                 new SettingsEnumDropdown<ScoringMode>
                 {
-                    LabelText = "分數顯示模式",
+                    LabelText = "分數計算模式",
                     Bindable = config.GetBindable<ScoringMode>(OsuSetting.ScoreDisplayMode)
                 }
             };

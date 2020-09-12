@@ -11,7 +11,7 @@ namespace osu.Game.Rulesets.Taiko.Mods
 {
     public class TaikoModRandom : ModRandom, IApplicableToBeatmap
     {
-        public override string Description => @"Shuffle around the colours!";
+        public override string Description => @"ÀH¾÷ÃC¦â!";
 
         public void ApplyToBeatmap(IBeatmap beatmap)
         {

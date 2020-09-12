@@ -12,7 +12,7 @@ namespace osu.Game.Rulesets.Mania.Mods
 {
     public class ManiaModMirror : Mod, IApplicableToBeatmap
     {
-        public override string Name => "Mirror";
+        public override string Name => "反轉";
         public override string Acronym => "MR";
         public override ModType Type => ModType.Conversion;
         public override double ScoreMultiplier => 1;

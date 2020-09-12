@@ -6,8 +6,8 @@ namespace osu.Game.Rulesets.Mania.Mods
     public class ManiaModKey8 : ManiaKeyMod
     {
         public override int KeyCount => 8;
-        public override string Name => "Eight Keys";
+        public override string Name => "八鍵";
         public override string Acronym => "8K";
-        public override string Description => @"Play with eight keys.";
+        public override string Description => @"用八鍵玩.";
     }
 }

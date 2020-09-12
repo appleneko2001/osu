@@ -136,7 +136,7 @@ namespace osu.Game.Overlays.Profile.Sections.Historical
                 },
                 new OsuSpriteText
                 {
-                    Text = "演唱者: " + new LocalisedString((beatmap.Metadata.ArtistUnicode, beatmap.Metadata.Artist)),
+                    Text = "演出者: " + new LocalisedString((beatmap.Metadata.ArtistUnicode, beatmap.Metadata.Artist)),
                     Font = OsuFont.GetFont(weight: FontWeight.Regular)
                 },
             };

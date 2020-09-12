@@ -21,7 +21,7 @@ namespace osu.Game.Overlays.Changelog
 
         protected override string AdditionalText => Value.LatestBuild.DisplayVersion;
 
-        protected override string InfoText => Value.LatestBuild.Users > 0 ? $"{"user".ToQuantity(Value.LatestBuild.Users, "N0")} online" : null;
+        protected override string InfoText => Value.LatestBuild.Users > 0 ? $"{Value.LatestBuild.Users.ToString("N0")} 用戶在線" : null;
 
         protected override Color4 GetBarColour(OsuColour colours) => Value.Colour;
     }

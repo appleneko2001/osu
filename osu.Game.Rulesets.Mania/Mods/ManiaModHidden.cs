@@ -14,7 +14,7 @@ namespace osu.Game.Rulesets.Mania.Mods
 {
     public class ManiaModHidden : ModHidden, IApplicableToDrawableRuleset<ManiaHitObject>
     {
-        public override string Description => @"Keys fade out before you hit them!";
+        public override string Description => @"在你/妳出動之前他們都藏起來了!";
         public override double ScoreMultiplier => 1;
         public override Type[] IncompatibleMods => new[] { typeof(ModFlashlight<ManiaHitObject>) };
 

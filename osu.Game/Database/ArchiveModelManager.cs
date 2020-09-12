@@ -120,7 +120,10 @@ namespace osu.Game.Database
         protected async Task<IEnumerable<TModel>> Import(ProgressNotification notification, params string[] paths)
         {
             notification.Progress = 0;
-            notification.Text = $"{HumanisedModelName.Humanize(LetterCasing.Title)} import is initialising...";
+
+            var translatedModelName = getTranslatedModelName(HumanisedModelName);
+
+            notification.Text = $"{translatedModelName} 準備匯入...";
 
             int current = 0;
 
@@ -142,7 +145,7 @@ namespace osu.Game.Database
                                 imported.Add(model);
                             current++;
 
-                            notification.Text = $"Imported {current} of {paths.Length} {HumanisedModelName}s";
+                            notification.Text = $"已匯入 {current} / {paths.Length} 個 {translatedModelName}";
                             notification.Progress = (float)current / paths.Length;
                         }
                     }
@@ -159,18 +162,18 @@ namespace osu.Game.Database
 
             if (imported.Count == 0)
             {
-                notification.Text = $"{HumanisedModelName.Humanize(LetterCasing.Title)} import failed!";
+                notification.Text = $"{translatedModelName} 匯入失敗!";
                 notification.State = ProgressNotificationState.Cancelled;
             }
             else
             {
                 notification.CompletionText = imported.Count == 1
-                    ? $"Imported {imported.First()}!"
-                    : $"Imported {imported.Count} {HumanisedModelName}s!";
+                    ? $"已匯入 {imported.First()}!"
+                    : $"已匯入 {imported.Count} 個 {translatedModelName}!";
 
                 if (imported.Count > 0 && PresentImport != null)
                 {
-                    notification.CompletionText += " Click to view.";
+                    notification.CompletionText += " 點擊以查看.";
                     notification.CompletionClickAction = () =>
                     {
                         PresentImport?.Invoke(imported);
@@ -209,7 +212,7 @@ namespace osu.Game.Database
             }
             catch (Exception e)
             {
-                LogForModel(import, $@"Could not delete original file after import ({Path.GetFileName(path)})", e);
+                LogForModel(import, $@"無法刪除原檔案在匯入過後 ({Path.GetFileName(path)})", e);
             }
 
             return import;
@@ -244,7 +247,7 @@ namespace osu.Game.Database
             }
             catch (Exception e)
             {
-                LogForModel(model, $"Model creation of {archive.Name} failed.", e);
+                LogForModel(model, $"建立 {archive.Name} 模板失敗.", e);
                 return null;
             }
 
@@ -311,14 +314,14 @@ namespace osu.Game.Database
                 if (!Delete(item))
                 {
                     // We may have not yet added the model to the underlying table, but should still clean up files.
-                    LogForModel(item, "Dereferencing files for incomplete import.");
+                    LogForModel(item, "因匯入沒有完成 正在解除引用.");
                     Files.Dereference(item.Files.Select(f => f.FileInfo).ToArray());
                 }
             }
 
             try
             {
-                LogForModel(item, "Beginning import...");
+                LogForModel(item, "開始匯入...");
 
                 item.Files = archive != null ? createFileInfos(archive, Files) : new List<TFileModel>();
                 item.Hash = computeHash(item, archive);
@@ -338,7 +341,7 @@ namespace osu.Game.Database
                             if (CanReuseExisting(existing, item))
                             {
                                 Undelete(existing);
-                                LogForModel(item, $"Found existing {HumanisedModelName} for {item} (ID {existing.ID}) – skipping import.");
+                                LogForModel(item, $"{HumanisedModelName} {item} (ID {existing.ID}) 已存在 – 略過匯入.");
                                 // existing item will be used; rollback new import and exit early.
                                 rollback();
                                 flushEvents(true);
@@ -361,12 +364,12 @@ namespace osu.Game.Database
                     }
                 }
 
-                LogForModel(item, "Import successfully completed!");
+                LogForModel(item, "匯入成功完成!");
             }
             catch (Exception e)
             {
                 if (!(e is TaskCanceledException))
-                    LogForModel(item, "Database import or population failed and has been rolled back.", e);
+                    LogForModel(item, "因無法匯入數據到數據庫 已經回溯操作.", e);
 
                 rollback();
                 flushEvents(false);
@@ -477,8 +480,8 @@ namespace osu.Game.Database
             var notification = new ProgressNotification
             {
                 Progress = 0,
-                Text = $"Preparing to delete all {HumanisedModelName}s...",
-                CompletionText = $"Deleted all {HumanisedModelName}s!",
+                Text = $"準備刪除所有的 {HumanisedModelName}...",
+                CompletionText = $"已刪除所有 {HumanisedModelName}!",
                 State = ProgressNotificationState.Active,
             };
 
@@ -493,7 +496,7 @@ namespace osu.Game.Database
                     // user requested abort
                     return;
 
-                notification.Text = $"Deleting {HumanisedModelName}s ({++i} of {items.Count})";
+                notification.Text = $"{HumanisedModelName} 刪除中 (已完成 {++i} / {items.Count})";
 
                 Delete(b);
 
@@ -513,7 +516,7 @@ namespace osu.Game.Database
 
             var notification = new ProgressNotification
             {
-                CompletionText = "Restored all deleted items!",
+                CompletionText = "已復原所有被刪除的物件!",
                 Progress = 0,
                 State = ProgressNotificationState.Active,
             };
@@ -529,7 +532,7 @@ namespace osu.Game.Database
                     // user requested abort
                     return;
 
-                notification.Text = $"Restoring ({++i} of {items.Count})";
+                notification.Text = $"復原中 ({++i} / {items.Count})";
 
                 Undelete(item);
 
@@ -697,7 +700,7 @@ namespace osu.Game.Database
 
         private DbSet<TModel> queryModel() => ContextFactory.Get().Set<TModel>();
 
-        protected virtual string HumanisedModelName => $"{typeof(TModel).Name.Replace("Info", "").ToLower()}";
+        protected virtual string HumanisedModelName => getTranslatedModelName(typeof(TModel).Name.Replace("Info", "").ToLower()) ?? "";
 
         /// <summary>
         /// Creates an <see cref="ArchiveReader"/> from a valid storage path.
@@ -771,6 +774,21 @@ namespace osu.Game.Database
             foreach (char c in Path.GetInvalidFileNameChars())
                 filename = filename.Replace(c, '_');
             return filename;
+        }
+
+        private string getTranslatedModelName(string s)
+        {
+            switch(s)
+            {
+                case "skin":
+                    return "皮膚";
+                case "beatmap":
+                    return "圖譜";
+                case "score":
+                    return "成績";
+                default:
+                    return s;
+            }
         }
     }
 }

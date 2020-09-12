@@ -16,7 +16,7 @@ namespace osu.Game.Rulesets.Mods
         public override string Acronym => "HT";
         public override IconUsage? Icon => OsuIcon.ModHalftime;
         public override ModType Type => ModType.DifficultyReduction;
-        public override string Description => "縮圈慢下來...";
+        public override string Description => "速度慢下來...";
         public override bool Ranked => true;
 
         public override Type[] IncompatibleMods => base.IncompatibleMods.Append(typeof(ModDoubleTime)).ToArray();

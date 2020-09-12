@@ -75,13 +75,13 @@ namespace osu.Game.Screens.Edit.Setup
                                     },
                                     artistTextBox = new LabelledTextBox
                                     {
-                                        Label = "作曲家",
+                                        Label = "演出者",
                                         Current = { Value = Beatmap.Value.Metadata.Artist },
                                         TabbableContentContainer = this
                                     },
                                     titleTextBox = new LabelledTextBox
                                     {
-                                        Label = "曲名",
+                                        Label = "標題",
                                         Current = { Value = Beatmap.Value.Metadata.Title },
                                         TabbableContentContainer = this
                                     },

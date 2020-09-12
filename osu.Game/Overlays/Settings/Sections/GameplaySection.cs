@@ -14,7 +14,7 @@ namespace osu.Game.Overlays.Settings.Sections
 {
     public class GameplaySection : SettingsSection
     {
-        public override string Header => "遊戲風格";
+        public override string Header => "遊戲";
 
         public override Drawable CreateIcon() => new SpriteIcon
         {

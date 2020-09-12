@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
@@ -42,7 +43,7 @@ namespace osu.Game.Overlays.News
         {
             if (post.Slug != null)
             {
-                TooltipText = "view in browser";
+                TooltipText = "在瀏覽器中查看";
                 Action = () => host.OpenUrlExternally("https://osu.ppy.sh/home/news/" + post.Slug);
             }
 
@@ -117,7 +118,7 @@ namespace osu.Game.Overlays.News
 
             main.AddParagraph(post.Title, t => t.Font = OsuFont.GetFont(size: 20, weight: FontWeight.SemiBold));
             main.AddParagraph(post.Preview, t => t.Font = OsuFont.GetFont(size: 12)); // Should use sans-serif font
-            main.AddParagraph("by ", t => t.Font = OsuFont.GetFont(size: 12));
+            main.AddParagraph("作者: ", t => t.Font = OsuFont.GetFont(size: 12));
             main.AddText(post.Author, t => t.Font = OsuFont.GetFont(size: 12, weight: FontWeight.SemiBold));
         }
 
@@ -148,7 +149,7 @@ namespace osu.Game.Overlays.News
                     },
                     new OsuSpriteText
                     {
-                        Text = date.ToString("d MMM yyyy").ToUpper(),
+                        Text = date.ToString("d MMM yyyy", new CultureInfo("zh-TW")).ToUpper(),
                         Font = OsuFont.GetFont(size: 10, weight: FontWeight.SemiBold),
                         Margin = new MarginPadding
                         {

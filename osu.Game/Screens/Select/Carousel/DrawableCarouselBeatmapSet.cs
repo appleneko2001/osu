@@ -130,16 +130,16 @@ namespace osu.Game.Screens.Select.Carousel
                 List<MenuItem> items = new List<MenuItem>();
 
                 if (Item.State.Value == CarouselItemState.NotSelected)
-                    items.Add(new OsuMenuItem("Expand", MenuItemType.Highlighted, () => Item.State.Value = CarouselItemState.Selected));
+                    items.Add(new OsuMenuItem("展開", MenuItemType.Highlighted, () => Item.State.Value = CarouselItemState.Selected));
 
                 if (beatmapSet.OnlineBeatmapSetID != null && viewDetails != null)
-                    items.Add(new OsuMenuItem("Details...", MenuItemType.Standard, () => viewDetails(beatmapSet.OnlineBeatmapSetID.Value)));
+                    items.Add(new OsuMenuItem("資訊...", MenuItemType.Standard, () => viewDetails(beatmapSet.OnlineBeatmapSetID.Value)));
 
                 if (beatmapSet.Beatmaps.Any(b => b.Hidden))
-                    items.Add(new OsuMenuItem("Restore all hidden", MenuItemType.Standard, () => restoreHiddenRequested(beatmapSet)));
+                    items.Add(new OsuMenuItem("恢復已隱藏難度", MenuItemType.Standard, () => restoreHiddenRequested(beatmapSet)));
 
                 if (dialogOverlay != null)
-                    items.Add(new OsuMenuItem("Delete", MenuItemType.Destructive, () => dialogOverlay.Push(new BeatmapDeleteDialog(beatmapSet))));
+                    items.Add(new OsuMenuItem("刪除", MenuItemType.Destructive, () => dialogOverlay.Push(new BeatmapDeleteDialog(beatmapSet))));
 
                 return items.ToArray();
             }

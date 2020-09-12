@@ -16,7 +16,7 @@ namespace osu.Game.Rulesets.Catch.Mods
 {
     public class CatchModRelax : ModRelax, IApplicableToDrawableRuleset<CatchHitObject>, IApplicableToPlayer
     {
-        public override string Description => @"Use the mouse to control the catcher.";
+        public override string Description => @"用滑鼠控制水果接盤者.";
 
         private DrawableRuleset<CatchHitObject> drawableRuleset;
 

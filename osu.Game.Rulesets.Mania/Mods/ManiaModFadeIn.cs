@@ -9,10 +9,10 @@ namespace osu.Game.Rulesets.Mania.Mods
 {
     public class ManiaModFadeIn : ManiaModHidden
     {
-        public override string Name => "Fade In";
+        public override string Name => "漸入";
         public override string Acronym => "FI";
         public override IconUsage? Icon => OsuIcon.ModHidden;
-        public override string Description => @"Keys appear out of nowhere!";
+        public override string Description => "看不到按鍵從哪裏來的啦!";
 
         protected override CoverExpandDirection ExpandDirection => CoverExpandDirection.AlongScroll;
     }

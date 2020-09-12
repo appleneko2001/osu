@@ -19,7 +19,7 @@ namespace osu.Game.Overlays.Settings.Sections.Audio
             {
                 new SettingsSlider<double, OffsetSlider>
                 {
-                    LabelText = "聲音偏移",
+                    LabelText = "音訊偏移",
                     Bindable = config.GetBindable<double>(OsuSetting.AudioOffset),
                     KeyboardStep = 1f
                 },

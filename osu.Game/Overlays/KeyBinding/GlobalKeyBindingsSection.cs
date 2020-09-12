@@ -37,7 +37,7 @@ namespace osu.Game.Overlays.KeyBinding
 
         private class InGameKeyBindingsSubsection : KeyBindingsSubsection
         {
-            protected override string Header => "In Game";
+            protected override string Header => "遊戲中";
 
             public InGameKeyBindingsSubsection(GlobalActionContainer manager)
                 : base(null)
@@ -48,7 +48,7 @@ namespace osu.Game.Overlays.KeyBinding
 
         private class AudioControlKeyBindingsSubsection : KeyBindingsSubsection
         {
-            protected override string Header => "Audio";
+            protected override string Header => "音訊";
 
             public AudioControlKeyBindingsSubsection(GlobalActionContainer manager)
                 : base(null)

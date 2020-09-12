@@ -17,72 +17,73 @@ namespace osu.Game.Rulesets.Mania
 
     public enum ManiaAction
     {
-        [Description("Special 1")]
+        [Description("特殊鍵 1")]
         Special1 = 1,
 
-        [Description("Special 2")]
+        [Description("特殊鍵 2")]
         Special2,
 
         // This offsets the start value of normal keys in-case we add more special keys
         // above at a later time, without breaking replays/configs.
-        [Description("Key 1")]
+
+        [Description("按鍵 1")]
         Key1 = 10,
 
-        [Description("Key 2")]
+        [Description("按鍵 2")]
         Key2,
 
-        [Description("Key 3")]
+        [Description("按鍵 3")]
         Key3,
 
-        [Description("Key 4")]
+        [Description("按鍵 4")]
         Key4,
 
-        [Description("Key 5")]
+        [Description("按鍵 5")]
         Key5,
 
-        [Description("Key 6")]
+        [Description("按鍵 6")]
         Key6,
 
-        [Description("Key 7")]
+        [Description("按鍵 7")]
         Key7,
 
-        [Description("Key 8")]
+        [Description("按鍵 8")]
         Key8,
 
-        [Description("Key 9")]
+        [Description("按鍵 9")]
         Key9,
 
-        [Description("Key 10")]
+        [Description("按鍵 10")]
         Key10,
 
-        [Description("Key 11")]
+        [Description("按鍵 11")]
         Key11,
 
-        [Description("Key 12")]
+        [Description("按鍵 12")]
         Key12,
 
-        [Description("Key 13")]
+        [Description("按鍵 13")]
         Key13,
 
-        [Description("Key 14")]
+        [Description("按鍵 14")]
         Key14,
 
-        [Description("Key 15")]
+        [Description("按鍵 15")]
         Key15,
 
-        [Description("Key 16")]
+        [Description("按鍵 16")]
         Key16,
 
-        [Description("Key 17")]
+        [Description("按鍵 17")]
         Key17,
 
-        [Description("Key 18")]
+        [Description("按鍵 18")]
         Key18,
 
-        [Description("Key 19")]
+        [Description("按鍵 19")]
         Key19,
 
-        [Description("Key 20")]
-        Key20,
+        [Description("按鍵 20")]
+        Key20
     }
 }

@@ -10,7 +10,7 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModDaycore : ModHalfTime
     {
-        public override string Name => "慢速硬核";
+        public override string Name => "陽光硬核"; // [RequestImprove] Daycore
         public override string Acronym => "DC";
         public override IconUsage? Icon => null;
         public override string Description => "哇啊哦哦哦哦...";

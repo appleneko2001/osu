@@ -39,7 +39,7 @@ namespace osu.Game.Overlays.Comments
                         Origin = Anchor.CentreLeft,
                         Font = OsuFont.GetFont(size: 20, italics: true),
                         Colour = colourProvider.Light1,
-                        Text = @"Comments"
+                        Text = @"評論"
                     },
                     new CircularContainer
                     {

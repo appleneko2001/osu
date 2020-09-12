@@ -192,7 +192,8 @@ namespace osu.Game.Rulesets.Osu.Statistics
 
         protected void AddPoint(Vector2 start, Vector2 end, Vector2 hitPoint, float radius)
         {
-            if (pointGrid.Content.Length == 0)
+            // I don't know why there have one error in next line, I replaced Count instead of Length.
+            if (pointGrid.Content.Count == 0)
                 return;
 
             double angle1 = Math.Atan2(end.Y - hitPoint.Y, hitPoint.X - end.X); // Angle between the end point and the hit point.

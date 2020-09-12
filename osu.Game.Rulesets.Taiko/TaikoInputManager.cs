@@ -17,16 +17,16 @@ namespace osu.Game.Rulesets.Taiko
 
     public enum TaikoAction
     {
-        [Description("Left (rim)")]
+        [Description("左 (外)")]
         LeftRim,
 
-        [Description("Left (centre)")]
+        [Description("左 (中)")]
         LeftCentre,
 
-        [Description("Right (centre)")]
+        [Description("右 (中)")]
         RightCentre,
 
-        [Description("Right (rim)")]
+        [Description("右 (外)")]
         RightRim
     }
 }

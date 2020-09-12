@@ -118,7 +118,7 @@ namespace osu.Game.Screens.Select
                             {
                                 new OsuTabControlCheckbox
                                 {
-                                    Text = "Show converted",
+                                    Text = "顯示已轉換圖譜",
                                     Current = config.GetBindable<bool>(OsuSetting.ShowConvertedBeatmaps),
                                     Anchor = Anchor.BottomRight,
                                     Origin = Anchor.BottomRight,

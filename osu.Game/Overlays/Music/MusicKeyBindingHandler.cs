@@ -37,11 +37,11 @@ namespace osu.Game.Overlays.Music
                     bool wasPlaying = musicController.IsPlaying;
 
                     if (musicController.TogglePause())
-                        onScreenDisplay?.Display(new MusicActionToast(wasPlaying ? "Pause track" : "Play track"));
+                        onScreenDisplay?.Display(new MusicActionToast(wasPlaying ? "暫停" : "播放"));
                     return true;
 
                 case GlobalAction.MusicNext:
-                    musicController.NextTrack(() => onScreenDisplay?.Display(new MusicActionToast("Next track")));
+                    musicController.NextTrack(() => onScreenDisplay?.Display(new MusicActionToast("下一首")));
 
                     return true;
 
@@ -51,11 +51,11 @@ namespace osu.Game.Overlays.Music
                         switch (res)
                         {
                             case PreviousTrackResult.Restart:
-                                onScreenDisplay?.Display(new MusicActionToast("Restart track"));
+                                onScreenDisplay?.Display(new MusicActionToast("重新播放"));
                                 break;
 
                             case PreviousTrackResult.Previous:
-                                onScreenDisplay?.Display(new MusicActionToast("Previous track"));
+                                onScreenDisplay?.Display(new MusicActionToast("上一首"));
                                 break;
                         }
                     });
@@ -73,7 +73,7 @@ namespace osu.Game.Overlays.Music
         private class MusicActionToast : Toast
         {
             public MusicActionToast(string action)
-                : base("Music Playback", action, string.Empty)
+                : base("播放器", action, string.Empty)
             {
             }
         }
