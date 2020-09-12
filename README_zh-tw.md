@@ -21,11 +21,11 @@
 
 ## 運行 osu!
 
-如果想要不設定開發環境就運行 osu!lazer 可以看一下 [已編譯的發行](https://github.com/appleneko2001/osu/releases). 下面請根據你/妳的作業系統安裝所需版本:
+如果想要不設定開發環境就運行 osu!lazer 可以看一下 [已編譯的發行](https://github.com/ppy/osu/releases). 下面請根據你/妳的作業系統安裝所需版本:
 
 **最新組建:**
 
-| [Windows (x64)](https://github.com/appleneko2001/osu/releases/latest/download/install.exe)  | [macOS 10.12+](https://github.com/appleneko2001/osu/releases/latest/download/osu.app.zip) | [Linux (x64)](https://github.com/appleneko2001/osu/releases/latest/download/osu.AppImage) | [iOS(iOS 10+, 官方版本)](https://osu.ppy.sh/home/testflight) | [Android (5+)](https://github.com/appleneko2001/osu/releases/latest/download/appleneko2001.osulazer_zhtw.apk)
+| [Windows (x64)](https://github.com/ppy/osu/releases/latest/download/install.exe)  | [macOS 10.12+](https://github.com/ppy/osu/releases/latest/download/osu.app.zip) | [Linux (x64)](https://github.com/ppy/osu/releases/latest/download/osu.AppImage) | [iOS(iOS 10+, 官方版本)](https://osu.ppy.sh/home/testflight) | [Android (5+)](https://github.com/ppy/osu/releases/latest/download/sh.ppy.osulazer.apk)
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 
 - 在運行 Windows 7 或者 8.1 作業系統時, **[附加需求](https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?tabs=netcore31&pivots=os-windows)** 可能會被要求.
