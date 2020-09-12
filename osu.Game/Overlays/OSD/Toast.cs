@@ -4,6 +4,7 @@
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
+using osu.Framework.Localisation;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osuTK;
@@ -24,6 +25,8 @@ namespace osu.Game.Overlays.OSD
         {
             Anchor = Anchor.Centre;
             Origin = Anchor.Centre;
+
+            string header = description.ToUpperInvariant();
 
             // A toast's height is decided (and transformed) by the containing OnScreenDisplay.
             RelativeSizeAxes = Axes.Y;
@@ -57,7 +60,7 @@ namespace osu.Game.Overlays.OSD
                     Spacing = new Vector2(1, 0),
                     Anchor = Anchor.TopCentre,
                     Origin = Anchor.TopCentre,
-                    Text = description.ToUpperInvariant()
+                    Text = new LocalisedString((header, header))
                 },
                 ValueText = new OsuSpriteText
                 {
@@ -66,7 +69,7 @@ namespace osu.Game.Overlays.OSD
                     Name = "Value",
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
-                    Text = value
+                    Text = new LocalisedString((value, value))
                 },
                 new OsuSpriteText
                 {

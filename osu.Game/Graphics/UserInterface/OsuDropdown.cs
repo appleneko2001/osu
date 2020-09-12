@@ -12,6 +12,7 @@ using osu.Framework.Graphics.UserInterface;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osuTK;
+using osu.Framework.Localisation;
 
 namespace osu.Game.Graphics.UserInterface
 {
@@ -171,7 +172,7 @@ namespace osu.Game.Graphics.UserInterface
                     public string Text
                     {
                         get => Label.Text;
-                        set => Label.Text = value;
+                        set => Label.Text = new LocalisedString((value, value));
                     }
 
                     public readonly OsuSpriteText Label;
@@ -218,7 +219,7 @@ namespace osu.Game.Graphics.UserInterface
             protected override string Label
             {
                 get => Text.Text;
-                set => Text.Text = value;
+                set => Text.Text = new LocalisedString((value, value));
             }
 
             protected readonly SpriteIcon Icon;
