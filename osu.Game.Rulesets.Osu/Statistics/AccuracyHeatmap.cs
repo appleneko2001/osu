@@ -192,7 +192,6 @@ namespace osu.Game.Rulesets.Osu.Statistics
 
         protected void AddPoint(Vector2 start, Vector2 end, Vector2 hitPoint, float radius)
         {
-            // I don't know why there have one error in next line, I replaced Count instead of Length.
             if (pointGrid.Content.Count == 0)
                 return;
 

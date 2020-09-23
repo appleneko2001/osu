@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using osu.Framework.Allocation;
+using osu.Framework.Bindables;
 using osu.Framework.Caching;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -38,13 +39,31 @@ namespace osu.Game.Rulesets.Osu.Edit
             new SpinnerCompositionTool()
         };
 
+        private readonly BindableBool distanceSnapToggle = new BindableBool(true) { Description = "Distance Snap" };
+
+        protected override IEnumerable<BindableBool> Toggles => new[]
+        {
+            distanceSnapToggle
+        };
+
+        private BindableList<HitObject> selectedHitObjects;
+
+        private Bindable<HitObject> placementObject;
+
         [BackgroundDependencyLoader]
         private void load()
         {
             LayerBelowRuleset.Add(distanceSnapGridContainer = new Container { RelativeSizeAxes = Axes.Both });
 
-            EditorBeatmap.SelectedHitObjects.CollectionChanged += (_, __) => updateDistanceSnapGrid();
-            EditorBeatmap.PlacementObject.ValueChanged += _ => updateDistanceSnapGrid();
+            selectedHitObjects = EditorBeatmap.SelectedHitObjects.GetBoundCopy();
+            selectedHitObjects.CollectionChanged += (_, __) => updateDistanceSnapGrid();
+
+            placementObject = EditorBeatmap.PlacementObject.GetBoundCopy();
+            placementObject.ValueChanged += _ => updateDistanceSnapGrid();
+            distanceSnapToggle.ValueChanged += _ => updateDistanceSnapGrid();
+
+            // we may be entering the screen with a selection already active
+            updateDistanceSnapGrid();
         }
 
         protected override ComposeBlueprintContainer CreateBlueprintContainer(IEnumerable<DrawableHitObject> hitObjects)
@@ -87,6 +106,10 @@ namespace osu.Game.Rulesets.Osu.Edit
         {
             distanceSnapGridContainer.Clear();
             distanceSnapGridCache.Invalidate();
+            distanceSnapGrid = null;
+
+            if (!distanceSnapToggle.Value)
+                return;
 
             switch (BlueprintContainer.CurrentTool)
             {

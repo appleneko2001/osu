@@ -259,6 +259,9 @@ namespace osu.Game.Database
         /// Generally should include all file types which determine the file's uniqueness.
         /// Large files should be avoided if possible.
         /// </summary>
+        /// <remarks>
+        /// This is only used by the default hash implementation. If <see cref="ComputeHash"/> is overridden, it will not be used.
+        /// </remarks>
         protected abstract string[] HashableFileTypes { get; }
 
         internal static void LogForModel(TModel model, string message, Exception e = null)
@@ -277,7 +280,7 @@ namespace osu.Game.Database
         /// <remarks>
         ///  In the case of no matching files, a hash will be generated from the passed archive's <see cref="ArchiveReader.Name"/>.
         /// </remarks>
-        private string computeHash(TModel item, ArchiveReader reader = null)
+        protected virtual string ComputeHash(TModel item, ArchiveReader reader = null)
         {
             // for now, concatenate all .osu files in the set to create a unique hash.
             MemoryStream hashable = new MemoryStream();
@@ -324,7 +327,7 @@ namespace osu.Game.Database
                 LogForModel(item, "開始匯入...");
 
                 item.Files = archive != null ? createFileInfos(archive, Files) : new List<TFileModel>();
-                item.Hash = computeHash(item, archive);
+                item.Hash = ComputeHash(item, archive);
 
                 await Populate(item, archive, cancellationToken);
 
@@ -443,7 +446,7 @@ namespace osu.Game.Database
         {
             using (ContextFactory.GetForWrite())
             {
-                item.Hash = computeHash(item);
+                item.Hash = ComputeHash(item);
                 ModelStore.Update(item);
             }
         }

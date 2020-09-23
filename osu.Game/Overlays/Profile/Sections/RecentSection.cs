@@ -15,7 +15,9 @@ namespace osu.Game.Overlays.Profile.Sections
         {
             Children = new[]
             {
-                new PaginatedRecentActivityContainer(User, null, @"該用戶近期沒有任何動態!"),
+                //  這段代碼因原Repo變動 暫時被覆蓋
+                //  new PaginatedRecentActivityContainer(User, null, @"該用戶近期沒有任何動態!"),
+                new PaginatedRecentActivityContainer(User),
             };
         }
     }

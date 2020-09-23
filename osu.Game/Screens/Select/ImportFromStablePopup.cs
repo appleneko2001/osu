@@ -12,7 +12,7 @@ namespace osu.Game.Screens.Select
         public ImportFromStablePopup(Action importFromStable)
         {
             HeaderText = @"未安裝任何圖譜!";
-            BodyText = "已發現正常版的 osu! 安裝位置\n要匯入圖譜, 成績和皮膚嗎\n建立數據需要一些硬碟的空間和時間.";
+            BodyText = "已發現正常版的 osu! 安裝位置\n要匯入圖譜, 成績, 圖譜收藏和皮膚嗎?\n這將在硬碟上爲這些檔案建立副本.";
 
             Icon = FontAwesome.Solid.Plane;
 

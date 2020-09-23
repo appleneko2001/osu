@@ -17,7 +17,9 @@ namespace osu.Game.Overlays.Profile.Sections
             Children = new Drawable[]
             {
                 new KudosuInfo(User),
-                new PaginatedKudosuHistoryContainer(User, null, @"該用戶近期沒有收到任何的 kudosu!"),
+                //  這段代碼因原Repo變動 暫時被覆蓋
+                //  new PaginatedKudosuHistoryContainer(User, null, @"該用戶近期沒有收到任何的 kudosu!"),
+                new PaginatedKudosuHistoryContainer(User),
             };
         }
     }
