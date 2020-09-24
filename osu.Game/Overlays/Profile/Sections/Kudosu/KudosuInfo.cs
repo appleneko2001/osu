@@ -67,10 +67,9 @@ namespace osu.Game.Overlays.Profile.Sections.Kudosu
             public CountTotal()
                 : base("總共已賺取的 Kudosu")
             {
-                DescriptionText.AddText("根據該用戶已完成了多少的圖譜審核. 關於更多可以查看");
-                    //Based on how much of a contribution the user has made to beatmap moderation. See ");
-                DescriptionText.AddLink("這裏", "https://osu.ppy.sh/wiki/Kudosu");
-                //DescriptionText.AddText(" for more information.");
+                DescriptionText.AddText("基於使用者對圖譜審核的貢獻量. 請看 "); 
+                DescriptionText.AddLink("這個頁面", "https://osu.ppy.sh/wiki/Kudosu");
+                DescriptionText.AddText(" 以獲得更多資訊.");
             }
         }
 

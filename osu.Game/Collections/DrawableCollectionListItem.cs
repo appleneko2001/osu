@@ -103,7 +103,7 @@ namespace osu.Game.Collections
                                 Size = Vector2.One,
                                 CornerRadius = item_height / 2,
                                 Current = collection.Name,
-                                PlaceholderText = IsCreated.Value ? string.Empty : "Create a new collection"
+                                PlaceholderText = IsCreated.Value ? string.Empty : "新增一個收藏"
                             },
                         }
                     },

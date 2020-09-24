@@ -28,7 +28,7 @@ namespace osu.Game.Overlays.Profile
             User.ValueChanged += e => updateDisplay(e.NewValue);
 
             TabControl.AddItem("資訊");
-            TabControl.AddItem("摸圖 (modding)");
+            TabControl.AddItem("摸圖");
 
             centreHeaderContainer.DetailsVisible.BindValueChanged(visible => detailHeaderContainer.Expanded = visible.NewValue, true);
         }

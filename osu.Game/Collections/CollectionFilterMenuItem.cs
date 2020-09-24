@@ -31,7 +31,7 @@ namespace osu.Game.Collections
         public CollectionFilterMenuItem([CanBeNull] BeatmapCollection collection)
         {
             Collection = collection;
-            CollectionName = Collection?.Name.GetBoundCopy() ?? new Bindable<string>("All beatmaps");
+            CollectionName = Collection?.Name.GetBoundCopy() ?? new Bindable<string>("所有圖譜");
         }
     }
 
@@ -48,7 +48,7 @@ namespace osu.Game.Collections
         public ManageCollectionsFilterMenuItem()
             : base(null)
         {
-            CollectionName.Value = "Manage collections...";
+            CollectionName.Value = "管理圖譜收藏...";
         }
     }
 }

@@ -12,8 +12,8 @@ namespace osu.Game.Collections
     {
         public DeleteCollectionDialog(BeatmapCollection collection, Action deleteAction)
         {
-            HeaderText = "Confirm deletion of";
-            BodyText = $"{collection.Name.Value} ({"beatmap".ToQuantity(collection.Beatmaps.Count)})";
+            HeaderText = "確認刪除收藏";
+            BodyText = $"{collection.Name.Value} ({collection.Beatmaps.Count} 個圖譜)"; // {"beatmap".ToQuantity(collection.Beatmaps.Count)}
 
             Icon = FontAwesome.Regular.TrashAlt;
 
@@ -21,12 +21,12 @@ namespace osu.Game.Collections
             {
                 new PopupDialogOkButton
                 {
-                    Text = @"Yes. Go for it.",
+                    Text = @"是的, 去吧!",
                     Action = deleteAction
                 },
                 new PopupDialogCancelButton
                 {
-                    Text = @"No! Abort mission!",
+                    Text = @"不要! 取消任務!",
                 },
             };
         }

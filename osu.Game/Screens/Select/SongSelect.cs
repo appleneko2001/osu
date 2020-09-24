@@ -277,7 +277,7 @@ namespace osu.Game.Screens.Select
 
                 BeatmapOptions.AddButton(@"管理", @"圖譜收藏", FontAwesome.Solid.Book, colours.Green, () => manageCollectionsDialog?.Show());
                 BeatmapOptions.AddButton(@"刪除", @"所有難度", FontAwesome.Solid.Trash, colours.Pink, () => delete(Beatmap.Value.BeatmapSetInfo));
-                BeatmapOptions.AddButton(@"Remove", @"from unplayed", FontAwesome.Regular.TimesCircle, colours.Purple, null);
+                BeatmapOptions.AddButton(@"Remove", @"from unplayed", FontAwesome.Regular.TimesCircle, colours.Purple, null); // 該功能官方版本暫時沒有實現 所以暫時不會翻譯這裏
                 BeatmapOptions.AddButton(@"清除", @"本地成績", FontAwesome.Solid.Eraser, colours.Purple, () => clearScores(Beatmap.Value.BeatmapInfo));
             }
 

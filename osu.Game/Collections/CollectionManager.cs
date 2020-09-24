@@ -133,7 +133,7 @@ namespace osu.Game.Collections
             var notification = new ProgressNotification
             {
                 State = ProgressNotificationState.Active,
-                Text = "Collections import is initialising..."
+                Text = "匯入圖譜收藏準備中..."
             };
 
             PostNotification?.Invoke(notification);
@@ -150,7 +150,7 @@ namespace osu.Game.Collections
             while (!IsDisposed && !importCompleted)
                 await Task.Delay(10);
 
-            notification.CompletionText = $"Imported {collection.Count} collections";
+            notification.CompletionText = $"已匯入 {collection.Count} 個圖譜收藏";
             notification.State = ProgressNotificationState.Completed;
         }
 
@@ -174,7 +174,7 @@ namespace osu.Game.Collections
         {
             if (notification != null)
             {
-                notification.Text = "Reading collections...";
+                notification.Text = "載入圖譜收藏...";
                 notification.Progress = 0;
             }
 
@@ -211,7 +211,7 @@ namespace osu.Game.Collections
 
                         if (notification != null)
                         {
-                            notification.Text = $"Imported {i + 1} of {collectionCount} collections";
+                            notification.Text = $"已匯入 {i + 1} / {collectionCount} 個圖譜收藏";
                             notification.Progress = (float)(i + 1) / collectionCount;
                         }
 
@@ -230,7 +230,7 @@ namespace osu.Game.Collections
         public void DeleteAll()
         {
             Collections.Clear();
-            PostNotification?.Invoke(new ProgressCompletionNotification { Text = "Deleted all collections!" });
+            PostNotification?.Invoke(new ProgressCompletionNotification { Text = "已清除所有圖譜收藏!" });
         }
 
         private readonly object saveLock = new object();

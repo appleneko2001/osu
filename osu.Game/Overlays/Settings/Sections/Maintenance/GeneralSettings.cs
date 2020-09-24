@@ -129,7 +129,7 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                     Text = "清除所有的圖譜收藏",
                     Action = () =>
                     {
-                        dialogOverlay?.Push(new DeleteAllBeatmapsDialog(collectionManager.DeleteAll));
+                        dialogOverlay?.Push(new DeleteAllBeatmapsDialog(collectionManager.DeleteAll) { BodyText = "所有的圖譜收藏嗎?" });
                     }
                 });
             }

@@ -69,7 +69,7 @@ namespace osu.Game.Collections
                                         {
                                             Anchor = Anchor.Centre,
                                             Origin = Anchor.Centre,
-                                            Text = "Manage collections",
+                                            Text = "管理圖譜收藏",
                                             Font = OsuFont.GetFont(size: 30),
                                             Padding = new MarginPadding { Vertical = 10 },
                                         },
