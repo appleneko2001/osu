@@ -69,7 +69,7 @@ namespace osu.Game.Collections
                                         {
                                             Anchor = Anchor.Centre,
                                             Origin = Anchor.Centre,
-                                            Text = "∫ﬁ≤zπœ√–¶¨¬√",
+                                            Text = "ÁÆ°ÁêÜÂúñË≠úÊî∂Ëóè",
                                             Font = OsuFont.GetFont(size: 30),
                                             Padding = new MarginPadding { Vertical = 10 },
                                         },

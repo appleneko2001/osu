@@ -31,7 +31,7 @@ namespace osu.Game.Collections
         public CollectionFilterMenuItem([CanBeNull] BeatmapCollection collection)
         {
             Collection = collection;
-            CollectionName = Collection?.Name.GetBoundCopy() ?? new Bindable<string>("©Ò¦³¹ÏÃĞ");
+            CollectionName = Collection?.Name.GetBoundCopy() ?? new Bindable<string>("æ‰€æœ‰åœ–è­œ");
         }
     }
 
@@ -48,7 +48,7 @@ namespace osu.Game.Collections
         public ManageCollectionsFilterMenuItem()
             : base(null)
         {
-            CollectionName.Value = "ºŞ²z¹ÏÃĞ¦¬ÂÃ...";
+            CollectionName.Value = "ç®¡ç†åœ–è­œæ”¶è—...";
         }
     }
 }
