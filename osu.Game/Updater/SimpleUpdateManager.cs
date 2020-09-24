@@ -20,6 +20,7 @@ namespace osu.Game.Updater
     public class SimpleUpdateManager : UpdateManager
     {
         private string version;
+        private OsuGameBase game;
 
         [Resolved]
         private GameHost host { get; set; }
@@ -27,14 +28,18 @@ namespace osu.Game.Updater
         [BackgroundDependencyLoader]
         private void load(OsuGameBase game)
         {
+            this.game = game;
             version = game.Version;
         }
 
         protected override async Task PerformUpdateCheck()
         {
+            string repo = game.UseTranslationRepositoryUpdate ?
+                "https://api.github.com/repos/appleneko2001/osu/releases/latest" :
+                "https://api.github.com/repos/ppy/osu/releases/latest";
             try
             {
-                var releases = new OsuJsonWebRequest<GitHubRelease>("https://api.github.com/repos/ppy/osu/releases/latest");
+                var releases = new OsuJsonWebRequest<GitHubRelease>(repo);
 
                 await releases.PerformAsync();
 
@@ -44,8 +49,8 @@ namespace osu.Game.Updater
                 {
                     Notifications.Post(new SimpleNotification
                     {
-                        Text = $"A newer release of osu! has been found ({version} → {latest.TagName}).\n\n"
-                               + "Click here to download the new version, which can be installed over the top of your existing installation",
+                        Text = $"最新的發行 osu! 已找到 ({version} → {latest.TagName}).\n\n"
+                               + "點擊下載新版本 將會進行覆蓋安裝.", //Click here to download the new version, which can be installed over the top of your existing installation
                         Icon = FontAwesome.Solid.Upload,
                         Activated = () =>
                         {

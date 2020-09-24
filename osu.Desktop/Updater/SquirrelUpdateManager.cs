@@ -10,6 +10,7 @@ using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Logging;
 using osu.Game;
+using osu.Game.Configuration;
 using osu.Game.Graphics;
 using osu.Game.Overlays;
 using osu.Game.Overlays.Notifications;
@@ -21,7 +22,8 @@ using LogLevel = Splat.LogLevel;
 namespace osu.Desktop.Updater
 {
     public class SquirrelUpdateManager : osu.Game.Updater.UpdateManager
-    {
+    { 
+        private OsuGame game;
         private UpdateManager updateManager;
         private NotificationOverlay notificationOverlay;
 
@@ -30,10 +32,11 @@ namespace osu.Desktop.Updater
         private static readonly Logger logger = Logger.GetLogger("updater");
 
         [BackgroundDependencyLoader]
-        private void load(NotificationOverlay notification)
+        private void load(NotificationOverlay notification, OsuGame game)
         {
+            this.game = game;
             notificationOverlay = notification;
-
+            
             Splat.Locator.CurrentMutable.Register(() => new SquirrelLogger(), typeof(Splat.ILogger));
         }
 
@@ -41,12 +44,15 @@ namespace osu.Desktop.Updater
 
         private async Task checkForUpdateAsync(bool useDeltaPatching = true, UpdateProgressNotification notification = null)
         {
+            string updateRepository = game.UseTranslationRepositoryUpdate ?
+                "https://github.com/appleneko2001/osu" :
+                "https://github.com/ppy/osu";
             // should we schedule a retry on completion of this check?
             bool scheduleRecheck = true;
 
             try
             {
-                updateManager ??= await UpdateManager.GitHubUpdateManager(@"https://github.com/ppy/osu", @"osulazer", null, null, true);
+                updateManager ??= await UpdateManager.GitHubUpdateManager(updateRepository, @"osulazer-zh-tw", null, null, true);
 
                 var info = await updateManager.CheckForUpdate(!useDeltaPatching);
                 if (info.ReleasesToApply.Count == 0)
@@ -60,14 +66,14 @@ namespace osu.Desktop.Updater
                 }
 
                 notification.Progress = 0;
-                notification.Text = @"Downloading update...";
+                notification.Text = @"下載更新中...";
 
                 try
                 {
                     await updateManager.DownloadReleases(info.ReleasesToApply, p => notification.Progress = p / 100f);
 
                     notification.Progress = 0;
-                    notification.Text = @"Installing update...";
+                    notification.Text = @"正在安裝...";
 
                     await updateManager.ApplyReleases(info, p => notification.Progress = p / 100f);
 
@@ -125,7 +131,7 @@ namespace osu.Desktop.Updater
             {
                 return new ProgressCompletionNotification
                 {
-                    Text = @"Update ready to install. Click to restart!",
+                    Text = @"更新已安裝, 點擊重新啟動遊戲!",
                     Activated = () =>
                     {
                         updateManager.PrepareUpdateAsync()

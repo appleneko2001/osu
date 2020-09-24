@@ -51,6 +51,7 @@ namespace osu.Game
         public const string CLIENT_STREAM_NAME = "lazer";
 
         public const int SAMPLE_CONCURRENCY = 6;
+        public bool UseTranslationRepositoryUpdate => LocalConfig.Get<bool>(OsuSetting.UseTranslationUpdateRepo);
 
         protected OsuConfigManager LocalConfig;
 

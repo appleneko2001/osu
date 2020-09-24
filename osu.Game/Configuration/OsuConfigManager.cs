@@ -19,6 +19,9 @@ namespace osu.Game.Configuration
     {
         protected override void InitialiseDefaults()
         {
+            // Set it true to keep updater use appleneko2001/osu update repo otherwize translation patch could be replaced by official update.
+            Set(OsuSetting.UseTranslationUpdateRepo, true);
+
             // UI/selection defaults
             Set(OsuSetting.Ruleset, 0, 0, int.MaxValue);
             Set(OsuSetting.Skin, 0, -1, int.MaxValue);
@@ -174,6 +177,7 @@ namespace osu.Game.Configuration
 
     public enum OsuSetting
     {
+        UseTranslationUpdateRepo = 1000, // Add an option to use appleneko2001/osu repository or ppy/osu official repository.
         Ruleset,
         Token,
         MenuCursorSize,

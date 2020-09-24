@@ -24,14 +24,24 @@ namespace osu.Game.Overlays.Settings.Sections.General
         [BackgroundDependencyLoader(true)]
         private void load(Storage storage, OsuConfigManager config, OsuGame game)
         {
+            if(updateManager?.CanCheckForUpdate == true)
+            {
+                Add(new SettingsCheckbox
+                {
+                    LabelText = "使用中文化更新流",
+                    TooltipText = "使用來自 appleneko2001/osu 的更新流來更新遊戲, 將保留中文化界面. 關閉後將使用ppy官方更新流.",
+                    Bindable = config.GetBindable<bool>(OsuSetting.UseTranslationUpdateRepo)
+                });
+            }
+
             Add(new SettingsEnumDropdown<ReleaseStream>
             {
                 LabelText = "發行版本",
                 Bindable = config.GetBindable<ReleaseStream>(OsuSetting.ReleaseStream),
-            });
+            }); 
 
             if (updateManager?.CanCheckForUpdate == true)
-            {
+            { 
                 Add(checkForUpdatesButton = new SettingsButton
                 {
                     Text = "檢查版本更新",

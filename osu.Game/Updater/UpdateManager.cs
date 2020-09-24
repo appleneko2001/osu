@@ -84,7 +84,7 @@ namespace osu.Game.Updater
             public UpdateCompleteNotification(string version)
             {
                 this.version = version;
-                Text = $"You are now running osu!lazer {version}.\nClick to see what's new!";
+                Text = $"正在遊玩的是 osu!lazer {version}.\n點擊查看本次更新的變動!";
             }
 
             [BackgroundDependencyLoader]

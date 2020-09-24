@@ -6,18 +6,18 @@
     <Description>A free-to-win rhythm game. Rhythm is just a *click* away!</Description>
     <AssemblyName>osu!</AssemblyName>
     <Title>osu!lazer</Title>
-    <Product>osu!lazer</Product>
+    <Product>osu!lazer 中文化</Product>
     <ApplicationIcon>lazer.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Version>2020.910.0.0</Version>
-    <FileVersion>0.0.0</FileVersion>
+    <Version>2020.923.0</Version>
+    <FileVersion>0.0.0</FileVersion> 
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>osu.Desktop.Program</StartupObject>
-    <PackageId>osu! 中文化</PackageId>
+    <PackageId>osulazer-zh-tw</PackageId>
     <Authors>ppy Pty Ltd, Translation by github@appleneko2001</Authors>
     <PackageProjectUrl>https://github.com/appleneko2001/osu</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/appleneko2001/osu</RepositoryUrl>
+    <RepositoryUrl>https://github.com/appleneko2001/osu</RepositoryUrl> 
   </PropertyGroup>
   <ItemGroup Label="Project References">
     <ProjectReference Include="..\osu.Game.Tournament\osu.Game.Tournament.csproj" />
