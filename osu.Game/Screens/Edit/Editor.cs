@@ -43,6 +43,7 @@ using osuTK.Input;
 namespace osu.Game.Screens.Edit
 {
     [Cached(typeof(IBeatSnapProvider))]
+    [Cached]
     public class Editor : ScreenWithBeatmapBackground, IKeyBindingHandler<GlobalAction>, IKeyBindingHandler<PlatformAction>, IBeatSnapProvider
     {
         public override float BackgroundParallaxAmount => 0.1f;
@@ -68,7 +69,7 @@ namespace osu.Game.Screens.Edit
         private string lastSavedHash;
 
         private Box bottomBackground;
-        private Container screenContainer;
+        private Container<EditorScreen> screenContainer;
 
         private EditorScreen currentScreen;
 
@@ -91,6 +92,9 @@ namespace osu.Game.Screens.Edit
         [Resolved]
         private IAPIProvider api { get; set; }
 
+        [Resolved]
+        private MusicController music { get; set; }
+
         [BackgroundDependencyLoader]
         private void load(OsuColour colours, GameHost host)
         {
@@ -98,9 +102,9 @@ namespace osu.Game.Screens.Edit
             beatDivisor.BindValueChanged(divisor => Beatmap.Value.BeatmapInfo.BeatDivisor = divisor.NewValue);
 
             // Todo: should probably be done at a DrawableRuleset level to share logic with Player.
-            var sourceClock = (IAdjustableClock)Beatmap.Value.Track ?? new StopwatchClock();
             clock = new EditorClock(Beatmap.Value, beatDivisor) { IsCoupled = false };
-            clock.ChangeSource(sourceClock);
+
+            UpdateClockSource();
 
             dependencies.CacheAs(clock);
             AddInternal(clock);
@@ -144,14 +148,14 @@ namespace osu.Game.Screens.Edit
 
             var fileMenuItems = new List<MenuItem>
             {
-                new EditorMenuItem("Save", MenuItemType.Standard, Save)
+                new EditorMenuItem("儲存", MenuItemType.Standard, Save)
             };
 
             if (RuntimeInfo.IsDesktop)
-                fileMenuItems.Add(new EditorMenuItem("Export package", MenuItemType.Standard, exportBeatmap));
+                fileMenuItems.Add(new EditorMenuItem("匯出", MenuItemType.Standard, exportBeatmap));
 
             fileMenuItems.Add(new EditorMenuItemSpacer());
-            fileMenuItems.Add(new EditorMenuItem("Exit", MenuItemType.Standard, this.Exit));
+            fileMenuItems.Add(new EditorMenuItem("離開", MenuItemType.Standard, this.Exit));
 
             AddInternal(new OsuContextMenuContainer
             {
@@ -163,7 +167,7 @@ namespace osu.Game.Screens.Edit
                         Name = "Screen container",
                         RelativeSizeAxes = Axes.Both,
                         Padding = new MarginPadding { Top = 40, Bottom = 60 },
-                        Child = screenContainer = new Container
+                        Child = screenContainer = new Container<EditorScreen>
                         {
                             RelativeSizeAxes = Axes.Both,
                             Masking = true
@@ -182,20 +186,20 @@ namespace osu.Game.Screens.Edit
                             Mode = { Value = isNewBeatmap ? EditorScreenMode.SongSetup : EditorScreenMode.Compose },
                             Items = new[]
                             {
-                                new MenuItem("File")
+                                new MenuItem("檔案")
                                 {
                                     Items = fileMenuItems
                                 },
-                                new MenuItem("Edit")
+                                new MenuItem("編輯")
                                 {
                                     Items = new[]
                                     {
-                                        undoMenuItem = new EditorMenuItem("Undo", MenuItemType.Standard, Undo),
-                                        redoMenuItem = new EditorMenuItem("Redo", MenuItemType.Standard, Redo),
+                                        undoMenuItem = new EditorMenuItem("還原", MenuItemType.Standard, Undo),
+                                        redoMenuItem = new EditorMenuItem("重做", MenuItemType.Standard, Redo),
                                         new EditorMenuItemSpacer(),
-                                        cutMenuItem = new EditorMenuItem("Cut", MenuItemType.Standard, Cut),
-                                        copyMenuItem = new EditorMenuItem("Copy", MenuItemType.Standard, Copy),
-                                        pasteMenuItem = new EditorMenuItem("Paste", MenuItemType.Standard, Paste),
+                                        cutMenuItem = new EditorMenuItem("剪切", MenuItemType.Standard, Cut),
+                                        copyMenuItem = new EditorMenuItem("複製", MenuItemType.Standard, Copy),
+                                        pasteMenuItem = new EditorMenuItem("貼上", MenuItemType.Standard, Paste),
                                     }
                                 }
                             }
@@ -269,6 +273,15 @@ namespace osu.Game.Screens.Edit
             menuBar.Mode.ValueChanged += onModeChanged;
 
             bottomBackground.Colour = colours.Gray2;
+        }
+
+        /// <summary>
+        /// If the beatmap's track has changed, this method must be called to keep the editor in a valid state.
+        /// </summary>
+        public void UpdateClockSource()
+        {
+            var sourceClock = (IAdjustableClock)Beatmap.Value.Track ?? new StopwatchClock();
+            clock.ChangeSource(sourceClock);
         }
 
         protected void Save()
@@ -512,7 +525,21 @@ namespace osu.Game.Screens.Edit
 
         private void onModeChanged(ValueChangedEvent<EditorScreenMode> e)
         {
-            currentScreen?.Exit();
+            var lastScreen = currentScreen;
+
+            lastScreen?
+                .ScaleTo(0.98f, 200, Easing.OutQuint)
+                .FadeOut(200, Easing.OutQuint);
+
+            if ((currentScreen = screenContainer.SingleOrDefault(s => s.Type == e.NewValue)) != null)
+            {
+                screenContainer.ChangeChildDepth(currentScreen, lastScreen?.Depth + 1 ?? 0);
+
+                currentScreen
+                    .ScaleTo(1, 200, Easing.OutQuint)
+                    .FadeIn(200, Easing.OutQuint);
+                return;
+            }
 
             switch (e.NewValue)
             {
