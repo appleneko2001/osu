@@ -15,7 +15,9 @@
   <PropertyGroup>
     <PackageProjectUrl>https://github.com/appleneko2001/osu</PackageProjectUrl>
     <Product>osu.Game (中文化)</Product>
-    <Authors>ppy Pty Ltd, Translation by github@appleneko2001</Authors>
+    <Authors>Translation by github@appleneko2001</Authors>
+    <Company>Translation by github@appleneko2001</Company>
+    <RepositoryUrl>https://github.com/appleneko2001/osu</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup Label="Icon">
     <None Include="..\assets\lazer-nuget.png">

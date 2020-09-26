@@ -5,6 +5,12 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Description>smash the keys. to the beat.</Description>
   </PropertyGroup>
+  <PropertyGroup>
+    <RepositoryUrl>https://github.com/appleneko2001/osu</RepositoryUrl>
+    <Company>Translation by github@appleneko2001</Company>
+    <Authors>Translation by github@appleneko2001</Authors>
+    <PackageProjectUrl>https://github.com/appleneko2001/osu</PackageProjectUrl>
+  </PropertyGroup>
   <ItemGroup Label="Project References">
     <ProjectReference Include="..\osu.Game\osu.Game.csproj" />
   </ItemGroup>

@@ -4,6 +4,12 @@
     <OutputType>Library</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Description>bash the drum. to the beat.</Description>
+    <Company>Translation by github@appleneko2001</Company>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageProjectUrl>https://github.com/appleneko2001/osu</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/appleneko2001/osu</RepositoryUrl>
+    <Authors>Translation by github@appleneko2001</Authors>
   </PropertyGroup>
   <ItemGroup Label="Project References">
     <ProjectReference Include="..\osu.Game\osu.Game.csproj" />

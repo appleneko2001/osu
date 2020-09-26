@@ -15,9 +15,10 @@
   <PropertyGroup>
     <StartupObject>osu.Desktop.Program</StartupObject>
     <PackageId>osulazer-zh-tw</PackageId>
-    <Authors>ppy Pty Ltd, Translation by github@appleneko2001</Authors>
+    <Authors>Translation by github@appleneko2001</Authors>
     <PackageProjectUrl>https://github.com/appleneko2001/osu</PackageProjectUrl>
     <RepositoryUrl>https://github.com/appleneko2001/osu</RepositoryUrl>
+    <Company>Translation by github@appleneko2001</Company>
   </PropertyGroup>
   <ItemGroup Label="Project References">
     <ProjectReference Include="..\osu.Game.Tournament\osu.Game.Tournament.csproj" />

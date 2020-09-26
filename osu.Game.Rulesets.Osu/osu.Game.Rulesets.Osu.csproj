@@ -4,6 +4,12 @@
     <OutputType>Library</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Description>click the circles. to the beat.</Description>
+    <Company>Translation by github@appleneko2001</Company>
+    <Authors>Translation by github@appleneko2001</Authors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageProjectUrl>https://github.com/appleneko2001/osu</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/appleneko2001/osu</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup Label="Project References">
     <ProjectReference Include="..\osu.Game\osu.Game.csproj" />
