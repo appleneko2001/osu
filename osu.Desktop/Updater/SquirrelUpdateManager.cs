@@ -10,7 +10,6 @@ using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Logging;
 using osu.Game;
-using osu.Game.Configuration;
 using osu.Game.Graphics;
 using osu.Game.Overlays;
 using osu.Game.Overlays.Notifications;
@@ -22,9 +21,10 @@ using LogLevel = Splat.LogLevel;
 namespace osu.Desktop.Updater
 {
     public class SquirrelUpdateManager : osu.Game.Updater.UpdateManager
-    { 
+    {
         private OsuGame game;
         private UpdateManager updateManager;
+        private CancellableDownloader cancellableDownloader;
         private NotificationOverlay notificationOverlay;
 
         public Task PrepareUpdateAsync() => UpdateManager.RestartAppWhenExited();
@@ -36,7 +36,7 @@ namespace osu.Desktop.Updater
         {
             this.game = game;
             notificationOverlay = notification;
-            
+
             Splat.Locator.CurrentMutable.Register(() => new SquirrelLogger(), typeof(Splat.ILogger));
         }
 
@@ -52,7 +52,10 @@ namespace osu.Desktop.Updater
 
             try
             {
-                updateManager ??= await UpdateManager.GitHubUpdateManager(updateRepository, @"osulazer-zh-tw", null, null, true);
+                Logger.Log($"Checking updates on repository: {updateRepository}");
+
+                cancellableDownloader ??= new CancellableDownloader();
+                updateManager ??= await UpdateManager.GitHubUpdateManager(updateRepository, @"osulazer-zh-tw", null, cancellableDownloader, true);
 
                 var info = await updateManager.CheckForUpdate(!useDeltaPatching);
                 if (info.ReleasesToApply.Count == 0)
@@ -70,7 +73,12 @@ namespace osu.Desktop.Updater
 
                 try
                 {
+                    var cancellation = notification.CancellationToken;
+                    cancellableDownloader.SetCancellationToken(cancellation);
+
                     await updateManager.DownloadReleases(info.ReleasesToApply, p => notification.Progress = p / 100f);
+
+                    cancellation.ThrowIfCancellationRequested();
 
                     notification.Progress = 0;
                     notification.Text = @"正在安裝...";
@@ -78,6 +86,12 @@ namespace osu.Desktop.Updater
                     await updateManager.ApplyReleases(info, p => notification.Progress = p / 100f);
 
                     notification.State = ProgressNotificationState.Completed;
+                }
+                catch (OperationCanceledException)
+                {
+                    notification.Text = "更新已取消.";
+                    notification.State = ProgressNotificationState.Cancelled;
+                    Logger.Log($"Update cancelled by user.", LoggingTarget.Runtime, Framework.Logging.LogLevel.Verbose);
                 }
                 catch (Exception e)
                 {
