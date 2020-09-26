@@ -2,8 +2,8 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Allocation;
-using osu.Framework.Graphics;
 using osu.Framework.Bindables;
+using osu.Framework.Graphics;
 using osu.Game.Beatmaps.ControlPoints;
 using osu.Game.Overlays.Settings;
 
@@ -20,7 +20,7 @@ namespace osu.Game.Screens.Edit.Timing
             {
                 multiplier = new SettingsSlider<double>
                 {
-                    LabelText = "Speed Multiplier",
+                    LabelText = "³t«×­¼¼Æ",
                     Bindable = new DifficultyControlPoint().SpeedMultiplierBindable,
                     RelativeSizeAxes = Axes.X,
                 }

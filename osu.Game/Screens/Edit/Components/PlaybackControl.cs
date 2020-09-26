@@ -2,8 +2,6 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
-using osuTK;
-using osuTK.Graphics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Bindables;
@@ -16,6 +14,8 @@ using osu.Framework.Input.Events;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
+using osuTK;
+using osuTK.Graphics;
 using osuTK.Input;
 
 namespace osu.Game.Screens.Edit.Components
@@ -46,7 +46,7 @@ namespace osu.Game.Screens.Edit.Components
                 new OsuSpriteText
                 {
                     Origin = Anchor.BottomLeft,
-                    Text = "Playback speed",
+                    Text = "回放速度",
                     RelativePositionAxes = Axes.Y,
                     Y = 0.5f,
                     Padding = new MarginPadding { Left = 45 }

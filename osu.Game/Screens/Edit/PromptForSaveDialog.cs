@@ -11,7 +11,7 @@ namespace osu.Game.Screens.Edit
     {
         public PromptForSaveDialog(Action exit, Action saveAndExit)
         {
-            HeaderText = "Did you want to save your changes?";
+            HeaderText = "要儲存對圖譜的變動嗎?";
 
             Icon = FontAwesome.Regular.Save;
 
@@ -19,17 +19,17 @@ namespace osu.Game.Screens.Edit
             {
                 new PopupDialogCancelButton
                 {
-                    Text = @"Save my masterpiece!",
+                    Text = @"儲存我的傑作!",
                     Action = saveAndExit
                 },
                 new PopupDialogOkButton
                 {
-                    Text = @"Forget all changes",
+                    Text = @"忘掉所有變動",
                     Action = exit
                 },
                 new PopupDialogCancelButton
                 {
-                    Text = @"Oops, continue editing",
+                    Text = @"抱歉, 我想繼續做圖",
                 },
             };
         }

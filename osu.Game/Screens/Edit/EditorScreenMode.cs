@@ -7,16 +7,16 @@ namespace osu.Game.Screens.Edit
 {
     public enum EditorScreenMode
     {
-        [Description("setup")]
+        [Description("設定")]
         SongSetup,
 
-        [Description("compose")]
+        [Description("作曲")]
         Compose,
 
-        [Description("design")]
+        [Description("設計")]
         Design,
 
-        [Description("timing")]
+        [Description("校時")]  // [RequestImprove] 原文是Timing 跟GlobalActionContainer.cs的情況一樣
         Timing,
     }
 }

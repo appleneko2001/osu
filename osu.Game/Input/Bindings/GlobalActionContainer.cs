@@ -176,16 +176,16 @@ namespace osu.Game.Input.Bindings
         PauseGameplay,
 
         // Editor
-        [Description("Setup Mode")]
+        [Description("設定模式")]
         EditorSetupMode,
 
-        [Description("Compose Mode")]
+        [Description("作曲模式")]
         EditorComposeMode,
 
-        [Description("Design Mode")]
+        [Description("設計模式")]
         EditorDesignMode,
 
-        [Description("Timing Mode")]
+        [Description("校時模式")] // [RequestImprove] 原文是Timing mode 不知道要怎麼正確翻譯就丟到Google translate查了一下 可能有點不對 個人的理解應該是時間軸 但是意義有點不太準確
         EditorTimingMode,
     }
 }

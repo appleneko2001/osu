@@ -3,18 +3,18 @@
 
 using System;
 using System.Collections.Generic;
-using osu.Framework.Screens;
+using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
-using osu.Game.Graphics.Sprites;
-using osu.Game.Screens.Backgrounds;
-using osu.Game.Graphics.UserInterface;
-using osuTK;
-using osuTK.Graphics;
-using osu.Game.Graphics;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Sprites;
+using osu.Framework.Screens;
+using osu.Game.Graphics;
+using osu.Game.Graphics.Sprites;
+using osu.Game.Graphics.UserInterface;
+using osu.Game.Screens.Backgrounds;
+using osuTK;
+using osuTK.Graphics;
 
 namespace osu.Game.Screens
 {
@@ -164,14 +164,14 @@ namespace osu.Game.Screens
                                     {
                                         Anchor = Anchor.TopCentre,
                                         Origin = Anchor.TopCentre,
-                                        Text = "is not yet ready for use!",
+                                        Text = "還沒有準備好!",
                                         Font = OsuFont.GetFont(size: 20),
                                     },
                                     new OsuSpriteText
                                     {
                                         Anchor = Anchor.TopCentre,
                                         Origin = Anchor.TopCentre,
-                                        Text = "please check back a bit later.",
+                                        Text = "稍晚一會再來看看吧.",
                                         Font = OsuFont.GetFont(size: 14),
                                     },
                                 }
