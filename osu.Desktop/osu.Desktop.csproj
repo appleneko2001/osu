@@ -9,7 +9,7 @@
     <Product>osu!lazer 中文化</Product>
     <ApplicationIcon>lazer.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Version>2020.925.0</Version>
+    <Version>0.0.0</Version>
     <FileVersion>0.0.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup>
@@ -20,6 +20,17 @@
     <RepositoryUrl>https://github.com/appleneko2001/osu</RepositoryUrl>
     <Company>Translation by github@appleneko2001</Company>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="osulazer-zh-tw\**" />
+    <Compile Remove="releases\**" />
+    <Compile Remove="staging\**" />
+    <EmbeddedResource Remove="osulazer-zh-tw\**" />
+    <EmbeddedResource Remove="releases\**" />
+    <EmbeddedResource Remove="staging\**" />
+    <None Remove="osulazer-zh-tw\**" />
+    <None Remove="releases\**" />
+    <None Remove="staging\**" />
+  </ItemGroup>
   <ItemGroup Label="Project References">
     <ProjectReference Include="..\osu.Game.Tournament\osu.Game.Tournament.csproj" />
     <ProjectReference Include="..\osu.Game\osu.Game.csproj" />
