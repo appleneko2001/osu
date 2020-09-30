@@ -13,9 +13,9 @@ using osu.Framework.Utils;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Online.API;
+using osu.Game.Users;
 using osuTK;
 using osuTK.Graphics;
-using osu.Game.Users;
 
 namespace osu.Game.Screens.Menu
 {
@@ -194,16 +194,16 @@ namespace osu.Game.Screens.Menu
                 "每次更新都會加入一些新的東西, 記得保持關注!",
                 "如果覺得界面太小了, 試着將 \"界面縮放\" 設定在合適的範圍!",
                 "試着調整 \"畫面縮放\" 模式去變動你/妳的遊戲中和界面縮放, 甚至在全螢幕模式中!",
-                "osu!direct 已適用於所有 lazer 玩家! 需要的時候在任意地方按 Ctrl-D!",
+                "osu!direct 已開放給所有 osu!lazer 玩家! 需要的時候在任意地方按 Ctrl-D!",
                 "在回放中的進度條 (畫面下方) 可被拖動!",
                 "多執行緒會在 \"FPS\" 過低的時候保持輸入控制不會被影響!",
                 "試着在 Mods 面板中往下翻, 會有很好玩的東西!",
-                "大部分線上頁面 (個人資訊, 排名或者其他) 可以在遊戲中顯示 (非網頁瀏覽器顯示!)",
-                "試着對圖譜右鍵進行更多操作 比如瀏覽圖譜資訊, 編輯圖譜, 遊玩圖譜以及隱藏!",
+                "大部分線上頁面 (個人資訊, 排名或者其他) 可以在遊戲中直接顯示 (非網頁瀏覽器顯示!)",
+                "試着對圖譜右鍵進行更多操作 比如瀏覽圖譜資訊, 編輯圖譜, 收藏圖譜, 遊玩圖譜以及隱藏!",
                 "所有的刪除圖譜操作在遊戲關閉之前都是暫時的 如果改變主意了可以回到維護選項中復原他們!",
                 "查看 \"時移 (Timeshift)\" 多人遊戲系統，該系統具有本地永久排行榜和播放列表支持!", // [RequestImprove] 不知道怎麼翻譯 用了Google translate 不要打我
-                "切換影格 / 執行緒資訊可以按 Ctrl-F11!",
-                "如果想要知道更詳細的日誌 可以按 Ctrl-F2 在遊戲中顯示他們! (暫未翻譯)",
+                "切換效能資訊顯示可以按 Ctrl-F11!",
+                "如果想要知道更詳細的日誌 可以按 Ctrl-F2 在遊戲中顯示他們!",
                 "中文化由 github@appleneko2001 提供! 記得支持一下 osu! 遊戲很棒 不是支持我!",
             };
 

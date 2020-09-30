@@ -1,14 +1,14 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Linq;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
+using osu.Game.Beatmaps;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
-using System.Linq;
-using osu.Game.Beatmaps;
 
 namespace osu.Game.Screens.Select.Details
 {
@@ -104,7 +104,8 @@ namespace osu.Game.Screens.Select.Details
                         {
                             Anchor = Anchor.TopCentre,
                             Origin = Anchor.TopCentre,
-                            Text = "評級價差",  // [RequestImprove] 原詞: Rating Spread 不知道該怎麼翻譯 用了Google Translate 如果有更好的翻譯麻煩Issue叫我
+                            Text = "評級圖表",  // [RequestImprove] 原詞: Rating Spread 不知道該怎麼翻譯 用了Google Translate 如果有更好的翻譯麻煩Issue叫我
+                            // 更新: 已從 “評級價差”改成“評級圖表” 但還是不太清楚這樣翻譯會不會更好
                             Font = OsuFont.GetFont(size: 12),
                             Margin = new MarginPadding { Bottom = 5 },
                         },

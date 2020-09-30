@@ -21,7 +21,7 @@ namespace osu.Game.Rulesets.Mods
     public abstract class ModNightcore<TObject> : ModDoubleTime, IApplicableToDrawableRuleset<TObject>
         where TObject : HitObject
     {
-        public override string Name => "歡樂硬核"; // [RequestImprove] 依據百度百科詞條決定的名字 我不知道中文要怎麼說比較好XD: https://baike.baidu.com/item/Nightcore/3772978
+        public override string Name => "深夜狂歡"; // [RequestImprove] 已改進翻譯 但是還是需要Feedback以確認翻譯準確性
         public override string Acronym => "NC";
         public override IconUsage? Icon => OsuIcon.ModNightcore;
         public override string Description => "嗨起來!";
