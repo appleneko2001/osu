@@ -3,7 +3,6 @@
 
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Graphics;
 using osu.Game.Beatmaps.ControlPoints;
 
 namespace osu.Game.Screens.Edit.Timing
@@ -17,11 +16,9 @@ namespace osu.Game.Screens.Edit.Timing
         {
             Flow.AddRange(new[]
             {
-                multiplierSlider = new SliderWithTextBoxInput<double>("Speed Multiplier")
+                multiplierSlider = new SliderWithTextBoxInput<double>("速度乘積")
                 {
-                    LabelText = "速度乘積",
-                    Bindable = new DifficultyControlPoint().SpeedMultiplierBindable,
-                    RelativeSizeAxes = Axes.X,
+                    Current = new DifficultyControlPoint().SpeedMultiplierBindable
                 }
             });
         }

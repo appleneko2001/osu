@@ -21,16 +21,16 @@ namespace osu.Game.Rulesets.Mods
         /// </summary>
         private const double final_rate_progress = 0.75f;
 
-        [SettingSource("°ò¥»³t«×", "¦±¥Øªº°ò¥»³t«×")]
+        [SettingSource("åŸºæœ¬é€Ÿåº¦", "æ›²ç›®çš„åŸºæœ¬é€Ÿåº¦")]
         public abstract BindableNumber<double> InitialRate { get; }
 
-        [SettingSource("³Ì¤j½d³ò", "³t«×½Õ¾ãªº­­¨î½d³ò")]
+        [SettingSource("æœ€å¤§ç¯„åœ", "é€Ÿåº¦èª¿æ•´çš„é™åˆ¶ç¯„åœ")]
         public abstract BindableNumber<double> FinalRate { get; }
 
-        [SettingSource("½Õ¾ã­µ°ª", "­µ°ª¬O§_¸ò³t«×¤@°_ÅÜ¤Æ")]
+        [SettingSource("èª¿æ•´éŸ³é«˜", "éŸ³é«˜æ˜¯å¦è·Ÿé€Ÿåº¦ä¸€èµ·è®ŠåŒ–")]
         public abstract BindableBool AdjustPitch { get; }
 
-        public override string SettingDescription => $"{InitialRate.Value:N2}x ¨ì {FinalRate.Value:N2}x";
+        public override string SettingDescription => $"{InitialRate.Value:N2}x åˆ° {FinalRate.Value:N2}x";
 
         private double finalRateTime;
         private double beginRampTime;

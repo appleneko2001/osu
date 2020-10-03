@@ -11,11 +11,11 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModSuddenDeath : Mod, IApplicableToHealthProcessor, IApplicableFailOverride
     {
-        public override string Name => "Àþ¶¡¦º¤`";
+        public override string Name => "çž¬é–“æ­»äº¡";
         public override string Acronym => "SD";
         public override IconUsage? Icon => OsuIcon.ModSuddendeath;
         public override ModType Type => ModType.DifficultyIncrease;
-        public override string Description => "¥u­n¥¢»~¤@¦¸ ´N·|Àþ¶¡¦º¤`.";
+        public override string Description => "åªè¦å¤±èª¤ä¸€æ¬¡ å°±æœƒçž¬é–“æ­»äº¡.";
         public override double ScoreMultiplier => 1;
         public override bool Ranked => true;
         public override Type[] IncompatibleMods => new[] { typeof(ModNoFail), typeof(ModRelax), typeof(ModAutoplay) };

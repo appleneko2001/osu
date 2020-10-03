@@ -10,10 +10,10 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModPerfect : ModSuddenDeath
     {
-        public override string Name => "§¹¬ü³Ó§Q";
+        public override string Name => "å®Œç¾Žå‹åˆ©";
         public override string Acronym => "PF";
         public override IconUsage? Icon => OsuIcon.ModPerfect;
-        public override string Description => "­n»òSS ­n»ò¦^®a.";
+        public override string Description => "è¦éº¼SS è¦éº¼å›žå®¶.";
 
         protected override bool FailCondition(HealthProcessor healthProcessor, JudgementResult result)
             => result.Type.AffectsAccuracy()

@@ -21,10 +21,10 @@ namespace osu.Game.Rulesets.Mods
     public abstract class ModNightcore<TObject> : ModDoubleTime, IApplicableToDrawableRuleset<TObject>
         where TObject : HitObject
     {
-        public override string Name => "²`©]¨gÅw"; // [RequestImprove] ¤w§ï¶iÂ½Ä¶ ¦ý¬OÁÙ¬O»Ý­nFeedback¥H½T»{Â½Ä¶·Ç½T©Ê
+        public override string Name => "æ·±å¤œç‹‚æ­¡"; // [RequestImprove] å·²æ”¹é€²ç¿»è­¯ ä½†æ˜¯é‚„æ˜¯éœ€è¦Feedbackä»¥ç¢ºèªç¿»è­¯æº–ç¢ºæ€§
         public override string Acronym => "NC";
         public override IconUsage? Icon => OsuIcon.ModNightcore;
-        public override string Description => "¶Ù°_¨Ó!";
+        public override string Description => "å—¨èµ·ä¾†!";
 
         private readonly BindableNumber<double> tempoAdjust = new BindableDouble(1);
         private readonly BindableNumber<double> freqAdjust = new BindableDouble(1);
