@@ -1,26 +1,25 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+Ôªø// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Game.Beatmaps.ControlPoints;
-using osu.Game.Overlays.Settings;
 
 namespace osu.Game.Screens.Edit.Timing
 {
     internal class DifficultySection : Section<DifficultyControlPoint>
     {
-        private SettingsSlider<double> multiplier;
+        private SliderWithTextBoxInput<double> multiplierSlider;
 
         [BackgroundDependencyLoader]
         private void load()
         {
             Flow.AddRange(new[]
             {
-                multiplier = new SettingsSlider<double>
+                multiplierSlider = new SliderWithTextBoxInput<double>("Speed Multiplier")
                 {
-                    LabelText = "≥t´◊≠ºº∆",
+                    LabelText = "ÈÄüÂ∫¶‰πòÁ©ç",
                     Bindable = new DifficultyControlPoint().SpeedMultiplierBindable,
                     RelativeSizeAxes = Axes.X,
                 }
@@ -31,7 +30,7 @@ namespace osu.Game.Screens.Edit.Timing
         {
             if (point.NewValue != null)
             {
-                multiplier.Bindable = point.NewValue.SpeedMultiplierBindable;
+                multiplierSlider.Current = point.NewValue.SpeedMultiplierBindable;
             }
         }
 

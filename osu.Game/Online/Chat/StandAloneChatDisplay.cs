@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+Ôªø// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
@@ -58,13 +58,14 @@ namespace osu.Game.Online.Chat
                 {
                     RelativeSizeAxes = Axes.X,
                     Height = textbox_height,
-                    PlaceholderText = "¶b¶π≥BøÈ§J∞TÆß",
-                    OnCommit = postMessage,
+                    PlaceholderText = "Âú®Ê≠§ËôïËº∏ÂÖ•Ë®äÊÅØ",
                     ReleaseFocusOnCommit = false,
                     HoldFocus = true,
                     Anchor = Anchor.BottomLeft,
                     Origin = Anchor.BottomLeft,
                 });
+
+                textbox.OnCommit += postMessage;
             }
 
             Channel.BindValueChanged(channelChanged);
