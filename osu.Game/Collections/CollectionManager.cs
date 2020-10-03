@@ -133,7 +133,7 @@ namespace osu.Game.Collections
             var notification = new ProgressNotification
             {
                 State = ProgressNotificationState.Active,
-                Text = "¶×¤J¹ÏÃĞ¦¬ÂÃ·Ç³Æ¤¤..."
+                Text = "åŒ¯å…¥åœ–è­œæ”¶è—æº–å‚™ä¸­..."
             };
 
             PostNotification?.Invoke(notification);
@@ -150,7 +150,7 @@ namespace osu.Game.Collections
             while (!IsDisposed && !importCompleted)
                 await Task.Delay(10);
 
-            notification.CompletionText = $"¤w¶×¤J {collection.Count} ­Ó¹ÏÃĞ¦¬ÂÃ";
+            notification.CompletionText = $"å·²åŒ¯å…¥ {collection.Count} å€‹åœ–è­œæ”¶è—";
             notification.State = ProgressNotificationState.Completed;
         }
 
@@ -174,7 +174,7 @@ namespace osu.Game.Collections
         {
             if (notification != null)
             {
-                notification.Text = "¸ü¤J¹ÏÃĞ¦¬ÂÃ...";
+                notification.Text = "è¼‰å…¥åœ–è­œæ”¶è—...";
                 notification.Progress = 0;
             }
 
@@ -211,7 +211,7 @@ namespace osu.Game.Collections
 
                         if (notification != null)
                         {
-                            notification.Text = $"¤w¶×¤J {i + 1} / {collectionCount} ­Ó¹ÏÃĞ¦¬ÂÃ";
+                            notification.Text = $"å·²åŒ¯å…¥ {i + 1} / {collectionCount} å€‹åœ–è­œæ”¶è—";
                             notification.Progress = (float)(i + 1) / collectionCount;
                         }
 
@@ -230,7 +230,7 @@ namespace osu.Game.Collections
         public void DeleteAll()
         {
             Collections.Clear();
-            PostNotification?.Invoke(new ProgressCompletionNotification { Text = "¤w²M°£©Ò¦³¹ÏÃĞ¦¬ÂÃ!" });
+            PostNotification?.Invoke(new ProgressCompletionNotification { Text = "å·²æ¸…é™¤æ‰€æœ‰åœ–è­œæ”¶è—!" });
         }
 
         private readonly object saveLock = new object();

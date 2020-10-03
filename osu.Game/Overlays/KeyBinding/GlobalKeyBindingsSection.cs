@@ -38,7 +38,7 @@ namespace osu.Game.Overlays.KeyBinding
 
         private class InGameKeyBindingsSubsection : KeyBindingsSubsection
         {
-            protected override string Header => "¹CÀ¸¤¤";
+            protected override string Header => "éŠæˆ²ä¸­";
 
             public InGameKeyBindingsSubsection(GlobalActionContainer manager)
                 : base(null)
@@ -49,7 +49,7 @@ namespace osu.Game.Overlays.KeyBinding
 
         private class AudioControlKeyBindingsSubsection : KeyBindingsSubsection
         {
-            protected override string Header => "­µ°T";
+            protected override string Header => "éŸ³è¨Š";
 
             public AudioControlKeyBindingsSubsection(GlobalActionContainer manager)
                 : base(null)

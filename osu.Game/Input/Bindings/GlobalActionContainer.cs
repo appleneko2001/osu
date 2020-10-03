@@ -92,100 +92,100 @@ namespace osu.Game.Input.Bindings
 
     public enum GlobalAction
     {
-        [Description("¤Á´«²á¤Ñ«Ç¹Ï¼h")]
+        [Description("åˆ‡æ›èŠå¤©å®¤åœ–å±¤")]
         ToggleChat,
 
-        [Description("¤Á´«ªÀ°Ï¹Ï¼h")]
+        [Description("åˆ‡æ›ç¤¾å€åœ–å±¤")]
         ToggleSocial,
 
-        [Description("­«³]¿é¤J³]©w")]
+        [Description("é‡è¨­è¼¸å…¥è¨­å®š")]
         ResetInputSettings,
 
-        [Description("¤Á´«¤u¨ãÄæ")]
+        [Description("åˆ‡æ›å·¥å…·æ¬„")]
         ToggleToolbar,
 
-        [Description("¤Á´«³]©w")]
+        [Description("åˆ‡æ›è¨­å®š")]
         ToggleSettings,
 
-        [Description("¤Á´« osu!direct")]
+        [Description("åˆ‡æ› osu!direct")]
         ToggleDirect,
 
-        [Description("¼W¥[­µ¶q")]
+        [Description("å¢åŠ éŸ³é‡")]
         IncreaseVolume,
 
-        [Description("´î¤Ö­µ¶q")]
+        [Description("æ¸›å°‘éŸ³é‡")]
         DecreaseVolume,
 
-        [Description("¤Á´«ÀR­µ")]
+        [Description("åˆ‡æ›éœéŸ³")]
         ToggleMute,
 
         // In-Game Keybindings
-        [Description("²¤¹L¤ù³õ")]
+        [Description("ç•¥éç‰‡å ´")]
         SkipCutscene,
 
-        [Description("§Ö³t­«·s¶}©l («ö¦í)")]
+        [Description("å¿«é€Ÿé‡æ–°é–‹å§‹ (æŒ‰ä½)")]
         QuickRetry,
 
-        [Description("ºI¹Ï")]
+        [Description("æˆªåœ–")]
         TakeScreenshot,
 
-        [Description("¤Á´«¹CÀ¸¤¤·Æ¹««öÁä")]
+        [Description("åˆ‡æ›éŠæˆ²ä¸­æ»‘é¼ æŒ‰éµ")]
         ToggleGameplayMouseButtons,
 
-        [Description("ªğ¦^")]
+        [Description("è¿”å›")]
         Back,
 
-        [Description("¼W¥[ºu°Ê³t«×")]
+        [Description("å¢åŠ æ»¾å‹•é€Ÿåº¦")]
         IncreaseScrollSpeed,
 
-        [Description("´î¤Öºu°Ê³t«×")]
+        [Description("æ¸›å°‘æ»¾å‹•é€Ÿåº¦")]
         DecreaseScrollSpeed,
 
-        [Description("¿ï¾Ü")]
+        [Description("é¸æ“‡")]
         Select,
 
-        [Description("§Ö³t°h¥X («ö¦í)")]
+        [Description("å¿«é€Ÿé€€å‡º (æŒ‰ä½)")]
         QuickExit,
 
         // Game-wide beatmap music controller keybindings
-        [Description("¤U¤@­º")]
+        [Description("ä¸‹ä¸€é¦–")]
         MusicNext,
 
-        [Description("¤W¤@­º")]
+        [Description("ä¸Šä¸€é¦–")]
         MusicPrev,
 
-        [Description("¼½©ñ / ¼È°±")]
+        [Description("æ’­æ”¾ / æš«åœ")]
         MusicPlay,
 
-        [Description("¤Á´«¥¿¦b¼½©ñ¹Ï¼h")]
+        [Description("åˆ‡æ›æ­£åœ¨æ’­æ”¾åœ–å±¤")]
         ToggleNowPlaying,
 
-        [Description("¿ï¾Ü¤W¤@­Ó")]
+        [Description("é¸æ“‡ä¸Šä¸€å€‹")]
         SelectPrevious,
 
-        [Description("¿ï¾Ü¤U¤@­Ó")]
+        [Description("é¸æ“‡ä¸‹ä¸€å€‹")]
         SelectNext,
 
-        [Description("¥D­¶")]
+        [Description("ä¸»é ")]
         Home,
 
-        [Description("¤Á´«³qª¾")]
+        [Description("åˆ‡æ›é€šçŸ¥")]
         ToggleNotifications,
 
-        [Description("¹CÀ¸¼È°±")]
+        [Description("éŠæˆ²æš«åœ")]
         PauseGameplay,
 
         // Editor
-        [Description("³]©w¼Ò¦¡")]
+        [Description("è¨­å®šæ¨¡å¼")]
         EditorSetupMode,
 
-        [Description("§@¦±¼Ò¦¡")]
+        [Description("ä½œæ›²æ¨¡å¼")]
         EditorComposeMode,
 
-        [Description("³]­p¼Ò¦¡")]
+        [Description("è¨­è¨ˆæ¨¡å¼")]
         EditorDesignMode,
 
-        [Description("®Õ®É¼Ò¦¡")] // [RequestImprove] ­ì¤å¬OTiming mode ¤£ª¾¹D­n«ç»ò¥¿½TÂ½Ä¶´N¥á¨ìGoogle translate¬d¤F¤@¤U ¥i¯à¦³ÂI¤£¹ï ­Ó¤Hªº²z¸ÑÀ³¸Ó¬O®É¶¡¶b ¦ı¬O·N¸q¦³ÂI¤£¤Ó·Ç½T
+        [Description("æ ¡æ™‚æ¨¡å¼")] // [RequestImprove] åŸæ–‡æ˜¯Timing mode ä¸çŸ¥é“è¦æ€éº¼æ­£ç¢ºç¿»è­¯å°±ä¸Ÿåˆ°Google translateæŸ¥äº†ä¸€ä¸‹ å¯èƒ½æœ‰é»ä¸å° å€‹äººçš„ç†è§£æ‡‰è©²æ˜¯æ™‚é–“è»¸ ä½†æ˜¯æ„ç¾©æœ‰é»ä¸å¤ªæº–ç¢º
         EditorTimingMode,
     }
 }

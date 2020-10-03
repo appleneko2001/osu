@@ -15,7 +15,7 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModHidden : Mod, IReadFromConfig, IApplicableToDrawableHitObjects, IApplicableToScoreProcessor
     {
-        public override string Name => "ÁôÂÃ¼Ò¦¡";
+        public override string Name => "éš±è—æ¨¡å¼";
         public override string Acronym => "HD";
         public override IconUsage? Icon => OsuIcon.ModHidden;
         public override ModType Type => ModType.DifficultyIncrease;

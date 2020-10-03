@@ -20,7 +20,7 @@ namespace osu.Game.Screens.Menu
 
         public StorageErrorDialog(OsuStorage storage, OsuStorageError error)
         {
-            HeaderText = "osu! Àx¦s¿ù»~";
+            HeaderText = "osu! å„²å­˜éŒ¯èª¤";
             Icon = FontAwesome.Solid.ExclamationTriangle;
 
             var buttons = new List<PopupDialogButton>();
@@ -28,13 +28,13 @@ namespace osu.Game.Screens.Menu
             switch (error)
             {
                 case OsuStorageError.NotAccessible:
-                    BodyText = $"«ü©wªº¦ì¸m (\"{storage.CustomStoragePath}\") µLªk³Q³X°İ. ¦pªG¾É¦Vªº¥Ø¿ı¬O¥~¸mµwºĞ, ½Ğ³s±µ«á¦A¸Õ¤@¦¸.";
+                    BodyText = $"æŒ‡å®šçš„ä½ç½® (\"{storage.CustomStoragePath}\") ç„¡æ³•è¢«è¨ªå•. å¦‚æœå°å‘çš„ç›®éŒ„æ˜¯å¤–ç½®ç¡¬ç¢Ÿ, è«‹é€£æ¥å¾Œå†è©¦ä¸€æ¬¡.";
 
                     buttons.AddRange(new PopupDialogButton[]
                     {
                         new PopupDialogCancelButton
                         {
-                            Text = "¦A¸Õ¤@¦¸",
+                            Text = "å†è©¦ä¸€æ¬¡",
                             Action = () =>
                             {
                                 if (!storage.TryChangeToCustomStorage(out var nextError))
@@ -43,29 +43,29 @@ namespace osu.Game.Screens.Menu
                         },
                         new PopupDialogCancelButton
                         {
-                            Text = "¥ı¥ÎÀq»{¦ì¸m ª½¨ì¤U¤@¦¸¶}©l¹CÀ¸",
+                            Text = "å…ˆç”¨é»˜èªä½ç½® ç›´åˆ°ä¸‹ä¸€æ¬¡é–‹å§‹éŠæˆ²",
                         },
                         new PopupDialogOkButton
                         {
-                            Text = "´_­ìÀq»{¦ì¸m",
+                            Text = "å¾©åŸé»˜èªä½ç½®",
                             Action = storage.ResetCustomStoragePath
                         },
                     });
                     break;
 
                 case OsuStorageError.AccessibleButEmpty:
-                    BodyText = $"«ü©wªº¦ì¸m (\"{storage.CustomStoragePath}\") ¤w¸g¤@µL©Ò¦³, ¦pªG§â¥L­ÌÂà²¾¨ì¨ä¥L¦ì¸m¤F, Ãö³¬ osu! §â¥L­ÌÂà²¾¦^¨Ó«á¦A¸Õ.";
+                    BodyText = $"æŒ‡å®šçš„ä½ç½® (\"{storage.CustomStoragePath}\") å·²ç¶“ä¸€ç„¡æ‰€æœ‰, å¦‚æœæŠŠä»–å€‘è½‰ç§»åˆ°å…¶ä»–ä½ç½®äº†, é—œé–‰ osu! æŠŠä»–å€‘è½‰ç§»å›ä¾†å¾Œå†è©¦.";
 
                     // Todo: Provide the option to search for the files similar to migration.
                     buttons.AddRange(new PopupDialogButton[]
                     {
                         new PopupDialogCancelButton
                         {
-                            Text = "¦b·í«e¦ì¸m­«·s¶}©l"
+                            Text = "åœ¨ç•¶å‰ä½ç½®é‡æ–°é–‹å§‹"
                         },
                         new PopupDialogOkButton
                         {
-                            Text = "´_­ìÀq»{¦ì¸m",
+                            Text = "å¾©åŸé»˜èªä½ç½®",
                             Action = storage.ResetCustomStoragePath
                         },
                     });

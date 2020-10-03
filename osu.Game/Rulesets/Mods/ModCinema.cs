@@ -24,10 +24,10 @@ namespace osu.Game.Rulesets.Mods
 
     public class ModCinema : ModAutoplay, IApplicableToHUD, IApplicableToPlayer
     {
-        public override string Name => "¼v°|¼Ò¦¡";
+        public override string Name => "å½±é™¢æ¨¡å¼";
         public override string Acronym => "CN";
         public override IconUsage? Icon => OsuIcon.ModCinema;
-        public override string Description => "Æ[¬İ¼v¤ù®É¤£·|¦³µøÄ±¤zÂZ.";
+        public override string Description => "è§€çœ‹å½±ç‰‡æ™‚ä¸æœƒæœ‰è¦–è¦ºå¹²æ“¾.";
 
         public void ApplyToHUD(HUDOverlay overlay)
         {

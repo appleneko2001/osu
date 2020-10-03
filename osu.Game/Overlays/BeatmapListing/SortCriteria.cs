@@ -7,19 +7,19 @@ namespace osu.Game.Overlays.BeatmapListing
 {
     public enum SortCriteria
     {
-        [Description("¼ĞÃD")]
+        [Description("æ¨™é¡Œ")]
         Title,
-        [Description("ºt¥XªÌ")]
+        [Description("æ¼”å‡ºè€…")]
         Artist,
-        [Description("Ãø«×")]
+        [Description("é›£åº¦")]
         Difficulty,
-        [Description("¤w¶iº]")]
+        [Description("å·²é€²æ¦œ")]
         Ranked,
-        [Description("µû¤À")]
+        [Description("è©•åˆ†")]
         Rating,
-        [Description("¹Cª±¦¸¼Æ")]
+        [Description("éŠç©æ¬¡æ•¸")]
         Plays,
-        [Description("³ßÅw")]
+        [Description("å–œæ­¡")]
         Favourites,
         Relevance // [RequestImprove]
     }

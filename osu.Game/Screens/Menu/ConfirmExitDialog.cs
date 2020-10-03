@@ -11,8 +11,8 @@ namespace osu.Game.Screens.Menu
     {
         public ConfirmExitDialog(Action confirm, Action cancel)
         {
-            HeaderText = "­n·Ç³ÆÂ÷¶}¤F¶Ü ?";
-            BodyText = "ÁÙ¦³¾÷·|§ïÅÜ¥D·N!";
+            HeaderText = "è¦æº–å‚™é›¢é–‹äº†å— ?";
+            BodyText = "é‚„æœ‰æ©Ÿæœƒæ”¹è®Šä¸»æ„!";
 
             Icon = FontAwesome.Solid.ExclamationTriangle;
 
@@ -20,12 +20,12 @@ namespace osu.Game.Screens.Menu
             {
                 new PopupDialogOkButton
                 {
-                    Text = @"¦A¨£",
+                    Text = @"å†è¦‹",
                     Action = confirm
                 },
                 new PopupDialogCancelButton
                 {
-                    Text = @"·Q¦A°±¯d¤@·|",
+                    Text = @"æƒ³å†åœç•™ä¸€æœƒ",
                     Action = cancel
                 },
             };

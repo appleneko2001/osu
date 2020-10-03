@@ -12,8 +12,8 @@ namespace osu.Game.Collections
     {
         public DeleteCollectionDialog(BeatmapCollection collection, Action deleteAction)
         {
-            HeaderText = "½T»{§R°£¦¬ÂÃ";
-            BodyText = $"{collection.Name.Value} ({collection.Beatmaps.Count} ­Ó¹ÏÃĞ)"; // {"beatmap".ToQuantity(collection.Beatmaps.Count)}
+            HeaderText = "ç¢ºèªåˆªé™¤æ”¶è—";
+            BodyText = $"{collection.Name.Value} ({collection.Beatmaps.Count} å€‹åœ–è­œ)"; // {"beatmap".ToQuantity(collection.Beatmaps.Count)}
 
             Icon = FontAwesome.Regular.TrashAlt;
 
@@ -21,12 +21,12 @@ namespace osu.Game.Collections
             {
                 new PopupDialogOkButton
                 {
-                    Text = @"¬Oªº, ¥h§a!",
+                    Text = @"æ˜¯çš„, å»å§!",
                     Action = deleteAction
                 },
                 new PopupDialogCancelButton
                 {
-                    Text = @"¤£­n! ¨ú®ø¥ô°È!",
+                    Text = @"ä¸è¦! å–æ¶ˆä»»å‹™!",
                 },
             };
         }

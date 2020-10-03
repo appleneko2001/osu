@@ -15,12 +15,12 @@ namespace osu.Game.Rulesets.Mania.Mods
 {
     public class ManiaModInvert : Mod, IApplicableAfterBeatmapConversion
     {
-        public override string Name => "­Ë¸m"; // [RequestImprove]
+        public override string Name => "å€’ç½®"; // [RequestImprove]
 
         public override string Acronym => "IN";
         public override double ScoreMultiplier => 1;
 
-        public override string Description => "¸òÀH¸`«ß«ö¦í«öÁä.";
+        public override string Description => "è·Ÿéš¨ç¯€å¾‹æŒ‰ä½æŒ‰éµ.";
 
         public override IconUsage? Icon => FontAwesome.Solid.YinYang;
 

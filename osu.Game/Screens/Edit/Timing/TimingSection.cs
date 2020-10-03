@@ -27,7 +27,7 @@ namespace osu.Game.Screens.Edit.Timing
                 bpmSlider = new BPMSlider(),
                 timeSignature = new SettingsEnumDropdown<TimeSignatures>
                 {
-                    LabelText = "¸`©çÃş«¬" //Time Signature
+                    LabelText = "ç¯€æ‹é¡å‹" //Time Signature
                 },
             });
         }

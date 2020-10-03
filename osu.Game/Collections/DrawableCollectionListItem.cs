@@ -103,7 +103,7 @@ namespace osu.Game.Collections
                                 Size = Vector2.One,
                                 CornerRadius = item_height / 2,
                                 Current = collection.Name,
-                                PlaceholderText = IsCreated.Value ? string.Empty : "·s¼W¤@­Ó¦¬ÂÃ"
+                                PlaceholderText = IsCreated.Value ? string.Empty : "æ–°å¢ä¸€å€‹æ”¶è—"
                             },
                         }
                     },

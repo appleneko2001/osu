@@ -10,11 +10,11 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModHardRock : Mod, IApplicableToDifficulty
     {
-        public override string Name => "°ªÃø¼Ò¦¡";
+        public override string Name => "é«˜é›£æ¨¡å¼";
         public override string Acronym => "HR";
         public override IconUsage? Icon => OsuIcon.ModHardrock;
         public override ModType Type => ModType.DifficultyIncrease;
-        public override string Description => "¤@¤Á³£·|ÅÜÃø...";
+        public override string Description => "ä¸€åˆ‡éƒ½æœƒè®Šé›£...";
         public override Type[] IncompatibleMods => new[] { typeof(ModEasy), typeof(ModDifficultyAdjust) };
 
         public void ReadFromDifficulty(BeatmapDifficulty difficulty)

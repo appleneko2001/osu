@@ -13,9 +13,9 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModDifficultyAdjust : Mod, IApplicableToDifficulty
     {
-        public override string Name => @"Ãø«×½Õ¾ã";
+        public override string Name => @"é›£åº¦èª¿æ•´";
 
-        public override string Description => @"ÂÐ»\¹ÏÃÐ­ì¥»ªºÃø«×³]©w.";
+        public override string Description => @"è¦†è“‹åœ–è­œåŽŸæœ¬çš„é›£åº¦è¨­å®š.";
 
         public override string Acronym => "DA";
 

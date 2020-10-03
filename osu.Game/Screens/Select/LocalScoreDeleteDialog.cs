@@ -35,17 +35,17 @@ namespace osu.Game.Screens.Select
             BodyText = $"{score.User} ({score.DisplayAccuracy}, {score.Rank})";
 
             Icon = FontAwesome.Regular.TrashAlt;
-            HeaderText = "½T»{²M²z¥»¦a¦¨ÁZ";
+            HeaderText = "ç¢ºèªæ¸…ç†æœ¬åœ°æˆç¸¾";
             Buttons = new PopupDialogButton[]
             {
                 new PopupDialogOkButton
                 {
-                    Text = "¬Oªº, ³Â·Ğ¤F.",
+                    Text = "æ˜¯çš„, éº»ç…©äº†.",
                     Action = () => scoreManager?.Delete(score)
                 },
                 new PopupDialogCancelButton
                 {
-                    Text = "¤£­n, §Ú¨Ì¨Ì¤£±Ë.",
+                    Text = "ä¸è¦, æˆ‘ä¾ä¾ä¸æ¨.",
                 },
             };
         }

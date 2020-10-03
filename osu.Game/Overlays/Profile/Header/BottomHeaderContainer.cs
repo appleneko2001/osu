@@ -78,10 +78,10 @@ namespace osu.Game.Overlays.Profile.Header
             if (user == null) return;
 
             if (user.JoinDate.ToUniversalTime().Year < 2008)
-                topLinkContainer.AddText("±q osu! ¤@¥X¥Í´N¥[¤J¤F");
+                topLinkContainer.AddText("å¾ osu! ä¸€å‡ºç”Ÿå°±åŠ å…¥äº†");
             else
             {
-                topLinkContainer.AddText("¤w¥[¤J ");
+                topLinkContainer.AddText("å·²åŠ å…¥ ");
                 topLinkContainer.AddText(new DrawableDate(user.JoinDate, italic: false), embolden);
             }
 
@@ -89,12 +89,12 @@ namespace osu.Game.Overlays.Profile.Header
 
             if (user.IsOnline)
             {
-                topLinkContainer.AddText("·í«e¦b½u");
+                topLinkContainer.AddText("ç•¶å‰åœ¨ç·š");
                 addSpacer(topLinkContainer);
             }
             else if (user.LastVisit.HasValue)
             {
-                topLinkContainer.AddText("¤W¦¸¦b½u ");
+                topLinkContainer.AddText("ä¸Šæ¬¡åœ¨ç·š ");
                 topLinkContainer.AddText(new DrawableDate(user.LastVisit.Value, italic: false), embolden);
 
                 addSpacer(topLinkContainer);
@@ -102,14 +102,14 @@ namespace osu.Game.Overlays.Profile.Header
 
             if (user.PlayStyles?.Length > 0)
             {
-                topLinkContainer.AddText("¨Ï¥Î ");
+                topLinkContainer.AddText("ä½¿ç”¨ ");
                 topLinkContainer.AddText(string.Join(", ", user.PlayStyles.Select(style => style.GetDescription())), embolden);
-                topLinkContainer.AddText(" ³]³Æ¹Cª±");
+                topLinkContainer.AddText(" è¨­å‚™éŠç©");
                 addSpacer(topLinkContainer);
             }
 
-            topLinkContainer.AddText("¤wµoªí ");
-            topLinkContainer.AddLink($@"{user.PostCount:#,##0} ­Ó½×¾Âpo¤å", $"https://osu.ppy.sh/users/{user.Id}/posts", creationParameters: embolden);
+            topLinkContainer.AddText("å·²ç™¼è¡¨ ");
+            topLinkContainer.AddLink($@"{user.PostCount:#,##0} å€‹è«–å£‡poæ–‡", $"https://osu.ppy.sh/users/{user.Id}/posts", creationParameters: embolden);
 
             string websiteWithoutProtocol = user.Website;
 

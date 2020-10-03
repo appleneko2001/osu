@@ -25,7 +25,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
 
         public LevelProgressBar()
         {
-            TooltipText = "¨ì¤U¤@­Óµ¥¯Å©Ò»Ý¶i«×";
+            TooltipText = "åˆ°ä¸‹ä¸€å€‹ç­‰ç´šæ‰€éœ€é€²åº¦";
         }
 
         [BackgroundDependencyLoader]

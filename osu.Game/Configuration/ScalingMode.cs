@@ -7,16 +7,16 @@ namespace osu.Game.Configuration
 {
     public enum ScalingMode
     {
-        [Description("Ãö³¬")]
+        [Description("é—œé–‰")]
         Off,
 
-        [Description("©Ò¦³")]
+        [Description("æ‰€æœ‰")]
         Everything,
 
-        [Description("°£¹Ï¼h")]
+        [Description("é™¤åœ–å±¤")]
         ExcludeOverlays,
 
-        [Description("¹CÀ¸¤¤")]
+        [Description("éŠæˆ²ä¸­")]
         Gameplay
     }
 }

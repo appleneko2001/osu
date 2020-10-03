@@ -11,13 +11,13 @@ namespace osu.Game.Rulesets.Mods
 {
     public class ModWindUp : ModTimeRamp
     {
-        public override string Name => "Wind Up";  // [RequestImprove] ¸òWind Down¬O¤@­Ó±¡ªp ¤£ª¾¹D«ç»òÂ½Ä¶¤ñ¸û¦n 
+        public override string Name => "Wind Up";  // [RequestImprove] è·ŸWind Downæ˜¯ä¸€å€‹æƒ…æ³ ä¸çŸ¥é“æ€éº¼ç¿»è­¯æ¯”è¼ƒå¥½ 
         public override string Acronym => "WU";
-        public override string Description => "§A/©p¯à¸ò¤W¸`«µ¶Ü?";
+        public override string Description => "ä½ /å¦³èƒ½è·Ÿä¸Šç¯€å¥å—?";
         public override IconUsage? Icon => FontAwesome.Solid.ChevronCircleUp;
         public override double ScoreMultiplier => 1.0;
 
-        [SettingSource("°ò¥»³t«×", "¦±¥Øªº°_©l³t«×")]
+        [SettingSource("åŸºæœ¬é€Ÿåº¦", "æ›²ç›®çš„èµ·å§‹é€Ÿåº¦")]
         public override BindableNumber<double> InitialRate { get; } = new BindableDouble
         {
             MinValue = 0.5,
@@ -27,7 +27,7 @@ namespace osu.Game.Rulesets.Mods
             Precision = 0.01,
         };
 
-        [SettingSource("³Ì¤j³t«×", "³Ì¤j³t«×ªº­­¨î")]
+        [SettingSource("æœ€å¤§é€Ÿåº¦", "æœ€å¤§é€Ÿåº¦çš„é™åˆ¶")]
         public override BindableNumber<double> FinalRate { get; } = new BindableDouble
         {
             MinValue = 1.01,
@@ -37,7 +37,7 @@ namespace osu.Game.Rulesets.Mods
             Precision = 0.01,
         };
 
-        [SettingSource("½Õ¾ã­µ°ª", "­µ°ª¬O§_¸ò³t«×¤@°_ÅÜ¤Æ")]
+        [SettingSource("èª¿æ•´éŸ³é«˜", "éŸ³é«˜æ˜¯å¦è·Ÿé€Ÿåº¦ä¸€èµ·è®ŠåŒ–")]
         public override BindableBool AdjustPitch { get; } = new BindableBool
         {
             Default = true,

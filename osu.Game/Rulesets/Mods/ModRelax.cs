@@ -9,7 +9,7 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModRelax : ModBlockFail
     {
-        public override string Name => "©ñÃP¼Ò¦¡";
+        public override string Name => "æ”¾é¬†æ¨¡å¼";
         public override string Acronym => "RX";
         public override IconUsage? Icon => OsuIcon.ModRelax;
         public override ModType Type => ModType.Automation;

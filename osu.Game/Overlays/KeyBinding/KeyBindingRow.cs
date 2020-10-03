@@ -334,7 +334,7 @@ namespace osu.Game.Overlays.KeyBinding
         {
             public CancelButton()
             {
-                Text = "®˙Æ¯";
+                Text = "ÂèñÊ∂à";
                 Size = new Vector2(80, 20);
             }
         }
@@ -343,7 +343,7 @@ namespace osu.Game.Overlays.KeyBinding
         {
             public ClearButton()
             {
-                Text = "≤M∞£";
+                Text = "Ê∏ÖÈô§";
                 Size = new Vector2(80, 20);
             }
 

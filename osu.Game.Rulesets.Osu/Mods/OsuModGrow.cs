@@ -9,15 +9,15 @@ namespace osu.Game.Rulesets.Osu.Mods
 {
     internal class OsuModGrow : OsuModObjectScaleTween
     {
-        public override string Name => "±q¤pÅÜ¤j";
+        public override string Name => "å¾å°è®Šå¤§";
 
         public override string Acronym => "GR";
 
         public override IconUsage? Icon => FontAwesome.Solid.ArrowsAltV;
 
-        public override string Description => "¥H¥¿½Tªº¶ê°é¤j¤p¥´À»!";
+        public override string Description => "ä»¥æ­£ç¢ºçš„åœ“åœˆå¤§å°æ‰“æ“Š!";
 
-        [SettingSource("¶}©l¤j¤p", "ªì©l¤j¤p­¼¼Æ±NÀ³¥Î©ó©Ò¦³ª«¥ó.")]
+        [SettingSource("é–‹å§‹å¤§å°", "åˆå§‹å¤§å°ä¹˜æ•¸å°‡æ‡‰ç”¨æ–¼æ‰€æœ‰ç‰©ä»¶.")]
         public override BindableNumber<float> StartScale { get; } = new BindableFloat
         {
             MinValue = 0f,

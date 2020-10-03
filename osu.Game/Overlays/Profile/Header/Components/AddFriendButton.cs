@@ -17,7 +17,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
     {
         public readonly Bindable<User> User = new Bindable<User>();
 
-        public override string TooltipText => "¦n¤Í";
+        public override string TooltipText => "å¥½å‹";
 
         private OsuSpriteText followerText;
 

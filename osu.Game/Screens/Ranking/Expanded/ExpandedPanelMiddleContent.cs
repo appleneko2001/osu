@@ -168,7 +168,7 @@ namespace osu.Game.Screens.Ranking.Expanded
                                     {
                                         if (!string.IsNullOrEmpty(creator))
                                         {
-                                            t.AddText("°µ¹ÏªÌ: ");
+                                            t.AddText("åšåœ–è€…: ");
                                             t.AddText(creator, s => s.Font = s.Font.With(weight: FontWeight.SemiBold));
                                         }
                                     })

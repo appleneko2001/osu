@@ -69,7 +69,7 @@ namespace osu.Desktop.Updater
                 }
 
                 notification.Progress = 0;
-                notification.Text = @"¤U¸ü§ó·s¤¤...";
+                notification.Text = @"ä¸‹è¼‰æ›´æ–°ä¸­...";
 
                 try
                 {
@@ -81,7 +81,7 @@ namespace osu.Desktop.Updater
                     cancellation.ThrowIfCancellationRequested();
 
                     notification.Progress = 0;
-                    notification.Text = @"¥¿¦b¦w¸Ë...";
+                    notification.Text = @"æ­£åœ¨å®‰è£...";
 
                     await updateManager.ApplyReleases(info, p => notification.Progress = p / 100f);
 
@@ -89,7 +89,7 @@ namespace osu.Desktop.Updater
                 }
                 catch (OperationCanceledException)
                 {
-                    notification.Text = "§ó·s¤w¨ú®ø.";
+                    notification.Text = "æ›´æ–°å·²å–æ¶ˆ.";
                     notification.State = ProgressNotificationState.Cancelled;
                     Logger.Log($"Update cancelled by user.", LoggingTarget.Runtime, Framework.Logging.LogLevel.Verbose);
                 }
@@ -145,7 +145,7 @@ namespace osu.Desktop.Updater
             {
                 return new ProgressCompletionNotification
                 {
-                    Text = @"§ó·s¤w¦w¸Ë, ÂIÀ»­«·s±Ò°Ê¹CÀ¸!",
+                    Text = @"æ›´æ–°å·²å®‰è£, é»žæ“Šé‡æ–°å•Ÿå‹•éŠæˆ²!",
                     Activated = () =>
                     {
                         updateManager.PrepareUpdateAsync()

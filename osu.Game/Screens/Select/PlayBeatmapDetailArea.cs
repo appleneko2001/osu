@@ -141,7 +141,7 @@ namespace osu.Game.Screens.Select
 
         public enum TabType
         {
-            [Description("¹ÏÃÐ¸ê°T")]
+            [Description("åœ–è­œè³‡è¨Š")]
             Details,
             Local,
             Country,

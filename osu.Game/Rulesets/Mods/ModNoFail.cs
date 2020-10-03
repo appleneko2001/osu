@@ -9,11 +9,11 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModNoFail : ModBlockFail
     {
-        public override string Name => "µL¥¢±Ñ";
+        public override string Name => "ç„¡å¤±æ•—";
         public override string Acronym => "NF";
         public override IconUsage? Icon => OsuIcon.ModNofail;
         public override ModType Type => ModType.DifficultyReduction;
-        public override string Description => "¨S¦³¤°»ò¬O¤ñ¹CÀ¸¹Lµ{¤¤Á×§K \"¬ðµM¦º±¼\" §ó¦nªº¤F";
+        public override string Description => "æ²’æœ‰ä»€éº¼æ˜¯æ¯”éŠæˆ²éŽç¨‹ä¸­é¿å… \"çªç„¶æ­»æŽ‰\" æ›´å¥½çš„äº†";
         public override double ScoreMultiplier => 0.5;
         public override bool Ranked => true;
         public override Type[] IncompatibleMods => new[] { typeof(ModRelax), typeof(ModSuddenDeath), typeof(ModAutoplay) };

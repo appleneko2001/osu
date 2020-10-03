@@ -11,7 +11,7 @@ namespace osu.Game.Screens.Edit
     {
         public PromptForSaveDialog(Action exit, Action saveAndExit)
         {
-            HeaderText = "­nÀx¦s¹ï¹ÏÃĞªºÅÜ°Ê¶Ü?";
+            HeaderText = "è¦å„²å­˜å°åœ–è­œçš„è®Šå‹•å—?";
 
             Icon = FontAwesome.Regular.Save;
 
@@ -19,17 +19,17 @@ namespace osu.Game.Screens.Edit
             {
                 new PopupDialogCancelButton
                 {
-                    Text = @"Àx¦s§Úªº³Ç§@!",
+                    Text = @"å„²å­˜æˆ‘çš„å‚‘ä½œ!",
                     Action = saveAndExit
                 },
                 new PopupDialogOkButton
                 {
-                    Text = @"§Ñ±¼©Ò¦³ÅÜ°Ê",
+                    Text = @"å¿˜æ‰æ‰€æœ‰è®Šå‹•",
                     Action = exit
                 },
                 new PopupDialogCancelButton
                 {
-                    Text = @"©êºp, §Ú·QÄ~Äò°µ¹Ï",
+                    Text = @"æŠ±æ­‰, æˆ‘æƒ³ç¹¼çºŒåšåœ–",
                 },
             };
         }

@@ -14,7 +14,7 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModEasy : Mod, IApplicableToDifficulty, IApplicableFailOverride, IApplicableToHealthProcessor
     {
-        public override string Name => "Â²³æ¼Ò¦¡";
+        public override string Name => "ç°¡å–®æ¨¡å¼";
         public override string Acronym => "EZ";
         public override IconUsage? Icon => OsuIcon.ModEasy;
         public override ModType Type => ModType.DifficultyReduction;
@@ -22,14 +22,14 @@ namespace osu.Game.Rulesets.Mods
         public override bool Ranked => true;
         public override Type[] IncompatibleMods => new[] { typeof(ModHardRock), typeof(ModDifficultyAdjust) };
 
-        [SettingSource("¾÷·|¼Æ¶q", "µ¹¤©Á`­«¥Í¾÷·|ªº¦¸¼Æ")]
+        [SettingSource("æ©Ÿæœƒæ•¸é‡", "çµ¦äºˆç¸½é‡ç”Ÿæ©Ÿæœƒçš„æ¬¡æ•¸")]
         public Bindable<int> Retries { get; } = new BindableInt(2)
         {
             MinValue = 0,
             MaxValue = 10
         };
 
-        public override string SettingDescription => Retries.IsDefault ? string.Empty : $"{"¾÷·|".ToQuantity(Retries.Value)}";
+        public override string SettingDescription => Retries.IsDefault ? string.Empty : $"{"æ©Ÿæœƒ".ToQuantity(Retries.Value)}";
 
         private int retries;
 

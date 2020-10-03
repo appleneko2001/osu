@@ -126,7 +126,7 @@ namespace osu.Game.Screens.Select.Carousel
                                         },
                                         new OsuSpriteText
                                         {
-                                            Text = "∞µπœ™Ã:",
+                                            Text = "ÂÅöÂúñËÄÖ:",
                                             Anchor = Anchor.BottomLeft,
                                             Origin = Anchor.BottomLeft
                                         },
@@ -216,25 +216,25 @@ namespace osu.Game.Screens.Select.Carousel
                 List<MenuItem> items = new List<MenuItem>();
 
                 if (startRequested != null)
-                    items.Add(new OsuMenuItem("πC™±", MenuItemType.Highlighted, () => startRequested(beatmap)));
+                    items.Add(new OsuMenuItem("ÈÅäÁé©", MenuItemType.Highlighted, () => startRequested(beatmap)));
 
                 if (editRequested != null)
-                    items.Add(new OsuMenuItem("ΩsøË", MenuItemType.Standard, () => editRequested(beatmap)));
+                    items.Add(new OsuMenuItem("Á∑®ËºØ", MenuItemType.Standard, () => editRequested(beatmap)));
 
                 if (beatmap.OnlineBeatmapID.HasValue && beatmapOverlay != null)
-                    items.Add(new OsuMenuItem("∏Í∞T...", MenuItemType.Standard, () => beatmapOverlay.FetchAndShowBeatmap(beatmap.OnlineBeatmapID.Value)));
+                    items.Add(new OsuMenuItem("Ë≥áË®ä...", MenuItemType.Standard, () => beatmapOverlay.FetchAndShowBeatmap(beatmap.OnlineBeatmapID.Value)));
 
                 if (collectionManager != null)
                 {
                     var collectionItems = collectionManager.Collections.Select(createCollectionMenuItem).ToList();
                     if (manageCollectionsDialog != null)
-                        collectionItems.Add(new OsuMenuItem("∫ﬁ≤z¶¨¬√...", MenuItemType.Standard, manageCollectionsDialog.Show));
+                        collectionItems.Add(new OsuMenuItem("ÁÆ°ÁêÜÊî∂Ëóè...", MenuItemType.Standard, manageCollectionsDialog.Show));
 
-                    items.Add(new OsuMenuItem("¶¨¬√") { Items = collectionItems });
+                    items.Add(new OsuMenuItem("Êî∂Ëóè") { Items = collectionItems });
                 }
 
                 if (hideRequested != null)
-                    items.Add(new OsuMenuItem("¡Ù¬√", MenuItemType.Destructive, () => hideRequested(beatmap)));
+                    items.Add(new OsuMenuItem("Èö±Ëóè", MenuItemType.Destructive, () => hideRequested(beatmap)));
 
                 return items.ToArray();
             }

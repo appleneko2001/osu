@@ -84,7 +84,7 @@ namespace osu.Game.Updater
             public UpdateCompleteNotification(string version)
             {
                 this.version = version;
-                Text = $"¥¿¦b¹Cª±ªº¬O osu!lazer {version}.\nÂIÀ»¬d¬İ¥»¦¸§ó·sªºÅÜ°Ê!";
+                Text = $"æ­£åœ¨éŠç©çš„æ˜¯ osu!lazer {version}.\né»æ“ŠæŸ¥çœ‹æœ¬æ¬¡æ›´æ–°çš„è®Šå‹•!";
             }
 
             [BackgroundDependencyLoader]

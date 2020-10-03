@@ -275,10 +275,10 @@ namespace osu.Game.Screens.Select
                 Footer.AddButton(new FooterButtonRandom { Action = triggerRandom });
                 Footer.AddButton(new FooterButtonOptions(), BeatmapOptions);
 
-                BeatmapOptions.AddButton(@"ºÞ²z", @"¹ÏÃÐ¦¬ÂÃ", FontAwesome.Solid.Book, colours.Green, () => manageCollectionsDialog?.Show());
-                BeatmapOptions.AddButton(@"§R°£", @"©Ò¦³Ãø«×", FontAwesome.Solid.Trash, colours.Pink, () => delete(Beatmap.Value.BeatmapSetInfo));
-                BeatmapOptions.AddButton(@"Remove", @"from unplayed", FontAwesome.Regular.TimesCircle, colours.Purple, null); // ¸Ó¥\¯à©x¤èª©¥»¼È®É¨S¦³¹ê²{ ©Ò¥H¼È®É¤£·|Â½Ä¶³oùØ
-                BeatmapOptions.AddButton(@"²M°£", @"¥»¦a¦¨ÁZ", FontAwesome.Solid.Eraser, colours.Purple, () => clearScores(Beatmap.Value.BeatmapInfo));
+                BeatmapOptions.AddButton(@"ç®¡ç†", @"åœ–è­œæ”¶è—", FontAwesome.Solid.Book, colours.Green, () => manageCollectionsDialog?.Show());
+                BeatmapOptions.AddButton(@"åˆªé™¤", @"æ‰€æœ‰é›£åº¦", FontAwesome.Solid.Trash, colours.Pink, () => delete(Beatmap.Value.BeatmapSetInfo));
+                BeatmapOptions.AddButton(@"Remove", @"from unplayed", FontAwesome.Regular.TimesCircle, colours.Purple, null); // è©²åŠŸèƒ½å®˜æ–¹ç‰ˆæœ¬æš«æ™‚æ²’æœ‰å¯¦ç¾ æ‰€ä»¥æš«æ™‚ä¸æœƒç¿»è­¯é€™è£
+                BeatmapOptions.AddButton(@"æ¸…é™¤", @"æœ¬åœ°æˆç¸¾", FontAwesome.Solid.Eraser, colours.Purple, () => clearScores(Beatmap.Value.BeatmapInfo));
             }
 
             dialogOverlay = dialog;

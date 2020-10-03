@@ -14,7 +14,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
     {
         public readonly BindableBool DetailsVisible = new BindableBool();
 
-        public override string TooltipText => DetailsVisible.Value ? "¦¬°_" : "®i¶}";
+        public override string TooltipText => DetailsVisible.Value ? "æ”¶èµ·" : "å±•é–‹";
 
         private SpriteIcon icon;
 

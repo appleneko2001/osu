@@ -7,7 +7,7 @@ namespace osu.Game.Rulesets.Osu.Mods
 {
     public class OsuModTouchDevice : Mod
     {
-        public override string Name => "¨Ï¥ÎÄ²±±¸Ë¸m";
+        public override string Name => "ä½¿ç”¨è§¸æŽ§è£ç½®";
         public override string Acronym => "TD";
         public override double ScoreMultiplier => 1;
 

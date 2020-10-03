@@ -44,18 +44,18 @@ namespace osu.Game.Overlays.AccountCreation
                         Anchor = Anchor.TopCentre,
                         Origin = Anchor.TopCentre,
                         Font = OsuFont.GetFont(size: 24, weight: FontWeight.Light),
-                        Text = "·sª±®aµù¥U",
+                        Text = "æ–°çŽ©å®¶è¨»å†Š",
                     },
                     new OsuSpriteText
                     {
                         Anchor = Anchor.TopCentre,
                         Origin = Anchor.TopCentre,
                         Font = OsuFont.GetFont(size: 12),
-                        Text = "Åý§Ú­Ì¶}©lµù¥U±b¸¹§a ÄÝ©ó§A/©pªº¿W¤@µL¤Gªº osu! ±b¸¹",
+                        Text = "è®“æˆ‘å€‘é–‹å§‹è¨»å†Šå¸³è™Ÿå§ å±¬æ–¼ä½ /å¦³çš„ç¨ä¸€ç„¡äºŒçš„ osu! å¸³è™Ÿ",
                     },
                     new SettingsButton
                     {
-                        Text = "³Ð«Ø osu! ±b¸¹!",
+                        Text = "å‰µå»º osu! å¸³è™Ÿ!",
                         Margin = new MarginPadding { Vertical = 120 },
                         Action = () => this.Push(new ScreenWarning())
                     }

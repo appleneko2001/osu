@@ -22,7 +22,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
         {
             AutoSizeAxes = Axes.Both;
 
-            TooltipText = "0 ­Ó¤p®É";
+            TooltipText = "0 å€‹å°æ™‚";
         }
 
         [BackgroundDependencyLoader]
@@ -30,7 +30,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
         {
             InternalChild = info = new OverlinedInfoContainer
             {
-                Title = "Á`¹Cª±®É¶¡",
+                Title = "ç¸½éŠç©æ™‚é–“",
                 LineColour = colourProvider.Highlight1,
             };
 
@@ -39,13 +39,13 @@ namespace osu.Game.Overlays.Profile.Header.Components
 
         private void updateTime(ValueChangedEvent<User> user)
         {
-            TooltipText = (user.NewValue?.Statistics?.PlayTime ?? 0) / 3600 + " ­Ó¤p®É";
+            TooltipText = (user.NewValue?.Statistics?.PlayTime ?? 0) / 3600 + " å€‹å°æ™‚";
             info.Content = formatTime(user.NewValue?.Statistics?.PlayTime);
         }
 
         private string formatTime(int? secondsNull)
         {
-            if (secondsNull == null) return "0¤ÀÄÁ";
+            if (secondsNull == null) return "0åˆ†é˜";
 
             int seconds = secondsNull.Value;
             string time = "";
@@ -53,14 +53,14 @@ namespace osu.Game.Overlays.Profile.Header.Components
             int days = seconds / 86400;
             seconds -= days * 86400;
             if (days > 0)
-                time += days + "¤Ñ ";
+                time += days + "å¤© ";
 
             int hours = seconds / 3600;
             seconds -= hours * 3600;
-            time += hours + "¤p®É ";
+            time += hours + "å°æ™‚ ";
 
             int minutes = seconds / 60;
-            time += minutes + "¤ÀÄÁ";
+            time += minutes + "åˆ†é˜";
 
             return time;
         }

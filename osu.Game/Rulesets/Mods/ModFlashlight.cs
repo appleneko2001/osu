@@ -26,11 +26,11 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModFlashlight : Mod
     {
-        public override string Name => "¤â¹q¼Ò¦¡";
+        public override string Name => "æ‰‹é›»æ¨¡å¼";
         public override string Acronym => "FL";
         public override IconUsage? Icon => OsuIcon.ModFlashlight;
         public override ModType Type => ModType.DifficultyIncrease;
-        public override string Description => "¦b¤@¤ù¶Â·t¤§¤¤ ´M¨D\"¶ê°é\".";
+        public override string Description => "åœ¨ä¸€ç‰‡é»‘æš—ä¹‹ä¸­ å°‹æ±‚\"åœ“åœˆ\".";
         public override bool Ranked => true;
 
         internal ModFlashlight()

@@ -12,16 +12,16 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModDoubleTime : ModRateAdjust
     {
-        public override string Name => "¥[³t";
+        public override string Name => "åŠ é€Ÿ";
         public override string Acronym => "DT";
         public override IconUsage? Icon => OsuIcon.ModDoubletime;
         public override ModType Type => ModType.DifficultyIncrease;
-        public override string Description => "¥[³t¥[³t!~~";
+        public override string Description => "åŠ é€ŸåŠ é€Ÿ!~~";
         public override bool Ranked => true;
 
         public override Type[] IncompatibleMods => base.IncompatibleMods.Append(typeof(ModHalfTime)).ToArray();
 
-        [SettingSource("³t«×¥[§Ö", "¹ê»Ú¥[°ªªº³t«×¶q")] // [RequestImprove] The actual increase to apply
+        [SettingSource("é€Ÿåº¦åŠ å¿«", "å¯¦éš›åŠ é«˜çš„é€Ÿåº¦é‡")] // [RequestImprove] The actual increase to apply
         public override BindableNumber<double> SpeedChange { get; } = new BindableDouble
         {
             MinValue = 1.01,

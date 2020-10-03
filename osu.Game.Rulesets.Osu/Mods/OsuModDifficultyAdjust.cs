@@ -11,7 +11,7 @@ namespace osu.Game.Rulesets.Osu.Mods
 {
     public class OsuModDifficultyAdjust : ModDifficultyAdjust
     {
-        [SettingSource("¶ê°é¤j¤p", "ÂĞ»\¹ÏÃĞ­ì¥»ªº CS (Circle Size).", FIRST_SETTING_ORDER - 1)]
+        [SettingSource("åœ“åœˆå¤§å°", "è¦†è“‹åœ–è­œåŸæœ¬çš„ CS (Circle Size).", FIRST_SETTING_ORDER - 1)]
         public BindableNumber<float> CircleSize { get; } = new BindableFloat
         {
             Precision = 0.1f,
@@ -21,7 +21,7 @@ namespace osu.Game.Rulesets.Osu.Mods
             Value = 5,
         };
 
-        [SettingSource("ÁY°é³t«×", "ÂĞ»\¹ÏÃĞ­ì¥»ªº AR (Approach Rate).", LAST_SETTING_ORDER + 1)]
+        [SettingSource("ç¸®åœˆé€Ÿåº¦", "è¦†è“‹åœ–è­œåŸæœ¬çš„ AR (Approach Rate).", LAST_SETTING_ORDER + 1)]
         public BindableNumber<float> ApproachRate { get; } = new BindableFloat
         {
             Precision = 0.1f,

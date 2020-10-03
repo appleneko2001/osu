@@ -18,11 +18,11 @@ namespace osu.Game.Rulesets.Osu.Mods
 {
     public class OsuModSpinIn : Mod, IApplicableToDrawableHitObjects, IReadFromConfig
     {
-        public override string Name => "±Û¤J";
+        public override string Name => "æ—‹å…¥";
         public override string Acronym => "SI";
         public override IconUsage? Icon => FontAwesome.Solid.Undo;
         public override ModType Type => ModType.Fun;
-        public override string Description => "ª«¥ó·|¥H±Û¤Jªº¤è¦¡¥X²{, ¨S¦³¥~³ò°é.";
+        public override string Description => "ç‰©ä»¶æœƒä»¥æ—‹å…¥çš„æ–¹å¼å‡ºç¾, æ²’æœ‰å¤–åœåœˆ.";
         public override double ScoreMultiplier => 1;
 
         // todo: this mod should be able to be compatible with hidden with a bit of further implementation.

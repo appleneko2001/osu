@@ -60,7 +60,7 @@ namespace osu.Game.Overlays.KeyBinding
         [BackgroundDependencyLoader]
         private void load(OsuColour colours)
         {
-            Text = "«ì´_©Ò¦³«öÁä³]©w";
+            Text = "æ¢å¾©æ‰€æœ‰æŒ‰éµè¨­å®š";
             RelativeSizeAxes = Axes.X;
             Margin = new MarginPadding { Top = 5 };
             Height = 20;

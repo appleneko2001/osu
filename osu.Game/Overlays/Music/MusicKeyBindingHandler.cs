@@ -37,11 +37,11 @@ namespace osu.Game.Overlays.Music
                     bool wasPlaying = musicController.IsPlaying;
 
                     if (musicController.TogglePause())
-                        onScreenDisplay?.Display(new MusicActionToast(wasPlaying ? "º»∞±" : "ºΩ©Ò"));
+                        onScreenDisplay?.Display(new MusicActionToast(wasPlaying ? "Êö´ÂÅú" : "Êí≠Êîæ"));
                     return true;
 
                 case GlobalAction.MusicNext:
-                    musicController.NextTrack(() => onScreenDisplay?.Display(new MusicActionToast("§U§@≠∫")));
+                    musicController.NextTrack(() => onScreenDisplay?.Display(new MusicActionToast("‰∏ã‰∏ÄÈ¶ñ")));
 
                     return true;
 
@@ -51,11 +51,11 @@ namespace osu.Game.Overlays.Music
                         switch (res)
                         {
                             case PreviousTrackResult.Restart:
-                                onScreenDisplay?.Display(new MusicActionToast("≠´∑sºΩ©Ò"));
+                                onScreenDisplay?.Display(new MusicActionToast("ÈáçÊñ∞Êí≠Êîæ"));
                                 break;
 
                             case PreviousTrackResult.Previous:
-                                onScreenDisplay?.Display(new MusicActionToast("§W§@≠∫"));
+                                onScreenDisplay?.Display(new MusicActionToast("‰∏ä‰∏ÄÈ¶ñ"));
                                 break;
                         }
                     });
@@ -73,7 +73,7 @@ namespace osu.Game.Overlays.Music
         private class MusicActionToast : Toast
         {
             public MusicActionToast(string action)
-                : base("ºΩ©Òæπ", action, string.Empty)
+                : base("Êí≠ÊîæÂô®", action, string.Empty)
             {
             }
         }

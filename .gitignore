@@ -334,5 +334,9 @@ inspectcode
 
 # BenchmarkDotNet
 /BenchmarkDotNet.Artifacts
+
+# Reserved
 /deployer
 /osu.Desktop/staging
+/osu.Game/Collections/DeleteCollectionDialog_BIG5.cs.old
+*.Big-5
