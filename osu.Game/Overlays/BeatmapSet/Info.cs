@@ -6,6 +6,7 @@ using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
+using osu.Framework.Localisation;
 using osu.Game.Beatmaps;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
@@ -107,7 +108,7 @@ namespace osu.Game.Overlays.BeatmapSet
                                     Anchor = Anchor.Centre,
                                     Origin = Anchor.Centre,
                                     Alpha = 0,
-                                    Text = "Unranked beatmap",
+                                    Text = new LocalisedString("Unranked beatmap"),
                                     Font = OsuFont.GetFont(size: 12)
                                 },
                             },

@@ -29,6 +29,7 @@ using osu.Game.Graphics.Cursor;
 using osu.Game.Input;
 using osu.Game.Input.Bindings;
 using osu.Game.IO;
+using osu.Game.Localisation;
 using osu.Game.Online.API;
 using osu.Game.Overlays;
 using osu.Game.Resources;
@@ -152,29 +153,8 @@ namespace osu.Game
                 // should eventually be handled in a better way.
                 VersionHash = $"{Version}-{RuntimeInfo.OS}".ComputeMD5Hash();
             }
-            var translateFrameworkPatch = new StringResourceStore(
-                new string[2] { "FRAME LIMITER", "幀數限制" },
-                new string[2] { "RAW INPUT", "原生輸入" },
-                new string[2] { "SCREEN MODE", "畫面模式" },
-                new string[2] { "SCREEN RESOLUTION", "畫面解析度" },
-                new string[2] { "AUDIO DEVICE", "音訊輸出設備" },
-                new string[2] { "CURSOR SENSITIVITY", "指針靈敏度" },
-                new string[2] { "Default", "默認設定" },
-                new string[2] { "VSync", "垂直同步" },
-                new string[2] { "2x refresh rate", "雙倍更新速率" },
-                new string[2] { "4x refresh rate", "四倍更新速率" },
-                new string[2] { "8x refresh rate", "八倍更新速率" },
-                new string[2] { "Unlimited", "關閉" },
-                new string[2] { "Multithreaded", "多線緒處理" },
-                new string[2] { "Single thread", "單處理緒" },
-                new string[2] { "Fullscreen", "全熒幕" },
-                new string[2] { "Always", "總是" },
-                new string[2] { "Never", "永不" },
-                new string[2] { "Borderless", "無邊框窗體" },
-                new string[2] { "Windowed", "窗體化" },
-                new string[2] { "enabled", "已啟用" },
-                new string[2] { "disabled", "已關閉" });
-            Localisation.AddLanguage("zh-TW", translateFrameworkPatch);
+            // Apply osu!framework and game translated strings patch
+            Localisation.AddLanguage("zh-TW", new StringResourceStore(TaiwanLocalisedStringDicts.FRAMEWORK_PATCH, TaiwanLocalisedStringDicts.GAME_PATCH));
 
             Resources.AddStore(new DllResourceStore(OsuResources.ResourceAssembly));
 

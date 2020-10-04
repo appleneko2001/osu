@@ -7,6 +7,7 @@ using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
+using osu.Framework.Localisation;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
@@ -54,7 +55,7 @@ namespace osu.Game.Overlays.Comments
                             Origin = Anchor.Centre,
                             Font = OsuFont.GetFont(size: 12, weight: FontWeight.Bold),
                             Margin = new MarginPadding { Horizontal = 20 },
-                            Text = @"Cancel"
+                            Text = new LocalisedString(@"Cancel")
                         }
                     }
                 };

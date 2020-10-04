@@ -1,27 +1,28 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osu.Framework.Graphics.Containers;
-using osu.Framework.Graphics;
-using osu.Game.Graphics;
-using osu.Framework.Graphics.Sprites;
-using osuTK;
-using osu.Game.Online.API.Requests.Responses;
-using osu.Game.Users.Drawables;
-using osu.Game.Graphics.Containers;
-using osu.Game.Utils;
-using osu.Framework.Graphics.Cursor;
-using osu.Framework.Bindables;
-using System.Linq;
-using osu.Game.Graphics.Sprites;
-using osu.Game.Online.Chat;
-using osu.Framework.Allocation;
-using System.Collections.Generic;
 using System;
-using osu.Framework.Graphics.Shapes;
-using osu.Framework.Extensions.IEnumerableExtensions;
+using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Linq;
+using osu.Framework.Allocation;
+using osu.Framework.Bindables;
+using osu.Framework.Extensions.IEnumerableExtensions;
+using osu.Framework.Graphics;
+using osu.Framework.Graphics.Containers;
+using osu.Framework.Graphics.Cursor;
+using osu.Framework.Graphics.Shapes;
+using osu.Framework.Graphics.Sprites;
+using osu.Framework.Localisation;
+using osu.Game.Graphics;
+using osu.Game.Graphics.Containers;
+using osu.Game.Graphics.Sprites;
+using osu.Game.Online.API.Requests.Responses;
+using osu.Game.Online.Chat;
 using osu.Game.Overlays.Comments.Buttons;
+using osu.Game.Users.Drawables;
+using osu.Game.Utils;
+using osuTK;
 
 namespace osu.Game.Overlays.Comments
 {
@@ -149,7 +150,7 @@ namespace osu.Game.Overlays.Comments
                                                         {
                                                             Alpha = Comment.IsDeleted ? 1 : 0,
                                                             Font = OsuFont.GetFont(size: 14, weight: FontWeight.Bold),
-                                                            Text = "deleted"
+                                                            Text = new LocalisedString("deleted")
                                                         }
                                                     }
                                                 },

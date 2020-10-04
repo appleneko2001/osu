@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Graphics;
+using osu.Framework.Localisation;
 using osu.Game.Graphics.UserInterface;
 
 namespace osu.Game.Overlays.Comments.Buttons
@@ -25,7 +26,7 @@ namespace osu.Game.Overlays.Comments.Buttons
         {
             public ButtonContent()
             {
-                Text = "load replies";
+                Text = new LocalisedString("load replies");
             }
         }
     }

@@ -9,8 +9,13 @@ using System.Threading.Tasks;
 using osu.Framework.Extensions.IEnumerableExtensions;
 using osu.Framework.IO.Stores;
 
+/// <summary>
+/// This class used for implementing framework text injection and dropmenus text injection support.
+/// It should be initialized and injected to Localisation property when game loading.
+/// </summary>
 public class StringResourceStore : IResourceStore<string>, IDisposable
 {
+    private StringResourceStore[] baseStores;
     private ConcurrentDictionary<string, string> stores;
 
     private bool isDisposed;
@@ -25,6 +30,7 @@ public class StringResourceStore : IResourceStore<string>, IDisposable
 
     /// <summary>
     /// Initializes a strings store with arrays (each array should have two strings, no more or less)
+    /// otherwize it will throws exception.
     /// </summary>
     public StringResourceStore(params IEnumerable<string>[] arrays)
     {
@@ -61,17 +67,26 @@ public class StringResourceStore : IResourceStore<string>, IDisposable
         }
     }
 
+    public StringResourceStore(params StringResourceStore[] stores)
+    {
+        this.stores = new ConcurrentDictionary<string, string>();
+        baseStores = stores;
+    }
+
     /// <summary>
     /// Get translated text from original text
     /// </summary>
     /// <param name="text">Original text</param>
-    /// <returns>A translated text, or original if it not exist in stores</returns>
+    /// <returns>A translated text, or original text if it not exist in stores</returns>
     public string Get(string text)
     {
         if (text == null)
             return null;
         if (stores.TryGetValue(text, out string result))
             return result;
+        if (baseStores != null)
+            return getFromBases(text);
+
         return text;
     }
 
@@ -79,14 +94,19 @@ public class StringResourceStore : IResourceStore<string>, IDisposable
     /// Get translated text from original text asynchronously
     /// </summary>
     /// <param name="text">Original text</param>
-    /// <returns>Result of task</returns>
+    /// <returns>Result of task that contains translated text</returns>
     public Task<string> GetAsync(string text)
     {
         if (text == null)
             return null;
         return Task.Run(() =>
-            stores.TryGetValue(text, out var value) ? value : text
-        );
+        {
+            if (stores.TryGetValue(text, out string result))
+                return result;
+            if (baseStores != null)
+                return getFromBases(text);
+            return text;
+        });
     }
 
     /// <summary>
@@ -95,7 +115,17 @@ public class StringResourceStore : IResourceStore<string>, IDisposable
     /// <returns></returns>
     public IEnumerable<string> GetAvailableResources()
     {
-        return stores.Keys;
+        List<string> result = new List<string>(stores.Keys);
+        if (baseStores != null)
+            baseStores.ForEach(i => result.AddRange(i.GetAvailableResources()));
+        return result;
+    }
+
+    private string getFromBases(string text)
+    {
+        string result = text;
+        baseStores.ForEach(i => { if (result == text) result = i.Get(result); });
+        return result;
     }
 
     /// <summary>
@@ -106,6 +136,10 @@ public class StringResourceStore : IResourceStore<string>, IDisposable
         throw new NotImplementedException();
     }
 
+    /// <summary>
+    /// Cleanup store and dispose this object.
+    /// </summary>
+    /// <param name="disposing"></param>
     protected virtual void Dispose(bool disposing)
     {
         if (!isDisposed)
@@ -115,6 +149,8 @@ public class StringResourceStore : IResourceStore<string>, IDisposable
             {
                 stores.ForEach(s => stores.TryRemove(s.Key, out string _));
             }
+            stores.Clear();
+            stores = null;
         }
     }
 
