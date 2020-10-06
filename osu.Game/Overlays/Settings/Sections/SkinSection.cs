@@ -47,29 +47,29 @@ namespace osu.Game.Overlays.Settings.Sections
                 new SettingsSlider<float, SizeSlider>
                 {
                     LabelText = "主選單光標大小",
-                    Bindable = config.GetBindable<float>(OsuSetting.MenuCursorSize),
+                    Current = config.GetBindable<float>(OsuSetting.MenuCursorSize),
                     KeyboardStep = 0.01f
                 },
                 new SettingsSlider<float, SizeSlider>
                 {
                     LabelText = "遊戲中光標大小",
-                    Bindable = config.GetBindable<float>(OsuSetting.GameplayCursorSize),
+                    Current = config.GetBindable<float>(OsuSetting.GameplayCursorSize),
                     KeyboardStep = 0.01f
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "根據遊戲中的圓圈大小調整光標大小",
-                    Bindable = config.GetBindable<bool>(OsuSetting.AutoCursorSize)
+                    Current = config.GetBindable<bool>(OsuSetting.AutoCursorSize)
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "使用圖譜的皮膚",
-                    Bindable = config.GetBindable<bool>(OsuSetting.BeatmapSkins)
+                    Current = config.GetBindable<bool>(OsuSetting.BeatmapSkins)
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "使用圖譜的打擊音",
-                    Bindable = config.GetBindable<bool>(OsuSetting.BeatmapHitsounds)
+                    Current = config.GetBindable<bool>(OsuSetting.BeatmapHitsounds)
                 },
             };
 
@@ -81,7 +81,7 @@ namespace osu.Game.Overlays.Settings.Sections
 
             config.BindWith(OsuSetting.Skin, configBindable);
 
-            skinDropdown.Bindable = dropdownBindable;
+            skinDropdown.Current = dropdownBindable;
             skinDropdown.Items = skins.GetAllUsableSkins().ToArray();
 
             // Todo: This should not be necessary when OsuConfigManager is databased

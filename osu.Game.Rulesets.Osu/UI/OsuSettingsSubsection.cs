@@ -27,17 +27,17 @@ namespace osu.Game.Rulesets.Osu.UI
                 new SettingsCheckbox
                 {
                     LabelText = "滑條漸入",
-                    Bindable = config.GetBindable<bool>(OsuRulesetSetting.SnakingInSliders)
+                    Current = config.GetBindable<bool>(OsuRulesetSetting.SnakingInSliders)
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "滑條漸出",
-                    Bindable = config.GetBindable<bool>(OsuRulesetSetting.SnakingOutSliders)
+                    Current = config.GetBindable<bool>(OsuRulesetSetting.SnakingOutSliders)
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "光標拖尾效果",
-                    Bindable = config.GetBindable<bool>(OsuRulesetSetting.ShowCursorTrail)
+                    Current = config.GetBindable<bool>(OsuRulesetSetting.ShowCursorTrail)
                 },
             };
         }

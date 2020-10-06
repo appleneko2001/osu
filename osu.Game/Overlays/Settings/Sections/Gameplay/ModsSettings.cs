@@ -22,7 +22,7 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
                 new SettingsCheckbox
                 {
                     LabelText = "啟用 \"有視覺干擾的Mods\" 時加強第一個物件的可見性",
-                    Bindable = config.GetBindable<bool>(OsuSetting.IncreaseFirstObjectVisibility),
+                    Current = config.GetBindable<bool>(OsuSetting.IncreaseFirstObjectVisibility),
                 },
             };
         }

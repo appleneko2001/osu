@@ -20,28 +20,28 @@ namespace osu.Game.Overlays.Settings.Sections.Audio
                 new SettingsSlider<double>
                 {
                     LabelText = "主音量",
-                    Bindable = audio.Volume,
+                    Current = audio.Volume,
                     KeyboardStep = 0.01f,
                     DisplayAsPercentage = true
                 },
                 new SettingsSlider<double>
                 {
                     LabelText = "主音量 (非活動狀態)",
-                    Bindable = config.GetBindable<double>(OsuSetting.VolumeInactive),
+                    Current = config.GetBindable<double>(OsuSetting.VolumeInactive),
                     KeyboardStep = 0.01f,
                     DisplayAsPercentage = true
                 },
                 new SettingsSlider<double>
                 {
                     LabelText = "效果音量",
-                    Bindable = audio.VolumeSample,
+                    Current = audio.VolumeSample,
                     KeyboardStep = 0.01f,
                     DisplayAsPercentage = true
                 },
                 new SettingsSlider<double>
                 {
                     LabelText = "音樂音量",
-                    Bindable = audio.VolumeTrack,
+                    Current = audio.VolumeTrack,
                     KeyboardStep = 0.01f,
                     DisplayAsPercentage = true
                 },

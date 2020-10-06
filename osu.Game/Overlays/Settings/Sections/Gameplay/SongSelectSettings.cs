@@ -31,31 +31,31 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
                 new SettingsCheckbox
                 {
                     LabelText = "設定滑鼠右鍵為絕對滾動",
-                    Bindable = config.GetBindable<bool>(OsuSetting.SongSelectRightMouseScroll),
+                    Current = config.GetBindable<bool>(OsuSetting.SongSelectRightMouseScroll),
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "顯示已轉換的圖譜",
-                    Bindable = config.GetBindable<bool>(OsuSetting.ShowConvertedBeatmaps),
+                    Current = config.GetBindable<bool>(OsuSetting.ShowConvertedBeatmaps),
                 },
                 new SettingsSlider<double, StarsSlider>
                 {
                     LabelText = "過濾圖譜難度",
-                    Bindable = config.GetBindable<double>(OsuSetting.DisplayStarsMinimum),
+                    Current = config.GetBindable<double>(OsuSetting.DisplayStarsMinimum),
                     KeyboardStep = 0.1f,
                     Keywords = new[] { "minimum", "maximum", "star", "difficulty" }
                 },
                 new SettingsSlider<double, MaximumStarsSlider>
                 {
                     LabelText = "到",
-                    Bindable = config.GetBindable<double>(OsuSetting.DisplayStarsMaximum),
+                    Current = config.GetBindable<double>(OsuSetting.DisplayStarsMaximum),
                     KeyboardStep = 0.1f,
                     Keywords = new[] { "minimum", "maximum", "star", "difficulty" }
                 },
                 new SettingsEnumDropdown<RandomSelectAlgorithm>
                 {
                     LabelText = "隨機選擇算法",
-                    Bindable = config.GetBindable<RandomSelectAlgorithm>(OsuSetting.RandomSelectAlgorithm),
+                    Current = config.GetBindable<RandomSelectAlgorithm>(OsuSetting.RandomSelectAlgorithm),
                 }
             };
         }

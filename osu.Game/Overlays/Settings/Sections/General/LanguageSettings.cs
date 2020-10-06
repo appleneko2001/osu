@@ -19,8 +19,8 @@ namespace osu.Game.Overlays.Settings.Sections.General
                 new SettingsCheckbox
                 {
                     LabelText = "以原始語言顯示歌曲資訊",
-                    Bindable = frameworkConfig.GetBindable<bool>(FrameworkSetting.ShowUnicode),
-                    TooltipText = "如歌曲有提供原始語言資訊, 則使用原始語言顯示歌曲資訊."
+                    Current = frameworkConfig.GetBindable<bool>(FrameworkSetting.ShowUnicode)
+                    ,TooltipText = "如歌曲有提供原始語言資訊, 則使用原始語言顯示歌曲資訊."
                 },
             };
         }

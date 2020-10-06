@@ -19,13 +19,12 @@ namespace osu.Game.Overlays.Settings.Sections.Debug
                 new SettingsCheckbox
                 {
                     LabelText = "顯示日誌圖層",
-                    Bindable = frameworkConfig.GetBindable<bool>(FrameworkSetting.ShowLogOverlay)
+                    Current = frameworkConfig.GetBindable<bool>(FrameworkSetting.ShowLogOverlay)
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "不使用\"前到後\"渲染設定",
-                    TooltipText = "禁用畫面Z軸 根據物件渲染順序決定物件前後",
-                    Bindable = config.GetBindable<bool>(DebugSetting.BypassFrontToBackPass)
+                    Current = config.GetBindable<bool>(DebugSetting.BypassFrontToBackPass)
                 }
             };
         }

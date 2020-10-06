@@ -36,39 +36,38 @@ namespace osu.Game.Overlays.Settings.Sections.Input
                 {
                     LabelText = "原生輸入 (Raw Input)",
                     TooltipText = rawInputToggle.Disabled ? "當前作業系統不支援該特性" : "啟用原生輸入 (Raw Input) 後會忽略 Windows 的滑鼠速度設定, 讓游標更精準地移動.",
-                    Bindable = rawInputToggle
+                    Current = rawInputToggle
                 },
                 new SensitivitySetting
                 {
                     LabelText = "指針靈敏度",
-                    Bindable = sensitivityBindable
+                    Current = sensitivityBindable
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "映射絕對座標輸入至 osu! 視窗",
-                    Bindable = config.GetBindable<bool>(FrameworkSetting.MapAbsoluteInputToWindow)
+                    Current = config.GetBindable<bool>(FrameworkSetting.MapAbsoluteInputToWindow)
                 },
                 new SettingsEnumDropdown<ConfineMouseMode>
                 {
                     LabelText = "限制光標到遊戲畫面中",
-                    Bindable = config.GetBindable<ConfineMouseMode>(FrameworkSetting.ConfineMouseMode),
+                    Current = config.GetBindable<ConfineMouseMode>(FrameworkSetting.ConfineMouseMode),
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "遊戲中禁用滾輪",
-                    Bindable = osuConfig.GetBindable<bool>(OsuSetting.MouseDisableWheel)
+                    Current = osuConfig.GetBindable<bool>(OsuSetting.MouseDisableWheel)
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "遊戲中禁用滑鼠按鍵",
-                    Bindable = osuConfig.GetBindable<bool>(OsuSetting.MouseDisableButtons)
+                    Current = osuConfig.GetBindable<bool>(OsuSetting.MouseDisableButtons)
                 },
             };
 
             if (RuntimeInfo.OS != RuntimeInfo.Platform.Windows)
             {
                 rawInputToggle.Disabled = true;
-                //rawInputToggle.
                 sensitivityBindable.Disabled = true;
             }
             else

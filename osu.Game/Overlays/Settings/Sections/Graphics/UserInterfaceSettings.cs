@@ -20,17 +20,17 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
                 new SettingsCheckbox
                 {
                     LabelText = "拖動時旋轉指針",
-                    Bindable = config.GetBindable<bool>(OsuSetting.CursorRotation)
+                    Current = config.GetBindable<bool>(OsuSetting.CursorRotation)
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "視差效果",
-                    Bindable = config.GetBindable<bool>(OsuSetting.MenuParallax)
+                    Current = config.GetBindable<bool>(OsuSetting.MenuParallax)
                 },
                 new SettingsSlider<float, TimeSlider>
                 {
                     LabelText = "按住確定操作用時",
-                    Bindable = config.GetBindable<float>(OsuSetting.UIHoldActivationDelay),
+                    Current = config.GetBindable<float>(OsuSetting.UIHoldActivationDelay),
                     KeyboardStep = 50
                 },
             };

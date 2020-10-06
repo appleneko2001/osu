@@ -19,22 +19,22 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
                 new SettingsCheckbox
                 {
                     LabelText = "故事板 / 影片",
-                    Bindable = config.GetBindable<bool>(OsuSetting.ShowStoryboard)
+                    Current = config.GetBindable<bool>(OsuSetting.ShowStoryboard)
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "打擊光亮",
-                    Bindable = config.GetBindable<bool>(OsuSetting.HitLighting)
+                    Current = config.GetBindable<bool>(OsuSetting.HitLighting)
                 },
                 new SettingsEnumDropdown<ScreenshotFormat>
                 {
                     LabelText = "截圖格式",
-                    Bindable = config.GetBindable<ScreenshotFormat>(OsuSetting.ScreenshotFormat)
+                    Current = config.GetBindable<ScreenshotFormat>(OsuSetting.ScreenshotFormat)
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "截圖時拍下光標",
-                    Bindable = config.GetBindable<bool>(OsuSetting.ScreenshotCaptureMenuCursor)
+                    Current = config.GetBindable<bool>(OsuSetting.ScreenshotCaptureMenuCursor)
                 }
             };
         }

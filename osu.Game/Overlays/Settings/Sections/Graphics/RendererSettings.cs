@@ -23,17 +23,17 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
                 new SettingsEnumDropdown<FrameSync>
                 {
                     LabelText = "幀數限制",
-                    Bindable = config.GetBindable<FrameSync>(FrameworkSetting.FrameSync)
+                    Current = config.GetBindable<FrameSync>(FrameworkSetting.FrameSync)
                 },
                 new SettingsEnumDropdown<ExecutionMode>
                 {
                     LabelText = "執行緒模式",
-                    Bindable = config.GetBindable<ExecutionMode>(FrameworkSetting.ExecutionMode)
+                    Current = config.GetBindable<ExecutionMode>(FrameworkSetting.ExecutionMode)
                 },
                 new SettingsCheckbox
                 {
                     LabelText = "顯示每秒幀數",
-                    Bindable = osuConfig.GetBindable<bool>(OsuSetting.ShowFpsDisplay)
+                    Current = osuConfig.GetBindable<bool>(OsuSetting.ShowFpsDisplay)
                 },
             };
         }
