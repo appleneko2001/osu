@@ -105,7 +105,10 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                     {
                         deleteSkinsButton.Enabled.Value = false;
                         Task.Run(() => skins.Delete(skins.GetAllUserSkins())).ContinueWith(t => Schedule(() => deleteSkinsButton.Enabled.Value = true));
-                    }));
+                    })
+                    {
+                        BodyText = "所有已安裝的皮膚嗎?"
+                    });
                 }
             });
 
