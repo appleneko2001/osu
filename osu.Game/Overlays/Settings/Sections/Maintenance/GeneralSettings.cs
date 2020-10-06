@@ -79,7 +79,10 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
                     {
                         deleteScoresButton.Enabled.Value = false;
                         Task.Run(() => scores.Delete(scores.GetAllUsableScores())).ContinueWith(t => Schedule(() => deleteScoresButton.Enabled.Value = true));
-                    }));
+                    })
+                    {
+                        BodyText = "所有本地成績嗎?"
+                    });
                 }
             });
 
