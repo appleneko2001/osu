@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
@@ -64,12 +64,12 @@ namespace osu.Game.Screens.Edit.Setup
                 },
                 new OsuSpriteText
                 {
-                    Text = "Resources"
+                    Text = "資訊"
                 },
                 audioTrackTextBox = new FileChooserLabelledTextBox
                 {
-                    Label = "Audio Track",
-                    Current = { Value = Beatmap.Value.Metadata.AudioFile ?? "Click to select a track" },
+                    Label = "曲目檔案",
+                    Current = { Value = Beatmap.Value.Metadata.AudioFile ?? "點擊以選擇檔案" },
                     Target = audioTrackFileChooserContainer,
                     TabbableContentContainer = this
                 },
@@ -196,7 +196,7 @@ namespace osu.Game.Screens.Edit.Setup
                         },
                         new OsuTextFlowContainer(t => t.Font = OsuFont.Default.With(size: 24))
                         {
-                            Text = "Drag image here to set beatmap background!",
+                            Text = "拖動圖像檔案到這裏來更改背景!",
                             Anchor = Anchor.Centre,
                             Origin = Anchor.Centre,
                             AutoSizeAxes = Axes.X,

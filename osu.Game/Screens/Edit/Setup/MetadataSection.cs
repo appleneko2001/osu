@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
@@ -24,29 +24,29 @@ namespace osu.Game.Screens.Edit.Setup
             {
                 new OsuSpriteText
                 {
-                    Text = "Beatmap metadata"
+                    Text = "圖譜資訊"
                 },
                 artistTextBox = new LabelledTextBox
                 {
-                    Label = "Artist",
+                    Label = "演出者",
                     Current = { Value = Beatmap.Value.Metadata.Artist },
                     TabbableContentContainer = this
                 },
                 titleTextBox = new LabelledTextBox
                 {
-                    Label = "Title",
+                    Label = "標題",
                     Current = { Value = Beatmap.Value.Metadata.Title },
                     TabbableContentContainer = this
                 },
                 creatorTextBox = new LabelledTextBox
                 {
-                    Label = "Creator",
+                    Label = "做圖者",
                     Current = { Value = Beatmap.Value.Metadata.AuthorString },
                     TabbableContentContainer = this
                 },
                 difficultyTextBox = new LabelledTextBox
                 {
-                    Label = "Difficulty Name",
+                    Label = "難度",
                     Current = { Value = Beatmap.Value.BeatmapInfo.Version },
                     TabbableContentContainer = this
                 },
