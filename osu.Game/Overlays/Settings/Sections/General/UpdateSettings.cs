@@ -30,7 +30,7 @@ namespace osu.Game.Overlays.Settings.Sections.General
                 {
                     LabelText = "使用中文化更新流",
                     TooltipText = "使用來自 appleneko2001/osu 的更新流來更新遊戲, 將保留中文化界面. 關閉後將使用ppy官方更新流.",
-                    Bindable = config.GetBindable<bool>(OsuSetting.UseTranslationUpdateRepo)
+                    Current = config.GetBindable<bool>(OsuSetting.UseTranslationUpdateRepo)
                 });
             }
 
