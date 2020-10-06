@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
@@ -131,8 +131,8 @@ namespace osu.Game.Screens.Edit.Compose.Components
         {
             const float separation = 40;
 
-            addButton(FontAwesome.Solid.Undo, "Rotate 90 degrees counter-clockwise", () => OnRotation?.Invoke(-90));
-            addButton(FontAwesome.Solid.Redo, "Rotate 90 degrees clockwise", () => OnRotation?.Invoke(90));
+            addButton(FontAwesome.Solid.Undo, "倒轉90度", () => OnRotation?.Invoke(-90));
+            addButton(FontAwesome.Solid.Redo, "正轉90度", () => OnRotation?.Invoke(90));
 
             AddRangeInternal(new Drawable[]
             {
@@ -146,7 +146,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
                     Anchor = Anchor.TopCentre,
                     Origin = Anchor.BottomCentre,
                 },
-                new SelectionBoxDragHandleButton(FontAwesome.Solid.Redo, "Free rotate")
+                new SelectionBoxDragHandleButton(FontAwesome.Solid.Redo, "自由旋轉")
                 {
                     Anchor = Anchor.TopCentre,
                     Y = -separation,
@@ -159,7 +159,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
 
         private void addYScaleComponents()
         {
-            addButton(FontAwesome.Solid.ArrowsAltV, "Flip vertically", () => OnFlip?.Invoke(Direction.Vertical));
+            addButton(FontAwesome.Solid.ArrowsAltV, "水平翻轉", () => OnFlip?.Invoke(Direction.Vertical));
 
             addDragHandle(Anchor.TopCentre);
             addDragHandle(Anchor.BottomCentre);
@@ -175,7 +175,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
 
         private void addXScaleComponents()
         {
-            addButton(FontAwesome.Solid.ArrowsAltH, "Flip horizontally", () => OnFlip?.Invoke(Direction.Horizontal));
+            addButton(FontAwesome.Solid.ArrowsAltH, "垂直翻轉", () => OnFlip?.Invoke(Direction.Horizontal));
 
             addDragHandle(Anchor.CentreLeft);
             addDragHandle(Anchor.CentreRight);
