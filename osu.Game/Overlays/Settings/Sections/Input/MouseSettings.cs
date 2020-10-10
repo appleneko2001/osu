@@ -6,9 +6,9 @@ using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Configuration;
 using osu.Framework.Graphics;
-using osu.Framework.Input;
 using osu.Game.Configuration;
 using osu.Game.Graphics.UserInterface;
+using osu.Game.Input;
 
 namespace osu.Game.Overlays.Settings.Sections.Input
 {
@@ -48,10 +48,10 @@ namespace osu.Game.Overlays.Settings.Sections.Input
                     LabelText = "映射絕對座標輸入至 osu! 視窗",
                     Current = config.GetBindable<bool>(FrameworkSetting.MapAbsoluteInputToWindow)
                 },
-                new SettingsEnumDropdown<ConfineMouseMode>
+                new SettingsEnumDropdown<OsuConfineMouseMode>
                 {
                     LabelText = "限制光標到遊戲畫面中",
-                    Current = config.GetBindable<ConfineMouseMode>(FrameworkSetting.ConfineMouseMode),
+                    Current = osuConfig.GetBindable<OsuConfineMouseMode>(OsuSetting.ConfineMouseMode)
                 },
                 new SettingsCheckbox
                 {
