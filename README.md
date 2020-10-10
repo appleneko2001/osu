@@ -21,7 +21,8 @@
 *提示: 由於我的計算機上的 Linux 不小心被我弄掉了 所以短時間內不會有AppImage 但是可以下載壓縮檔解包 然後使用dotnet osu.dll指令執行 效果差不多一樣 只是稍微麻煩一點而已*
 在以上要求滿足後 請選擇下面的下載選擇. 另外 安裝包目前只可以將應用安裝到 C:\Users\<用戶名>\AppData\Local\osulazer-zh-tw 中. 關於更多可以閱覽該 [Issue](https://github.com/Squirrel/Squirrel.Windows/issues/1002) 我已經將該Repository進行了fork 我可能會自己改動Squirrel安裝器 嘗試實現讓用戶選擇安裝位置. 當然如果不行的話我會把那個劃掉再說明原因...
 
-| ![下載Windows安裝包](https://img.shields.io/github/downloads/appleneko2001/osu/latest/install.exe?color=blue&label=%E4%B8%8B%E8%BC%89Windows%E5%AE%89%E8%A3%9D%E5%8C%85&logo=windows&logoColor=lightblue) | ![下載壓縮檔](https://img.shields.io/github/downloads/appleneko2001/osu/latest/osulazer-zh-tw-win-x64.zip?color=blue&label=%E4%B8%8B%E8%BC%89%E5%A3%93%E7%B8%AE%E6%AA%94) |
+| [![下載Windows安裝包](https://img.shields.io/github/downloads/appleneko2001/osu/latest/install.exe?color=blue&label=%E4%B8%8B%E8%BC%89Windows%E5%AE%89%E8%A3%9D%E5%8C%85&logo=windows&logoColor=lightblue)](https://github.com/appleneko2001/osu/releases/latest/download/install.exe)
+| [![下載壓縮檔](https://img.shields.io/github/downloads/appleneko2001/osu/latest/osulazer-zh-tw-win-x64.zip?color=blue&label=%E4%B8%8B%E8%BC%89%E5%A3%93%E7%B8%AE%E6%AA%94)](https://github.com/appleneko2001/osu/releases/latest/download/osulazer-zh-tw-win-x64.zip) |
 | ------------- | ------------- |
 
 下載完安裝包後 按兩次執行安裝 過後osulazer將會自己啟動 如果需要解除安裝的話 可以用一般方式進行解除安裝 (還能是什麼 控制台裏面的那個程式與功能啦 Windows 10的話是可以透過設定裏的系統設定 差不多一樣 只是界面有點區別而已).
