@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
@@ -82,7 +82,7 @@ namespace osu.Game.Screens.Ranking.Statistics
                     Direction = FillDirection.Vertical,
                     Children = new Drawable[]
                     {
-                        new MessagePlaceholder("Extended statistics are only available after watching a replay!"),
+                        new MessagePlaceholder("更多的統計數據將在只有觀看重放後可用!"),//Extended statistics are only available after watching a replay!
                         new ReplayDownloadButton(newScore)
                         {
                             Scale = new Vector2(1.5f),
