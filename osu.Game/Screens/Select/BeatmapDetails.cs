@@ -1,24 +1,24 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osuTK;
-using osuTK.Graphics;
+using System.Linq;
 using osu.Framework.Allocation;
+using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
-using osu.Game.Graphics.Sprites;
-using System.Linq;
-using osu.Game.Online.API;
-using osu.Framework.Threading;
 using osu.Framework.Graphics.Shapes;
-using osu.Framework.Extensions.Color4Extensions;
-using osu.Game.Screens.Select.Details;
+using osu.Framework.Threading;
 using osu.Game.Beatmaps;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
+using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
+using osu.Game.Online.API;
 using osu.Game.Online.API.Requests;
 using osu.Game.Rulesets;
+using osu.Game.Screens.Select.Details;
+using osuTK;
+using osuTK.Graphics;
 
 namespace osu.Game.Screens.Select
 {
@@ -27,11 +27,13 @@ namespace osu.Game.Screens.Select
         private const float spacing = 10;
         private const float transition_duration = 250;
 
+        private readonly OsuScrollContainer mainScroll;
+
         private readonly FillFlowContainer top, statsFlow;
         private readonly AdvancedStats advanced;
         private readonly DetailBox ratingsContainer;
         private readonly UserRatings ratings;
-        private readonly OsuScrollContainer metadataScroll;
+        private readonly Container metadataScroll;
         private readonly MetadataSection description, source, tags;
         private readonly Container failRetryContainer;
         private readonly FailRetryGraph failRetryGraph;
@@ -63,112 +65,126 @@ namespace osu.Game.Screens.Select
 
         public BeatmapDetails()
         {
-            Container content;
-
-            Children = new Drawable[]
+            FillFlowContainer content;
+            Add(mainScroll = new OsuScrollContainer()
             {
-                new Box
+                RelativeSizeAxes = Axes.Both,
+
+                ScrollbarVisible = false,
+                Children = new Drawable[]
                 {
-                    RelativeSizeAxes = Axes.Both,
-                    Colour = Color4.Black.Opacity(0.5f),
-                },
-                content = new Container
-                {
-                    RelativeSizeAxes = Axes.Both,
-                    Padding = new MarginPadding { Horizontal = spacing },
-                    Children = new Drawable[]
+                    new Box
                     {
-                        top = new FillFlowContainer
+                        RelativeSizeAxes = Axes.Both,
+                        Colour = Color4.Black.Opacity(0.5f),
+                    },
+                    content = new FillFlowContainer
+                    {
+                        Name = "Content",
+                        RelativeSizeAxes = Axes.Both,
+                        //AutoSizeAxes = Axes.Y,
+                        Padding = new MarginPadding { Horizontal = spacing },
+                        Children = new Drawable[]
                         {
-                            RelativeSizeAxes = Axes.X,
-                            AutoSizeAxes = Axes.Y,
-                            Direction = FillDirection.Horizontal,
-                            Children = new Drawable[]
+                            top = new FillFlowContainer
                             {
-                                statsFlow = new FillFlowContainer
+                                RelativeSizeAxes = Axes.X,
+                                AutoSizeAxes = Axes.Y,
+                                Direction = FillDirection.Horizontal,
+                                Children = new Drawable[]
                                 {
-                                    RelativeSizeAxes = Axes.X,
-                                    AutoSizeAxes = Axes.Y,
-                                    Width = 0.5f,
-                                    Spacing = new Vector2(spacing),
-                                    Padding = new MarginPadding { Right = spacing / 2 },
-                                    Children = new[]
-                                    {
-                                        new DetailBox
-                                        {
-                                            Child = advanced = new AdvancedStats
-                                            {
-                                                RelativeSizeAxes = Axes.X,
-                                                AutoSizeAxes = Axes.Y,
-                                                Padding = new MarginPadding { Horizontal = spacing, Top = spacing * 2, Bottom = spacing },
-                                            },
-                                        },
-                                        ratingsContainer = new DetailBox
-                                        {
-                                            Child = ratings = new UserRatings
-                                            {
-                                                RelativeSizeAxes = Axes.X,
-                                                Height = 134,
-                                                Padding = new MarginPadding { Horizontal = spacing, Top = spacing },
-                                            },
-                                        },
-                                    },
-                                },
-                                metadataScroll = new OsuScrollContainer
-                                {
-                                    RelativeSizeAxes = Axes.X,
-                                    Width = 0.5f,
-                                    ScrollbarVisible = false,
-                                    Padding = new MarginPadding { Left = spacing / 2 },
-                                    Child = new FillFlowContainer
+                                    statsFlow = new FillFlowContainer
                                     {
                                         RelativeSizeAxes = Axes.X,
                                         AutoSizeAxes = Axes.Y,
-                                        LayoutDuration = transition_duration,
-                                        LayoutEasing = Easing.OutQuad,
-                                        Spacing = new Vector2(spacing * 2),
-                                        Margin = new MarginPadding { Top = spacing * 2 },
+                                        Width = 0.5f,
+                                        Spacing = new Vector2(spacing),
+                                        Padding = new MarginPadding { Right = spacing / 2 },
                                         Children = new[]
                                         {
-                                            description = new MetadataSection("說明"),
-                                            source = new MetadataSection("來源"),
-                                            tags = new MetadataSection("標籤"),
+                                            new DetailBox
+                                            {
+                                                Child = advanced = new AdvancedStats
+                                                {
+                                                    RelativeSizeAxes = Axes.X,
+                                                    AutoSizeAxes = Axes.Y,
+                                                    Padding = new MarginPadding { Horizontal = spacing, Top = spacing * 2, Bottom = spacing },
+                                                },
+                                            },
+                                            ratingsContainer = new DetailBox
+                                            {
+                                                Child = ratings = new UserRatings
+                                                {
+                                                    RelativeSizeAxes = Axes.X,
+                                                    Height = 134,
+                                                    Padding = new MarginPadding { Horizontal = spacing, Top = spacing },
+                                                },
+                                            },
+                                        },
+                                    },
+                                    metadataScroll = new Container
+                                    {
+                                        RelativeSizeAxes = Axes.X,
+                                        AutoSizeAxes = Axes.Y,
+                                        Width = 0.5f,
+                                        //ScrollbarVisible = false,
+                                        Padding = new MarginPadding { Left = spacing / 2 },
+                                        Child = new FillFlowContainer
+                                        {
+                                            RelativeSizeAxes = Axes.X,
+                                            AutoSizeAxes = Axes.Y,
+                                            LayoutDuration = transition_duration,
+                                            LayoutEasing = Easing.OutQuad,
+                                            Spacing = new Vector2(spacing * 2),
+                                            Margin = new MarginPadding { Top = spacing * 2 },
+                                            Children = new[]
+                                            {
+                                                description = new MetadataSection("說明"),
+                                                source = new MetadataSection("來源"),
+                                                tags = new MetadataSection("標籤"),
+                                            },
                                         },
                                     },
                                 },
                             },
-                        },
-                        failRetryContainer = new Container
-                        {
-                            Anchor = Anchor.BottomLeft,
-                            Origin = Anchor.BottomLeft,
-                            RelativeSizeAxes = Axes.X,
-                            Children = new Drawable[]
+                            failRetryContainer = new Container
                             {
-                                new OsuSpriteText
+                                //Anchor = Anchor.BottomLeft,
+                                //Origin = Anchor.BottomLeft,
+                                RelativeSizeAxes = Axes.X,
+                                Children = new Drawable[]
                                 {
-                                    Text = "失誤位置",
-                                    Font = OsuFont.GetFont(weight: FontWeight.Bold, size: 14),
-                                },
-                                failRetryGraph = new FailRetryGraph
-                                {
-                                    RelativeSizeAxes = Axes.Both,
-                                    Padding = new MarginPadding { Top = 14 + spacing / 2 },
+                                    new OsuSpriteText
+                                    {
+                                        Text = "失誤位置",
+                                        Font = OsuFont.GetFont(weight: FontWeight.Bold, size: 14),
+                                    },
+                                    failRetryGraph = new FailRetryGraph
+                                    {
+                                        RelativeSizeAxes = Axes.Both,
+                                        Padding = new MarginPadding { Top = 14 + spacing / 2 },
+                                    },
                                 },
                             },
                         },
                     },
                 },
-                loading = new LoadingLayer(content),
-            };
+            });
+            Add(loading = new LoadingLayer(content));
         }
 
         protected override void UpdateAfterChildren()
         {
             base.UpdateAfterChildren();
 
-            metadataScroll.Height = statsFlow.DrawHeight;
-            failRetryContainer.Height = DrawHeight - Padding.TotalVertical - (top.DrawHeight + spacing / 2);
+            // The ugly way to fix scroll content height
+            // I'm sorry but I trying to do it best:(
+            mainScroll.ScrollContent.RelativeSizeAxes = Axes.X;
+            mainScroll.ScrollContent.AutoSizeAxes = Axes.None;
+            mainScroll.ScrollContent.Height = top.DrawHeight + failRetryContainer.DrawHeight;
+            //metadataScroll.Height = statsFlow.DrawHeight;
+            failRetryContainer.Height = 120;
+            //DrawHeight - Padding.TotalVertical - (top.DrawHeight + spacing / 2);
         }
 
         private void updateStatistics()

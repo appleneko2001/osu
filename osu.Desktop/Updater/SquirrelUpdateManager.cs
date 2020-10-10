@@ -156,7 +156,7 @@ namespace osu.Desktop.Updater
 
             public UpdateCompleteNotification(SquirrelUpdateManager updateManager)
             {
-                Text = @"Update ready to install. Click to restart!";
+                Text = @"更新已安裝, 點擊重新啟動遊戲!";
 
                 Activated = () =>
                 {

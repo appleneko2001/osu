@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Humanizer;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
@@ -17,15 +18,14 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
+using osu.Game.Online.API;
 using osu.Game.Overlays;
 using osu.Game.Rulesets.UI;
-using osu.Game.Screens.Select;
 using osu.Game.Scoring;
+using osu.Game.Screens.Select;
 using osu.Game.Users.Drawables;
 using osuTK;
 using osuTK.Graphics;
-using Humanizer;
-using osu.Game.Online.API;
 
 namespace osu.Game.Online.Leaderboards
 {
@@ -386,10 +386,10 @@ namespace osu.Game.Online.Leaderboards
                 List<MenuItem> items = new List<MenuItem>();
 
                 if (score.Mods.Length > 0 && modsContainer.Any(s => s.IsHovered) && songSelect != null)
-                    items.Add(new OsuMenuItem("Use these mods", MenuItemType.Highlighted, () => songSelect.Mods.Value = score.Mods));
+                    items.Add(new OsuMenuItem("使用他的 Mods 設定", MenuItemType.Highlighted, () => songSelect.Mods.Value = score.Mods));
 
                 if (score.ID != 0)
-                    items.Add(new OsuMenuItem("Delete", MenuItemType.Destructive, () => dialogOverlay?.Push(new LocalScoreDeleteDialog(score))));
+                    items.Add(new OsuMenuItem("刪除", MenuItemType.Destructive, () => dialogOverlay?.Push(new LocalScoreDeleteDialog(score))));
 
                 return items.ToArray();
             }
