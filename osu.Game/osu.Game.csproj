@@ -7,7 +7,7 @@
   <PropertyGroup Label="Nuget">
     <Title>osu! 中文化</Title>
     <PackageId>appleneko2001.osu.GameTranslateTw</PackageId>
-    <Version>2020.925.0</Version>
+    <Version>0.0.0</Version>
     <PackageIcon>icon.png</PackageIcon>
     <IsPackable>true</IsPackable>
     <Copyright>Copyright (c) 2020 ppy Pty Ltd</Copyright>
