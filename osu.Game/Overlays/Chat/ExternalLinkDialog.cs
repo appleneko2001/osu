@@ -12,7 +12,7 @@ namespace osu.Game.Overlays.Chat
         public ExternalLinkDialog(string url, Action openExternalLinkAction)
         {
             HeaderText = "只是確認一下...";
-            BodyText = $"你/妳現在在離開 osu! 並訪問下面的網址:\n\n{url}";
+            BodyText = $"你現在在離開 osu! 並訪問下面的網址:\n\n{url}";
 
             Icon = FontAwesome.Solid.ExclamationTriangle;
 

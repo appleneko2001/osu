@@ -116,7 +116,7 @@ namespace osu.Game.Overlays.AccountCreation
                 }
             };
 
-            multiAccountExplanationText.AddText("你/妳是 ");
+            multiAccountExplanationText.AddText("你是 ");
             multiAccountExplanationText.AddText(api.ProvidedUsername, cp => cp.Colour = colours.BlueLight);
             multiAccountExplanationText.AddText("嗎? osu! 有一條 ");
             multiAccountExplanationText.AddText("每人只能有一個 osu! 帳號的規則!", cp => cp.Colour = colours.Yellow);

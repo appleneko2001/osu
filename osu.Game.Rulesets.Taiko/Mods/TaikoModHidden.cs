@@ -7,7 +7,7 @@ namespace osu.Game.Rulesets.Taiko.Mods
 {
     public class TaikoModHidden : ModHidden
     {
-        public override string Description => @"在你/妳行動的時候它們會淡出!";
+        public override string Description => @"在你行動的時候它們會淡出!";
         public override double ScoreMultiplier => 1.06;
         public override bool HasImplementation => false;
     }

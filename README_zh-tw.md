@@ -21,7 +21,7 @@
 
 ## 運行 osu!
 
-如果想要不設定開發環境就運行 osu!lazer 可以看一下 [已編譯的發行](https://github.com/ppy/osu/releases). 下面請根據你/妳的作業系統安裝所需版本:
+如果想要不設定開發環境就運行 osu!lazer 可以看一下 [已編譯的發行](https://github.com/ppy/osu/releases). 下面請根據你的作業系統安裝所需版本:
 
 **最新組建:**
 
@@ -31,13 +31,13 @@
 - 在運行 Windows 7 或者 8.1 作業系統時, **[附加需求](https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?tabs=netcore31&pivots=os-windows)** 可能會被要求.
 爲了能夠正確運行 .NET Core 應用程式 請確保作業系統已經使用了最新的服務包 (Service packs) 
 
-如果上述平台表中沒有你/妳需要的 可以按照下面的教程去自己組建它
+如果上述平台表中沒有你需要的 可以按照下面的教程去自己組建它
 
 ## 開發自己的規則集
 
 osu! 設計成可以模塊化的遊戲模式, 叫做 "規則集". 開發任意一種可以讓開發者使用 osu! 客製化屬於自己的玩法風格. 想要開始製作規則集的話 我們有一些模板可供參考: [規則集模板, 官方頁面](https://github.com/ppy/osu-templates).
 
-你/妳也可以看一些其他人製作的規則集 在[這裏可以看到他們](https://github.com/ppy/osu/issues/5852).
+你也可以看一些其他人製作的規則集 在[這裏可以看到他們](https://github.com/ppy/osu/issues/5852).
 
 ## 開發或除錯 osu!
 
@@ -65,7 +65,7 @@ git pull
 
 ### 組建
 
-下面指出的推薦 IDE 已經自身附帶了組建專案功能. 你/妳應使用 IDE 提供的 組建/運行 功能確保不會搞砸一切. 在測試或者組建新的組件時 非常建議使用
+下面指出的推薦 IDE 已經自身附帶了組建專案功能. 你應使用 IDE 提供的 組建/運行 功能確保不會搞砸一切. 在測試或者組建新的組件時 非常建議使用
 `VisualTests` 專案預設 關於更多可以 [瀏覽下方](#貢獻). 
 
 - Visual Studio / Rider 用戶應去使用特定平台的 `.slnf` 檔案去載入專案, 相比主要的 `.sln.` 它會直接載入所有子專案.
@@ -77,7 +77,7 @@ git pull
 dotnet run --project osu.Desktop
 ```
 
-如果你/妳對 osu! 除錯不感興趣的話 可以在上面的命令加一個 `-c Release` 來進行最佳化. 在這個情況下 應將在該文檔中提到的任何指令中 `Debug` 換成 `Release`  
+如果你對 osu! 除錯不感興趣的話 可以在上面的命令加一個 `-c Release` 來進行最佳化. 在這個情況下 應將在該文檔中提到的任何指令中 `Debug` 換成 `Release`  
 
 如果組建失敗 試着復原 NuGet 包去解決 (`dotnet restore`). 
 
@@ -101,18 +101,18 @@ JetBrains ReSharper InspectCode 也提供了更廣泛的分析功能和規則. �
 
 ## 貢獻
 
-如果想要提供一些貢獻到該專案, 可以用提交 issues 的方式或者提交 pull 請求. 按照過去的經驗, 我們準備了 [貢獻指導 (暫未翻譯)](CONTRIBUTING.md) 來幫助你/妳與我們 (ppy官方團隊) 的合作過程並回答近期經常被詢問的問題 
+如果想要提供一些貢獻到該專案, 可以用提交 issues 的方式或者提交 pull 請求. 按照過去的經驗, 我們準備了 [貢獻指導 (暫未翻譯)](CONTRIBUTING.md) 來幫助你與我們 (ppy官方團隊) 的合作過程並回答近期經常被詢問的問題 
 
 由於我們 (ppy官方團隊) 已經定義了太多的標準在這裏, 沒有什麼東西是一成不變的. 如果有關於我們 (ppy官方團隊) 提供的代碼庫的代碼結構化的問題, 或者在貢獻過程中的任何問題 *請提出*他們. 我們 (ppy官方團隊) 接受所有的反饋 這樣在貢獻過程中減少更多的麻煩.
 
 給那些對本專案感興趣並提供了很多的貢獻的用戶, 我們 (ppy官方團隊) 會提供
 [賞金](https://docs.google.com/spreadsheets/d/1jNXfj_S3Pb5PErA-czDdC9DUu4IgUbe1Lt8E7CYUJuE/view?&rm=minimal#gid=523803337), 
-透過 PayPal 或者 osu!supporter 標籤. 不要猶豫 [請求賞金](https://docs.google.com/forms/d/e/1FAIpQLSet_8iFAgPMG526pBZ2Kic6HSh7XPM3fE8xPcnWNkMzINDdYg/viewform) 爲你/妳對專案獻出的工作和努力.
+透過 PayPal 或者 osu!supporter 標籤. 不要猶豫 [請求賞金](https://docs.google.com/forms/d/e/1FAIpQLSet_8iFAgPMG526pBZ2Kic6HSh7XPM3fE8xPcnWNkMzINDdYg/viewform) 爲你對專案獻出的工作和努力.
 
 ## 協議聲明
 
 *osu!* 的框架和代碼透過 [MIT 協議](https://opensource.org/licenses/MIT) 發行. 關於更多請閱覽 [協議檔案](LICENCE). 
-[tl;dr](https://tldrlegal.com/license/mit-license) 只要在軟體/源代碼的任何副本中包含原始版權和許可聲明, 就可以做任何你/妳想做的事情.
+[tl;dr](https://tldrlegal.com/license/mit-license) 只要在軟體/源代碼的任何副本中包含原始版權和許可聲明, 就可以做任何你想做的事情.
 
 注意! 這 *不包含* 使用 "osu!" 或者 "ppy" 商標在任何軟體, 資源, 推廣或者盈利, 因爲他們受商標法律保護.
 

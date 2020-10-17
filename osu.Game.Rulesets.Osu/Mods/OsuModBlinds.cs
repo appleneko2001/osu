@@ -21,7 +21,7 @@ namespace osu.Game.Rulesets.Osu.Mods
     public class OsuModBlinds : Mod, IApplicableToDrawableRuleset<OsuHitObject>, IApplicableToHealthProcessor
     {
         public override string Name => "關窗模式";
-        public override string Description => "在你/妳玩的時候畫面會關窗.";
+        public override string Description => "在你玩的時候畫面會關窗.";
         public override string Acronym => "BL";
 
         public override IconUsage? Icon => FontAwesome.Solid.Adjust;

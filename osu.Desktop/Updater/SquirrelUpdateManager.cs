@@ -22,7 +22,6 @@ namespace osu.Desktop.Updater
 {
     public class SquirrelUpdateManager : osu.Game.Updater.UpdateManager
     {
-        private OsuGame game;
         private UpdateManager updateManager;
         private CancellableDownloader cancellableDownloader;
         private NotificationOverlay notificationOverlay;
@@ -37,9 +36,8 @@ namespace osu.Desktop.Updater
         private bool updatePending;
 
         [BackgroundDependencyLoader]
-        private void load(NotificationOverlay notification, OsuGame game)
+        private void load(NotificationOverlay notification)
         {
-            this.game = game;
             notificationOverlay = notification;
 
             Splat.Locator.CurrentMutable.Register(() => new SquirrelLogger(), typeof(Splat.ILogger));
@@ -49,9 +47,8 @@ namespace osu.Desktop.Updater
 
         private async Task<bool> checkForUpdateAsync(bool useDeltaPatching = true, UpdateProgressNotification notification = null)
         {
-            string updateRepository = game.UseTranslationRepositoryUpdate ?
-                "https://github.com/appleneko2001/osu" :
-                "https://github.com/ppy/osu";
+            // Use translation update repository
+            string updateRepository = "https://github.com/appleneko2001/osu";
             // should we schedule a retry on completion of this check?
             bool scheduleRecheck = true;
 

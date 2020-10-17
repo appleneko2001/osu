@@ -129,14 +129,14 @@ namespace osu.Game.Overlays.AccountCreation
 
             textboxes = new[] { usernameTextBox, emailTextBox, passwordTextBox };
 
-            usernameDescription.AddText("暱稱將成爲你/妳的公開名字 不要包含褻瀆文字或者僞裝他人的暱稱 當然也不要把你/妳的個人資訊公開啦");
+            usernameDescription.AddText("暱稱將成爲你的公開名字 不要包含褻瀆文字或者僞裝他人的暱稱 當然也不要把你的個人資訊公開啦");
             //This will be your public presence. No profanity, no impersonation. Avoid exposing your own personal details, too!
             emailAddressDescription.AddText("將用於獲取通知, 帳號驗證和重設密碼. 我們承諾不會發送垃圾信封到這個E-mail.");
             emailAddressDescription.AddText(" 確定這裏是對的!", cp => cp.Font = cp.Font.With(Typeface.Torus, weight: FontWeight.Bold));
 
             passwordDescription.AddText("至少 ");
             characterCheckText = passwordDescription.AddText("有 8 個字長");
-            passwordDescription.AddText(". 選擇一個不錯的 不會忘記的密碼 比如一首你/妳最喜歡的曲名.");
+            passwordDescription.AddText(". 選擇一個不錯的 不會忘記的密碼 比如一首你最喜歡的曲名.");
 
             passwordTextBox.Current.ValueChanged += password => { characterCheckText.ForEach(s => s.Colour = password.NewValue.Length == 0 ? Color4.White : Interpolation.ValueAt(password.NewValue.Length, Color4.OrangeRed, Color4.YellowGreen, 0, 8, Easing.In)); };
         }

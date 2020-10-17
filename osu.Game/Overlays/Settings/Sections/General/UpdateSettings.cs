@@ -29,16 +29,6 @@ namespace osu.Game.Overlays.Settings.Sections.General
         [BackgroundDependencyLoader(true)]
         private void load(Storage storage, OsuConfigManager config, OsuGame game)
         {
-            if (updateManager?.CanCheckForUpdate == true)
-            {
-                Add(new SettingsCheckbox
-                {
-                    LabelText = "使用中文化更新流",
-                    TooltipText = "使用來自 appleneko2001/osu 的更新流來更新遊戲, 將保留中文化界面. 關閉後將使用ppy官方更新流.",
-                    Current = config.GetBindable<bool>(OsuSetting.UseTranslationUpdateRepo)
-                });
-            }
-
             Add(new SettingsEnumDropdown<ReleaseStream>
             {
                 LabelText = "發行版本",
@@ -59,7 +49,7 @@ namespace osu.Game.Overlays.Settings.Sections.General
                             {
                                 notifications?.Post(new SimpleNotification
                                 {
-                                    Text = $"You are running the latest release ({game.Version})",
+                                    Text = $"當前版本已經到最新! ({game.Version})",
                                     Icon = FontAwesome.Solid.CheckCircle,
                                 });
                             }

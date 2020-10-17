@@ -35,9 +35,8 @@ namespace osu.Game.Updater
 
         protected override async Task<bool> PerformUpdateCheck()
         {
-            string repo = game.UseTranslationRepositoryUpdate ?
-                "https://api.github.com/repos/appleneko2001/osu/releases/latest" :
-                "https://api.github.com/repos/ppy/osu/releases/latest";
+            // Use translation update repository instead.
+            string repo = "https://api.github.com/repos/appleneko2001/osu/releases/latest";
             try
             {
                 var releases = new OsuJsonWebRequest<GitHubRelease>(repo);

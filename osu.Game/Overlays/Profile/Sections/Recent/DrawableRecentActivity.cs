@@ -150,8 +150,9 @@ namespace osu.Game.Overlays.Profile.Sections.Recent
 
                 case RecentActivityType.BeatmapsetRevive:
                     addBeatmapsetLink();
-                    addText(" 已從死神中救出, 拯救者: ");
+                    addText(" 已被 ");
                     addUserLink();
+                    addText(" 從死神中救活 ");
                     break;
 
                 case RecentActivityType.BeatmapsetUpdate:
@@ -186,12 +187,12 @@ namespace osu.Game.Overlays.Profile.Sections.Recent
 
                 case RecentActivityType.UserSupportAgain:
                     addUserLink();
-                    addText(" 再一次贊助了 osu! - 感謝你/妳的贊助!");
+                    addText(" 再一次贊助了 osu! - 感謝你的贊助!");
                     break;
 
                 case RecentActivityType.UserSupportFirst:
                     addUserLink();
-                    addText(" 已成爲 osu!supporter - 感謝你/妳的贊助!");
+                    addText(" 已成爲 osu!supporter - 感謝你的贊助!");
                     break;
 
                 case RecentActivityType.UserSupportGift:

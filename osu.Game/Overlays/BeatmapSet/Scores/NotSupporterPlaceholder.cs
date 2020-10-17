@@ -28,7 +28,7 @@ namespace osu.Game.Overlays.BeatmapSet.Scores
                     {
                         Anchor = Anchor.TopCentre,
                         Origin = Anchor.TopCentre,
-                        Text = @"你/妳需要成爲 osu!supporter 才可以訪問好友和國家排名!",
+                        Text = @"你需要成爲 osu!supporter 才可以訪問好友和國家排名!",
                         Font = OsuFont.GetFont(size: 14, weight: FontWeight.Bold),
                     },
                     text = new LinkFlowContainer(t => t.Font = t.Font.With(size: 11))

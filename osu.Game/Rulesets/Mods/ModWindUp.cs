@@ -13,7 +13,7 @@ namespace osu.Game.Rulesets.Mods
     {
         public override string Name => "Wind Up";  // [RequestImprove] 跟Wind Down是一個情況 不知道怎麼翻譯比較好 
         public override string Acronym => "WU";
-        public override string Description => "你/妳能跟上節奏嗎?";
+        public override string Description => "你能跟上節奏嗎?";
         public override IconUsage? Icon => FontAwesome.Solid.ChevronCircleUp;
         public override double ScoreMultiplier => 1.0;
 

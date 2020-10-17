@@ -51,7 +51,7 @@ namespace osu.Game.Overlays.AccountCreation
                         Anchor = Anchor.TopCentre,
                         Origin = Anchor.TopCentre,
                         Font = OsuFont.GetFont(size: 12),
-                        Text = "讓我們開始註冊帳號吧 屬於你/妳的獨一無二的 osu! 帳號",
+                        Text = "讓我們開始註冊帳號吧 屬於你的獨一無二的 osu! 帳號",
                     },
                     new SettingsButton
                     {

@@ -116,7 +116,7 @@ namespace osu.Game.Screens.Menu
 
                 if (e.NewValue.IsSupporter)
                 {
-                    supportFlow.AddText("我們永遠不會忘記你/妳對 osu! 的支持", format);
+                    supportFlow.AddText("我們永遠不會忘記你對 osu! 的支持", format);
                 }
                 else
                 {
@@ -200,7 +200,7 @@ namespace osu.Game.Screens.Menu
                 "所有設定都會實時動態變更. 試着在遊戲中選擇別的皮膚!",
                 "每次更新都會加入一些新的東西, 記得保持關注!",
                 "如果覺得界面太小了, 試着將 \"界面縮放\" 設定在合適的範圍!",
-                "試着調整 \"畫面縮放\" 模式去變動你/妳的遊戲中和界面縮放, 甚至在全螢幕模式中!",
+                "試着調整 \"畫面縮放\" 模式去變動你的遊戲中和界面縮放, 甚至在全螢幕模式中!",
                 "osu!direct 已開放給所有 osu!lazer 玩家! 需要的時候在任意地方按 Ctrl-D!",
                 "在回放中的進度條 (畫面下方) 可被拖動!",
                 "多執行緒會在 \"FPS\" 過低的時候保持輸入控制不會被影響!",

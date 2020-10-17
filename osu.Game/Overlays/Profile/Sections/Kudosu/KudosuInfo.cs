@@ -57,7 +57,7 @@ namespace osu.Game.Overlays.Profile.Sections.Kudosu
             public CountAvailable()
                 : base("Kudosu 可用")
             {
-                DescriptionText.Text = "Kudosu 可以拿來交換 kudosu 星數 來幫助你/妳的圖譜有更多的關注量. 這裏顯示沒有被交換過的 Kudosu 數量";
+                DescriptionText.Text = "Kudosu 可以拿來交換 kudosu 星數 來幫助你的圖譜有更多的關注量. 這裏顯示沒有被交換過的 Kudosu 數量";
 //"Kudosu can be traded for kudosu stars, which will help your beatmap get more attention. This is the number of kudosu you haven't traded in yet.";
             }
         }
