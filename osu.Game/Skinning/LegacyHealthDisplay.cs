@@ -83,6 +83,9 @@ namespace osu.Game.Skinning
             // Compatible with new style marker YPos correction (Idk how new style looks like but I keep it in general)
             // But use centered position for old style marker are looks bad so I use zero YPos for old style marker
             // and IT WORKS PERFECTLY FOR OLD STYLE
+            // The fact is next line is perfectly works for both style marker!
+            // For new style -- use half height and for old style is just zero
+            // Tested with some skins for example: Quadrilate-don! 2!, KousakaHonoka, Crisp1.2 etc..
             marker.Position = fill.Position + new Vector2(fill.DrawWidth, isNewStyle ? fill.DrawHeight / 2 : 0);
         }
 
