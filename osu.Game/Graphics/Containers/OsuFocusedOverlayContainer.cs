@@ -6,12 +6,12 @@ using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics.Containers;
-using osuTK;
 using osu.Framework.Input.Bindings;
 using osu.Framework.Input.Events;
 using osu.Game.Audio;
 using osu.Game.Input.Bindings;
 using osu.Game.Overlays;
+using osuTK;
 
 namespace osu.Game.Graphics.Containers
 {
@@ -71,7 +71,9 @@ namespace osu.Game.Graphics.Containers
 
         protected override bool OnMouseDown(MouseDownEvent e)
         {
-            closeOnMouseUp = !base.ReceivePositionalInputAt(e.ScreenSpaceMousePosition);
+            // Improve UX: Press mouse back button to hide overlay
+            if (closeOnMouseUp = !base.ReceivePositionalInputAt(e.ScreenSpaceMousePosition) || e.Button == osuTK.Input.MouseButton.Button1)
+                Hide();
 
             return base.OnMouseDown(e);
         }
