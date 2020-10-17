@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
@@ -61,9 +61,9 @@ namespace osu.Game.Overlays.BeatmapSet.Scores
                         Spacing = new Vector2(margin, 0),
                         Children = new Drawable[]
                         {
-                            totalScoreColumn = new TextColumn("total score", largeFont, top_columns_min_width),
-                            accuracyColumn = new TextColumn("accuracy", largeFont, top_columns_min_width),
-                            maxComboColumn = new TextColumn("max combo", largeFont, top_columns_min_width)
+                            totalScoreColumn = new TextColumn("總分數", largeFont, top_columns_min_width),
+                            accuracyColumn = new TextColumn("準確率", largeFont, top_columns_min_width),
+                            maxComboColumn = new TextColumn("最高連擊", largeFont, top_columns_min_width)
                         }
                     },
                     new FillFlowContainer
