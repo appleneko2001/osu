@@ -16,7 +16,10 @@ namespace osu.Game.Configuration
         [Description("打擊失誤計 (右)")]
         HitErrorRight,
 
-        [Description("打擊失誤計 (雙)")]
+        [Description("打擊失誤計 (下)")]
+        HitErrorBottom,
+
+        [Description("打擊失誤計 (左側和右側)")]
         HitErrorBoth,
 
         [Description("彩塊 (左)")]
@@ -25,7 +28,10 @@ namespace osu.Game.Configuration
         [Description("彩塊 (右)")]
         ColourRight,
 
-        [Description("彩塊 (雙)")]
-        ColourBoth
+        [Description("彩塊 (左側和右側)")]
+        ColourBoth,
+
+        [Description("彩塊 (下)")]
+        ColourBottom,
     }
 }
