@@ -99,7 +99,7 @@ namespace osu.Game.Screens.Select
                                         AutoSizeAxes = Axes.Y,
                                         Width = 0.5f,
                                         Spacing = new Vector2(spacing),
-                                        Padding = new MarginPadding { Right = spacing / 2 },
+                                        Padding = new MarginPadding { Right = spacing / 2, Top = spacing  },
                                         Children = new[]
                                         {
                                             new DetailBox
@@ -108,7 +108,7 @@ namespace osu.Game.Screens.Select
                                                 {
                                                     RelativeSizeAxes = Axes.X,
                                                     AutoSizeAxes = Axes.Y,
-                                                    Padding = new MarginPadding { Horizontal = spacing, Top = spacing * 2, Bottom = spacing },
+                                                    Padding = new MarginPadding { Horizontal = spacing, Top = spacing, Bottom = spacing },
                                                 },
                                             },
                                             ratingsContainer = new DetailBox
@@ -127,7 +127,6 @@ namespace osu.Game.Screens.Select
                                         RelativeSizeAxes = Axes.X,
                                         AutoSizeAxes = Axes.Y,
                                         Width = 0.5f,
-                                        //ScrollbarVisible = false,
                                         Padding = new MarginPadding { Left = spacing / 2 },
                                         Child = new FillFlowContainer
                                         {
@@ -149,9 +148,8 @@ namespace osu.Game.Screens.Select
                             },
                             failRetryContainer = new Container
                             {
-                                //Anchor = Anchor.BottomLeft,
-                                //Origin = Anchor.BottomLeft,
                                 RelativeSizeAxes = Axes.X,
+                                Padding = new MarginPadding { Top = spacing },
                                 Children = new Drawable[]
                                 {
                                     new OsuSpriteText
@@ -169,22 +167,20 @@ namespace osu.Game.Screens.Select
                         },
                     },
                 },
-            });
+            }); ;
             Add(loading = new LoadingLayer(content));
+
+            mainScroll.ScrollContent.RelativeSizeAxes = Axes.X;
+            mainScroll.ScrollContent.AutoSizeAxes = Axes.None;
+
+            failRetryContainer.Height = 120;
         }
 
         protected override void UpdateAfterChildren()
         {
             base.UpdateAfterChildren();
 
-            // The ugly way to fix scroll content height
-            // I'm sorry but I trying to do it best:(
-            mainScroll.ScrollContent.RelativeSizeAxes = Axes.X;
-            mainScroll.ScrollContent.AutoSizeAxes = Axes.None;
             mainScroll.ScrollContent.Height = top.DrawHeight + failRetryContainer.DrawHeight;
-            //metadataScroll.Height = statsFlow.DrawHeight;
-            failRetryContainer.Height = 120;
-            //DrawHeight - Padding.TotalVertical - (top.DrawHeight + spacing / 2);
         }
 
         private void updateStatistics()
