@@ -71,16 +71,15 @@ namespace osu.Game.Graphics.Containers
 
         protected override bool OnMouseDown(MouseDownEvent e)
         {
-            // Improve UX: Press mouse back button to hide overlay
-            if (closeOnMouseUp = !base.ReceivePositionalInputAt(e.ScreenSpaceMousePosition) || e.Button == osuTK.Input.MouseButton.Button1)
-                Hide();
+            closeOnMouseUp = !base.ReceivePositionalInputAt(e.ScreenSpaceMousePosition);
 
             return base.OnMouseDown(e);
         }
 
         protected override void OnMouseUp(MouseUpEvent e)
         {
-            if (closeOnMouseUp && !base.ReceivePositionalInputAt(e.ScreenSpaceMousePosition))
+            // Improve UX: Press mouse back button to hide overlay 
+            if ((closeOnMouseUp && !base.ReceivePositionalInputAt(e.ScreenSpaceMousePosition)) || e.Button == osuTK.Input.MouseButton.Button1)
                 Hide();
 
             base.OnMouseUp(e);
