@@ -153,7 +153,10 @@ namespace osu.Game.Online.API
 
             cancelled = true;
             WebRequest?.Abort();
-             
+
+            if (e is OperationCanceledException)
+                return;
+
             try
             {
                 string responseString = WebRequest?.GetResponseString();
@@ -168,7 +171,7 @@ namespace osu.Game.Online.API
             }
             catch
             {
-            } 
+            }
 
             Logger.Log($@"Failing request {this} ({e})", LoggingTarget.Network);
             pendingFailure = () => TriggerFailure(e);
