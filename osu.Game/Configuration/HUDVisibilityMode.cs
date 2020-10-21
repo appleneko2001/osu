@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System.ComponentModel;
@@ -9,10 +9,10 @@ namespace osu.Game.Configuration
     {
         Never,
 
-        [Description("Hide during gameplay")]
+        [Description("遊戲中隱藏")]
         HideDuringGameplay,
 
-        [Description("Hide during breaks")]
+        [Description("休息中隱藏")]
         HideDuringBreaks,
 
         Always

@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Allocation;
@@ -63,8 +63,8 @@ namespace osu.Game.Screens.Play
                             Origin = Anchor.Centre,
                         }.With(tfc =>
                         {
-                            tfc.AddText("This beatmap contains scenes with ");
-                            tfc.AddText("rapidly flashing colours", s =>
+                            tfc.AddText("該圖譜有一些 "); //This beatmap contains scenes with
+                            tfc.AddText("顏色快速閃爍的場景", s => //rapidly flashing colours
                             {
                                 s.Font = s.Font.With(weight: FontWeight.Bold);
                                 s.Colour = colours.Yellow;
@@ -72,7 +72,7 @@ namespace osu.Game.Screens.Play
                             tfc.AddText(".");
 
                             tfc.NewParagraph();
-                            tfc.AddText("Please take caution if you are affected by epilepsy.");
+                            tfc.AddText("記得留意 如果感到不適."); //Please take caution if you are affected by epilepsy.
                         }),
                     }
                 }

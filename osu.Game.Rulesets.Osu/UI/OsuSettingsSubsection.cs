@@ -42,7 +42,7 @@ namespace osu.Game.Rulesets.Osu.UI
                 },
                 new SettingsEnumDropdown<PlayfieldBorderStyle>
                 {
-                    LabelText = "Playfield border style",
+                    LabelText = "遊戲區域邊界樣式",
                     Current = config.GetBindable<PlayfieldBorderStyle>(OsuRulesetSetting.PlayfieldBorderStyle),
                 },
             };

@@ -151,7 +151,7 @@ namespace osu.Game.Online.Leaderboards
                 switch (placeholderState = value)
                 {
                     case PlaceholderState.NetworkFailure:
-                        replacePlaceholder(new ClickablePlaceholder(@"Couldn't fetch scores!", FontAwesome.Solid.Sync)
+                        replacePlaceholder(new ClickablePlaceholder(@"無法獲取排名板資訊!", FontAwesome.Solid.Sync)
                         {
                             Action = UpdateScores,
                         });
