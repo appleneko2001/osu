@@ -37,10 +37,10 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
                     LabelText = "休息片刻時背景變亮",
                     Current = config.GetBindable<bool>(OsuSetting.LightenDuringBreaks)
                 },
-                new SettingsCheckbox
+                new SettingsEnumDropdown<HUDVisibilityMode>
                 {
-                    LabelText = "顯示分數圖層",
-                    Current = config.GetBindable<bool>(OsuSetting.ShowInterface)
+                    LabelText = "遊戲中介面圖層",
+                    Current = config.GetBindable<HUDVisibilityMode>(OsuSetting.HUDVisibilityMode)
                 },
                 new SettingsCheckbox
                 {
@@ -75,9 +75,10 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
                 },
                 new SettingsEnumDropdown<ScoringMode>
                 {
-                    LabelText = "分數計算模式",
-                    Current = config.GetBindable<ScoringMode>(OsuSetting.ScoreDisplayMode)
-                }
+                    LabelText = "分數顯示模式",
+                    Current = config.GetBindable<ScoringMode>(OsuSetting.ScoreDisplayMode),
+                    Keywords = new[] { "scoring" }
+                },
             };
 
             if (RuntimeInfo.OS == RuntimeInfo.Platform.Windows)
