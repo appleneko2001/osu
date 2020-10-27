@@ -4,52 +4,52 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using osu.Framework.Configuration;
-using osu.Framework.Screens;
-using osu.Game.Configuration;
-using osu.Framework.Graphics;
-using osu.Framework.Graphics.Containers;
-using osu.Game.Overlays;
-using osu.Framework.Logging;
-using osu.Framework.Allocation;
-using osu.Game.Overlays.Toolbar;
-using osu.Game.Screens;
-using osu.Game.Screens.Menu;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
 using JetBrains.Annotations;
+using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Bindables;
+using osu.Framework.Configuration;
 using osu.Framework.Development;
 using osu.Framework.Extensions.IEnumerableExtensions;
+using osu.Framework.Graphics;
+using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Input;
 using osu.Framework.Input.Bindings;
 using osu.Framework.Input.Events;
+using osu.Framework.Logging;
 using osu.Framework.Platform;
+using osu.Framework.Screens;
 using osu.Framework.Threading;
 using osu.Game.Beatmaps;
 using osu.Game.Collections;
+using osu.Game.Configuration;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Input;
-using osu.Game.Overlays.Notifications;
 using osu.Game.Input.Bindings;
 using osu.Game.Online.Chat;
+using osu.Game.Overlays;
 using osu.Game.Overlays.Music;
-using osu.Game.Skinning;
-using osuTK.Graphics;
+using osu.Game.Overlays.Notifications;
+using osu.Game.Overlays.Toolbar;
 using osu.Game.Overlays.Volume;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Scoring;
+using osu.Game.Screens;
+using osu.Game.Screens.Menu;
 using osu.Game.Screens.Play;
 using osu.Game.Screens.Ranking;
 using osu.Game.Screens.Select;
+using osu.Game.Skinning;
 using osu.Game.Updater;
 using osu.Game.Utils;
+using osuTK.Graphics;
 using LogLevel = osu.Framework.Logging.LogLevel;
 
 namespace osu.Game
@@ -268,7 +268,7 @@ namespace osu.Game
                 case LinkAction.Spectate:
                     waitForReady(() => notifications, _ => notifications.Post(new SimpleNotification
                     {
-                        Text = @"This link type is not yet supported!",
+                        Text = @"該鏈接類型還沒有被支援!",
                         Icon = FontAwesome.Solid.LifeRing,
                     }));
                     break;
@@ -755,7 +755,7 @@ namespace osu.Game
                     Schedule(() => notifications.Post(new SimpleNotification
                     {
                         Icon = entry.Level == LogLevel.Important ? FontAwesome.Solid.ExclamationCircle : FontAwesome.Solid.Bomb,
-                        Text = entry.Message.Truncate(256) + (entry.Exception != null && IsDeployedBuild ? "\n\nThis error has been automatically reported to the devs." : string.Empty),
+                        Text = entry.Message.Truncate(256) + (entry.Exception != null && IsDeployedBuild ? "\n\n該錯誤已自動回報到開發團隊." : string.Empty),
                     }));
                 }
                 else if (recentLogCount == short_term_display_limit)

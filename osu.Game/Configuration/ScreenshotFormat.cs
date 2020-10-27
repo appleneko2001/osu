@@ -7,10 +7,10 @@ namespace osu.Game.Configuration
 {
     public enum ScreenshotFormat
     {
-        [Description("JPG (輕量)")]
+        [Description("JPG (經過壓縮)")]
         Jpg = 1,
 
-        [Description("PNG (無損)")]
+        [Description("PNG (高解析度)")]
         Png = 2
     }
 }

@@ -51,9 +51,10 @@
                 // And this one cannot be injected too cuz it uses TextFlowContainer to rendering text, they separated a lot parts so our injector cannot work. 
                 //new string[2] { "Texture could not be loaded via STB; falling back to ImageSharp.", "無法使用STB載入圖像, 將使用ImageSharp處理." }
                 );
+        /// <summary>
+        ///  It doesn't work lol 
+        /// </summary>
         public static readonly StringResourceStore GAME_PATCH = new StringResourceStore(
-            new string[2] { "Current Directory: ", "當前目錄: " },
-            //new string[2] { "Computer", "計算機" },
             new string[2] { "No scores have been set yet. Maybe you can be the first!", "暫時還沒有成績. 也許你可以成爲第一個!" },
             new string[2] { "None of your friends have set a score on this map yet.", "你的朋友們好像還沒有在這張圖上計入成績." },
             new string[2] { "No one from your country has set a score on this map yet.", "在你的國家中還沒有一個人在這張圖上計入成績." },
@@ -63,9 +64,6 @@
             new string[2] { "load replies", "顯示回覆" },
             new string[2] { "show more", "顯示更多" },
             new string[2] { "deleted", "已刪除" },
-
-            new string[2] { "You've retried ", "你已經重試了 " },
-            new string[2] { " in this session", " 在當前會話" },
 
             new string[2] { "Your music volume is set to 0%! Click here to restore it.", "音樂音量設定爲 0%! 點擊以復原設定." },
             new string[2] { "This link type is not yet supported!", "該鏈接類型還沒有被支援!" }

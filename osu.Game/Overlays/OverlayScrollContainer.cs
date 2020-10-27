@@ -116,7 +116,7 @@ namespace osu.Game.Overlays
                     }
                 });
 
-                TooltipText = "Scroll to top";
+                TooltipText = "回到最上方";
             }
 
             [BackgroundDependencyLoader]

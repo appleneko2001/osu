@@ -4,7 +4,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Humanizer;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
@@ -232,21 +231,21 @@ namespace osu.Game.Screens.Play
             {
                 new OsuSpriteText
                 {
-                    Text = new LocalisedString("You've retried "),
+                    Text = new LocalisedString("你已經重試了 "),
                     Shadow = true,
                     ShadowColour = new Color4(0, 0, 0, 0.25f),
                     Font = OsuFont.GetFont(size: 18),
                 },
                 new OsuSpriteText
                 {
-                    Text = "time".ToQuantity(retries),
+                    Text = $"{retries} 次",//"time".ToQuantity(retries),
                     Font = OsuFont.GetFont(weight: FontWeight.Bold, size: 18),
                     Shadow = true,
                     ShadowColour = new Color4(0, 0, 0, 0.25f),
                 },
                 new OsuSpriteText
                 {
-                    Text = new LocalisedString(" in this session"),
+                    Text = new LocalisedString(" 在本次會話"),
                     Shadow = true,
                     ShadowColour = new Color4(0, 0, 0, 0.25f),
                     Font = OsuFont.GetFont(size: 18),

@@ -156,7 +156,7 @@ namespace osu.Game.Graphics.UserInterfaceV2
 
                 flow.ChildrenEnumerable = new Drawable[]
                 {
-                    new OsuSpriteText { Text = new LocalisedString("Current Directory: "), Font = OsuFont.Default.With(size: DisplayPiece.HEIGHT), },
+                    new OsuSpriteText { Text = new LocalisedString("當前目錄: "), Font = OsuFont.Default.With(size: DisplayPiece.HEIGHT), },
                     new ComputerPiece(),
                 }.Concat(pathPieces);
             }
