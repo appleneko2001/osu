@@ -28,6 +28,8 @@
 | [Windows (x64)](https://github.com/ppy/osu/releases/latest/download/install.exe)  | [macOS 10.12+](https://github.com/ppy/osu/releases/latest/download/osu.app.zip) | [Linux (x64)](https://github.com/ppy/osu/releases/latest/download/osu.AppImage) | [iOS(iOS 10+, 官方版本)](https://osu.ppy.sh/home/testflight) | [Android (5+)](https://github.com/ppy/osu/releases/latest/download/sh.ppy.osulazer.apk)
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 
+- iOS testflight 測試人員組可能會滿員 (Apple 公司設定了 10,000 用戶的上限). 我們有些時候會重設該設定 如果發生的話. 請不要再擔心或者提問這個問題. 如果發生的話 請定時再試或者追隨 [peppy 的 twitter](https://twitter.com/ppy) 用於接收重設測試人員表通知.
+
 - 在運行 Windows 7 或者 8.1 作業系統時, **[附加需求](https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?tabs=netcore31&pivots=os-windows)** 可能會被要求.
 爲了能夠正確運行 .NET Core 應用程式 請確保作業系統已經使用了最新的服務包 (Service packs) 
 
