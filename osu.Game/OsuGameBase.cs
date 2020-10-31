@@ -30,7 +30,7 @@ using osu.Game.Input;
 using osu.Game.Input.Bindings;
 using osu.Game.IO;
 using osu.Game.Localisation;
-using osu.Game.Online.API;
+using osu.Game.Online.Spectator;
 using osu.Game.Overlays;
 using osu.Game.Resources;
 using osu.Game.Rulesets;
@@ -74,6 +74,8 @@ namespace osu.Game
         protected RulesetConfigCache RulesetConfigCache;
 
         protected IAPIProvider API;
+
+        private SpectatorStreamingClient spectatorStreaming;
 
         protected MenuCursorContainer MenuCursorContainer;
 
@@ -192,9 +194,9 @@ namespace osu.Game
             dependencies.Cache(SkinManager = new SkinManager(Storage, contextFactory, Host, Audio, new NamespacedResourceStore<byte[]>(Resources, "Skins/Legacy")));
             dependencies.CacheAs<ISkinSource>(SkinManager);
 
-            API ??= new APIAccess(LocalConfig);
+            dependencies.CacheAs(API ??= new APIAccess(LocalConfig));
 
-            dependencies.CacheAs(API);
+            dependencies.CacheAs(spectatorStreaming = new SpectatorStreamingClient());
 
             var defaultBeatmap = new DummyWorkingBeatmap(Audio, Textures);
 
@@ -250,8 +252,11 @@ namespace osu.Game
 
             FileStore.Cleanup();
 
+            // add api components to hierarchy.
             if (API is APIAccess apiAccess)
                 AddInternal(apiAccess);
+            AddInternal(spectatorStreaming);
+
             AddInternal(RulesetConfigCache);
 
             MenuCursorContainer = new MenuCursorContainer { RelativeSizeAxes = Axes.Both };

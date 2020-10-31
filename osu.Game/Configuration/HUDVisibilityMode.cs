@@ -12,9 +12,6 @@ namespace osu.Game.Configuration
         [Description("遊戲中隱藏")]
         HideDuringGameplay,
 
-        [Description("休息中隱藏")]
-        HideDuringBreaks,
-
         Always
     }
 }

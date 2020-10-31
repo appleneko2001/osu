@@ -67,6 +67,7 @@ namespace osu.Game.Input.Bindings
             new KeyBinding(new[] { InputKey.Control, InputKey.Plus }, GlobalAction.IncreaseScrollSpeed),
             new KeyBinding(new[] { InputKey.Control, InputKey.Minus }, GlobalAction.DecreaseScrollSpeed),
             new KeyBinding(InputKey.MouseMiddle, GlobalAction.PauseGameplay),
+            new KeyBinding(InputKey.Control, GlobalAction.HoldForHUD),
         };
 
         public IEnumerable<KeyBinding> AudioControlKeyBindings => new[]
@@ -187,5 +188,8 @@ namespace osu.Game.Input.Bindings
 
         [Description("校時模式")] // [RequestImprove] 原文是Timing mode 不知道要怎麼正確翻譯就丟到Google translate查了一下 可能有點不對 個人的理解應該是時間軸 但是意義有點不太準確
         EditorTimingMode,
+
+        [Description("Hold for HUD")]
+        HoldForHUD,
     }
 }
