@@ -30,6 +30,7 @@ using osu.Game.Input;
 using osu.Game.Input.Bindings;
 using osu.Game.IO;
 using osu.Game.Localisation;
+using osu.Game.Online.API;
 using osu.Game.Online.Spectator;
 using osu.Game.Overlays;
 using osu.Game.Resources;
