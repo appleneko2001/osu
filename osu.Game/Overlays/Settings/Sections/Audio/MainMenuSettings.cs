@@ -42,7 +42,7 @@ namespace osu.Game.Overlays.Settings.Sections.Audio
                 },
                 new SettingsDropdown<SeasonalBackgroundMode>
                 {
-                    LabelText = "Seasonal backgrounds",
+                    LabelText = "季節和節日背景圖像",
                     Current = config.GetBindable<SeasonalBackgroundMode>(OsuSetting.SeasonalBackgroundMode),
                     Items = Enum.GetValues(typeof(SeasonalBackgroundMode)).Cast<SeasonalBackgroundMode>()
                 }
