@@ -1,11 +1,16 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using NUnit.Framework.Internal;
+using osu.Framework.Graphics.Sprites;
 using osu.Framework.Platform;
+using osu.Game.Overlays;
+using osu.Game.Overlays.Notifications;
+using Logger = osu.Framework.Logging.Logger;
 
 namespace osu.Game.IO
 {
@@ -57,7 +62,17 @@ namespace osu.Game.IO
 
             CopyRecursive(source, destination);
             ChangeTargetStorage(newStorage);
-            DeleteRecursive(source);
+
+            // This action could be breaked if delete old files fail.
+            // we need to handle IOException for keep migration processes.
+            try
+            { 
+                DeleteRecursive(source);
+            }
+            catch(IOException error)
+            {
+                Logger.Error(error, "Cannot delete old storage files on migration process.", Framework.Logging.LoggingTarget.Database);
+            }
         }
 
         protected void DeleteRecursive(DirectoryInfo target, bool topLevelExcludes = true)
