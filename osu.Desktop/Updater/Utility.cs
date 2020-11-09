@@ -65,9 +65,9 @@ namespace osu.Desktop.Updater
                     byte[] buffer = new byte[4096];
                     int read;
                     int totalRead = 0;
-                    while ((read = await file.ReadAsync(buffer, 0, buffer.Length, cancellationToken).ConfigureAwait(false)) > 0)
+                    while ((read = await file.ReadAsync(buffer, cancellationToken).ConfigureAwait(false)) > 0)
                     {
-                        await toStream.WriteAsync(buffer, 0, read, cancellationToken).ConfigureAwait(false);
+                        await toStream.WriteAsync(buffer.AsMemory(0, read), cancellationToken).ConfigureAwait(false);
                         totalRead += read;
                         progressCallback(totalRead, length);
                     }
@@ -90,9 +90,9 @@ namespace osu.Desktop.Updater
                     byte[] buffer = new byte[4096];
                     int read;
                     int totalRead = 0;
-                    while ((read = await stream.ReadAsync(buffer, 0, buffer.Length, cancellationToken).ConfigureAwait(false)) > 0)
+                    while ((read = await stream.ReadAsync(buffer, cancellationToken).ConfigureAwait(false)) > 0)
                     {
-                        await toStream.WriteAsync(buffer, 0, read, cancellationToken).ConfigureAwait(false);
+                        await toStream.WriteAsync(buffer.AsMemory(0, read), cancellationToken).ConfigureAwait(false);
                         totalRead += read;
                         progressCallback(totalRead, length);
                     }
