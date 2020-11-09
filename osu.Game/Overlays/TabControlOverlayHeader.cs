@@ -106,7 +106,7 @@ namespace osu.Game.Overlays
                 public OverlayHeaderTabItem(T value)
                     : base(value)
                 {
-                    Text.Text = ((value as Enum)?.GetDescription() ?? value.ToString()).ToLower();
+                    Text.Text = ((Value as Enum)?.GetDescription() ?? Value.ToString()).ToLower();
                     Text.Font = OsuFont.GetFont(size: 14);
                     Text.Margin = new MarginPadding { Vertical = 16.5f }; // 15px padding + 1.5px line-height difference compensation
                     Bar.Margin = new MarginPadding { Bottom = bar_height };

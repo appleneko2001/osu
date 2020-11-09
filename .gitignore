@@ -340,3 +340,5 @@ inspectcode
 /osu.Desktop/staging
 /osu.Game/Collections/DeleteCollectionDialog_BIG5.cs.old
 *.Big-5
+
+*.GeneratedMSBuildEditorConfig.editorconfig

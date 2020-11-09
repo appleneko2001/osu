@@ -312,6 +312,7 @@ namespace osu.Game.Screens.Select
 
             public MetadataSection(string title)
             {
+                Alpha = 0;
                 RelativeSizeAxes = Axes.X;
                 AutoSizeAxes = Axes.Y;
 

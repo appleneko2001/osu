@@ -32,11 +32,7 @@ namespace osu.Game.Screens.Select
         [BackgroundDependencyLoader]
         private void load(OsuColour colours)
         {
-            BeatmapOptions.AddButton(@"編輯", @"這個圖譜", FontAwesome.Solid.PencilAlt, colours.Yellow, () =>
-            {
-                ValidForResume = false;
-                Edit();
-            });
+            BeatmapOptions.AddButton(@"編輯", @"這個圖譜", FontAwesome.Solid.PencilAlt, colours.Yellow, () => Edit());
 
             ((PlayBeatmapDetailArea)BeatmapDetails).Leaderboard.ScoreSelected += PresentScore;
         }
