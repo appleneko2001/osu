@@ -35,7 +35,7 @@ namespace osu.Game.Overlays.Settings.Sections.Input
                 new SettingsCheckbox
                 {
                     LabelText = "原生輸入 (Raw Input)",
-                    TooltipText = rawInputToggle.Disabled ? "當前作業系統不支援該特性" : "啟用原生輸入 (Raw Input) 後會忽略 Windows 的滑鼠速度設定, 讓游標更精準地移動.\n\n警告! 該設定暫時在SDL模式下不會運作!",
+                    TooltipText = rawInputToggle.Disabled ? "當前作業系統不支援該特性" : "啟用原生輸入 (Raw Input) 後會忽略 Windows 的滑鼠速度設定, 讓游標更精準地移動.",
                     Current = rawInputToggle
                 },
                 new SensitivitySetting
