@@ -115,7 +115,7 @@ namespace osu.Game.Overlays.BeatmapListing
                                     categoryFilter = new BeatmapSearchFilterRow<SearchCategory>(@"類型"),
                                     genreFilter = new BeatmapSearchFilterRow<SearchGenre>(@"曲風"),
                                     languageFilter = new BeatmapSearchFilterRow<SearchLanguage>(@"語言"),
-                                    extraFilter = new BeatmapSearchMultipleSelectionFilterRow<SearchExtra>(@"Extra"),
+                                    extraFilter = new BeatmapSearchMultipleSelectionFilterRow<SearchExtra>(@"進階"),
                                     ranksFilter = new BeatmapSearchScoreFilterRow(),
                                     playedFilter = new BeatmapSearchFilterRow<SearchPlayed>(@"已玩過")
                                 }

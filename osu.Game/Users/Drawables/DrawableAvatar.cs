@@ -74,7 +74,7 @@ namespace osu.Game.Users.Drawables
 
         private class ClickableArea : OsuClickableContainer
         {
-            public override string TooltipText => Enabled.Value ? @"view profile" : null;
+            public override string TooltipText => Enabled.Value ? @"顯示用戶資訊" : null;
 
             protected override bool OnClick(ClickEvent e)
             {

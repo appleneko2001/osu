@@ -34,7 +34,7 @@ namespace osu.Game.Overlays.BeatmapSet.Buttons
             {
                 if (!Enabled.Value) return string.Empty;
 
-                return (favourited.Value ? "Unfavourite" : "Favourite") + " this beatmapset";
+                return (favourited.Value ? "解除收藏" : "收藏") + "該圖譜集";
             }
         }
 

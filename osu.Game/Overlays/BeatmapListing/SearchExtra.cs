@@ -7,10 +7,10 @@ namespace osu.Game.Overlays.BeatmapListing
 {
     public enum SearchExtra
     {
-        [Description("Has Video")]
+        [Description("有背景影片")]
         Video,
 
-        [Description("Has Storyboard")]
+        [Description("有故事板")]
         Storyboard
     }
 }

@@ -58,6 +58,6 @@ namespace osu.Game.Graphics.UserInterface
             return true;
         }
 
-        public string TooltipText => "view in browser";
+        public string TooltipText => "在網頁瀏覽器中查看";
     }
 }

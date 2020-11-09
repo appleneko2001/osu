@@ -24,13 +24,13 @@ namespace osu.Game.Overlays.Settings.Sections.Online
                 new SettingsCheckbox
                 {
                     LabelText = "默認下載沒有影像的圖譜",
-                    Keywords = new[] { "no-video" },
+                    Keywords = new[] { "no-video", "無影片", "沒有影像" },
                     Current = config.GetBindable<bool>(OsuSetting.PreferNoVideo)
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Automatically download beatmaps when spectating",
-                    Keywords = new[] { "spectator" },
+                    LabelText = "觀看模式下自動下載需要的圖譜",
+                    Keywords = new[] { "spectator", "觀看模式", "自動下載" },
                     Current = config.GetBindable<bool>(OsuSetting.AutomaticallyDownloadWhenSpectating),
                 },
             };

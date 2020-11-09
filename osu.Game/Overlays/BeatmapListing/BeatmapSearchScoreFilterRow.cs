@@ -11,7 +11,7 @@ namespace osu.Game.Overlays.BeatmapListing
     public class BeatmapSearchScoreFilterRow : BeatmapSearchMultipleSelectionFilterRow<ScoreRank>
     {
         public BeatmapSearchScoreFilterRow()
-            : base(@"Rank Achieved")
+            : base(@"Rank Achieved") // [Untranslated]
         {
         }
 
@@ -36,10 +36,10 @@ namespace osu.Game.Overlays.BeatmapListing
                 switch (value)
                 {
                     case ScoreRank.XH:
-                        return @"Silver SS";
+                        return @"銀 SS";
 
                     case ScoreRank.SH:
-                        return @"Silver S";
+                        return @"銀 S";
 
                     default:
                         return value.GetDescription();

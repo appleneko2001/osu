@@ -165,7 +165,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
             if (CanScaleX && CanScaleY) addFullScaleComponents();
             if (CanScaleY) addYScaleComponents();
             if (CanRotate) addRotationComponents();
-            if (CanReverse) addButton(FontAwesome.Solid.Backward, "Reverse pattern (Ctrl-G)", () => OnReverse?.Invoke());
+            if (CanReverse) addButton(FontAwesome.Solid.Backward, "反轉 (Ctrl-G)", () => OnReverse?.Invoke());
         }
 
         private void addRotationComponents()

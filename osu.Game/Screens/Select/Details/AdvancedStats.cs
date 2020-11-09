@@ -61,7 +61,7 @@ namespace osu.Game.Screens.Select.Details
                 Children = new[]
                 {
                     FirstValue = new StatisticRow(), // circle size/key amount
-                    HpDrain = new StatisticRow { Title = "掉血速度" }, //[RequestImprove] 用了個比較爛的譯文 如果可以的話告訴我怎麼翻譯比較好 我中文很爛xD
+                    HpDrain = new StatisticRow { Title = "枯竭速度" }, //[RequestImprove] 用了個比較爛的譯文 如果可以的話告訴我怎麼翻譯比較好 我中文很爛xD
                     Accuracy = new StatisticRow { Title = "準擊率" }, 
                     ApproachRate = new StatisticRow { Title = "縮圈速度" },
                     starDifficulty = new StatisticRow(10, true) { Title = "難度" },

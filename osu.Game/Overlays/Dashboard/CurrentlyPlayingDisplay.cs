@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Specialized;
@@ -130,7 +130,7 @@ namespace osu.Game.Overlays.Dashboard
                             new PurpleTriangleButton
                             {
                                 RelativeSizeAxes = Axes.X,
-                                Text = "Watch",
+                                Text = "觀看",
                                 Anchor = Anchor.TopCentre,
                                 Origin = Anchor.TopCentre,
                                 Action = () => game?.PerformFromScreen(s => s.Push(new Spectator(user)))
