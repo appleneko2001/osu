@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using Newtonsoft.Json;
+using osu.Framework.Localisation;
 using osu.Framework.Testing;
 using osu.Game.Database;
 using osu.Game.Users;
@@ -62,7 +63,9 @@ namespace osu.Game.Beatmaps
         public override string ToString()
         {
             string author = Author == null ? string.Empty : $"({Author})";
-            return $"{Artist} - {Title} {author}".Trim();
+            var artist = new LocalisedString((ArtistUnicode, Artist));
+            var title = new LocalisedString((TitleUnicode, Title));
+            return $"{artist} - {title} {author}".Trim();
         }
 
         [JsonIgnore]
