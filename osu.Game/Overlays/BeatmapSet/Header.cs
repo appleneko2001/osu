@@ -10,6 +10,7 @@ using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
 using osu.Framework.Graphics.Shapes;
+using osu.Framework.Localisation;
 using osu.Game.Beatmaps.Drawables;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
@@ -246,8 +247,16 @@ namespace osu.Game.Overlays.BeatmapSet
 
                     loading.Hide();
 
-                    title.Text = setInfo.NewValue.Metadata.Title ?? string.Empty;
-                    artist.Text = setInfo.NewValue.Metadata.Artist ?? string.Empty;
+                    // Make BeatmapInfo overlay shows unicoded title and artist
+                    // Actually the API responce are provided those values but the class implements cant see them 
+
+                    // Use LocalisedString to insert the unicode title and artist strings
+                    title.Text = new LocalisedString((
+                        setInfo.NewValue.Metadata.TitleUnicode, // TitleUnicode text from API responce
+                        setInfo.NewValue.Metadata.Title ?? string.Empty));
+                    artist.Text = new LocalisedString((
+                        setInfo.NewValue.Metadata.ArtistUnicode, // ArtistUnicode text from API responce
+                        setInfo.NewValue.Metadata.Artist ?? string.Empty));
 
                     onlineStatusPill.FadeIn(500, Easing.OutQuint);
                     onlineStatusPill.Status = setInfo.NewValue.OnlineInfo.Status;
