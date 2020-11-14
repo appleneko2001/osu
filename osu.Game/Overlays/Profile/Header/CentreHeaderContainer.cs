@@ -58,6 +58,14 @@ namespace osu.Game.Overlays.Profile.Header
                         {
                             User = { BindTarget = User }
                         },
+                        // Disabled temporarily, Will be available
+                        // after peppy improves the watch stream system
+                        // (Supports watch to stable players gameplay.)
+                        /*new SpectatePlayerButton
+                        {
+                            RelativeSizeAxes = Axes.Y,
+                            User = { BindTarget = User }
+                        },*/
                     }
                 },
                 new Container
