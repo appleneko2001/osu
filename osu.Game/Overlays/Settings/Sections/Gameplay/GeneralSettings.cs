@@ -68,6 +68,11 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
                     LabelText = "立體打擊音效",
                     Current = config.GetBindable<bool>(OsuSetting.PositionalHitSounds)
                 },
+                new SettingsCheckbox
+                {
+                    LabelText = "Always play first combo break sound",
+                    Current = config.GetBindable<bool>(OsuSetting.AlwaysPlayFirstComboBreak)
+                },
                 new SettingsEnumDropdown<ScoreMeterType>
                 {
                     LabelText = "分數計數器類型",
