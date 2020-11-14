@@ -191,10 +191,10 @@ namespace osu.Game.Input.Bindings
         [Description("校時模式")] // [RequestImprove] 原文是Timing mode 不知道要怎麼正確翻譯就丟到Google translate查了一下 可能有點不對 個人的理解應該是時間軸 但是意義有點不太準確
         EditorTimingMode,
 
-        [Description("Hold for HUD")]
+        [Description("按住以顯示遊戲中介面圖層")]
         HoldForHUD,
 
-        [Description("Random Skin")]
+        [Description("隨機選取皮膚")]
         RandomSkin,
     }
 }

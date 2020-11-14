@@ -70,7 +70,8 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Always play first combo break sound",
+                    LabelText = "總是播放第一個連打中斷音", //Always play first combo break sound
+                    TooltipText = "在開始過程中就算連打不多 失誤一次將播放一次連打中斷音效.",
                     Current = config.GetBindable<bool>(OsuSetting.AlwaysPlayFirstComboBreak)
                 },
                 new SettingsEnumDropdown<ScoreMeterType>

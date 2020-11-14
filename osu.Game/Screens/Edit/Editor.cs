@@ -210,7 +210,7 @@ namespace osu.Game.Screens.Edit
                                         pasteMenuItem = new EditorMenuItem("貼上", MenuItemType.Standard, Paste),
                                     }
                                 },
-                                new MenuItem("View")
+                                new MenuItem("檢視")
                                 {
                                     Items = new[]
                                     {
