@@ -18,14 +18,16 @@ using osu.Game.Skinning;
 
 namespace osu.Game.Rulesets.Mods
 {
-    public abstract class ModNightcore<TObject> : ModDoubleTime, IApplicableToDrawableRuleset<TObject>
-        where TObject : HitObject
+    public abstract class ModNightcore : ModDoubleTime
     {
         public override string Name => "深夜狂歡"; // [RequestImprove] 已改進翻譯 但是還是需要Feedback以確認翻譯準確性
         public override string Acronym => "NC";
         public override IconUsage? Icon => OsuIcon.ModNightcore;
         public override string Description => "嗨起來!";
 
+    public abstract class ModNightcore<TObject> : ModNightcore, IApplicableToDrawableRuleset<TObject>
+        where TObject : HitObject
+    {
         private readonly BindableNumber<double> tempoAdjust = new BindableDouble(1);
         private readonly BindableNumber<double> freqAdjust = new BindableDouble(1);
 
