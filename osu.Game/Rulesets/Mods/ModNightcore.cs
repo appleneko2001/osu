@@ -24,7 +24,7 @@ namespace osu.Game.Rulesets.Mods
         public override string Acronym => "NC";
         public override IconUsage? Icon => OsuIcon.ModNightcore;
         public override string Description => "嗨起來!";
-
+    }
     public abstract class ModNightcore<TObject> : ModNightcore, IApplicableToDrawableRuleset<TObject>
         where TObject : HitObject
     {
@@ -71,10 +71,10 @@ namespace osu.Game.Rulesets.Mods
             {
                 InternalChildren = new Drawable[]
                 {
-                    hatSample = new PausableSkinnableSound(new SampleInfo("Gameplay/nightcore-hat")),
-                    clapSample = new PausableSkinnableSound(new SampleInfo("Gameplay/nightcore-clap")),
-                    kickSample = new PausableSkinnableSound(new SampleInfo("Gameplay/nightcore-kick")),
-                    finishSample = new PausableSkinnableSound(new SampleInfo("Gameplay/nightcore-finish")),
+                hatSample = new PausableSkinnableSound(new SampleInfo("Gameplay/nightcore-hat")),
+                clapSample = new PausableSkinnableSound(new SampleInfo("Gameplay/nightcore-clap")),
+                kickSample = new PausableSkinnableSound(new SampleInfo("Gameplay/nightcore-kick")),
+                finishSample = new PausableSkinnableSound(new SampleInfo("Gameplay/nightcore-finish")),
                 };
             }
 

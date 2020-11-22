@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
@@ -124,7 +124,7 @@ namespace osu.Game.Screens.Play
                         {
                             new OsuSpriteText
                             {
-                                Text = "Spectator Mode",
+                                Text = "觀看者模式",
                                 Font = OsuFont.Default.With(size: 30),
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,
@@ -162,14 +162,14 @@ namespace osu.Game.Screens.Play
                             },
                             automaticDownload = new SettingsCheckbox
                             {
-                                LabelText = "Automatically download beatmaps",
+                                LabelText = "自動下載需要的圖譜",
                                 Current = config.GetBindable<bool>(OsuSetting.AutomaticallyDownloadWhenSpectating),
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,
                             },
                             watchButton = new PurpleTriangleButton
                             {
-                                Text = "Start Watching",
+                                Text = "開始觀看",
                                 Width = 250,
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,
