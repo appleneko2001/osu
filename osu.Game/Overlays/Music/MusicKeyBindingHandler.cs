@@ -6,6 +6,7 @@ using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Input.Bindings;
 using osu.Game.Beatmaps;
+using osu.Game.Configuration;
 using osu.Game.Input.Bindings;
 using osu.Game.Overlays.OSD;
 
@@ -37,11 +38,11 @@ namespace osu.Game.Overlays.Music
                     bool wasPlaying = musicController.IsPlaying;
 
                     if (musicController.TogglePause())
-                        onScreenDisplay?.Display(new MusicActionToast(wasPlaying ? "暫停" : "播放"));
+                        onScreenDisplay?.Display(new MusicActionToast(wasPlaying ? "暫停" : "播放", action));
                     return true;
 
                 case GlobalAction.MusicNext:
-                    musicController.NextTrack(() => onScreenDisplay?.Display(new MusicActionToast("下一首")));
+                    musicController.NextTrack(() => onScreenDisplay?.Display(new MusicActionToast("下一首", action)));
 
                     return true;
 
@@ -72,9 +73,18 @@ namespace osu.Game.Overlays.Music
 
         private class MusicActionToast : Toast
         {
-            public MusicActionToast(string action)
-                : base("播放器", action, string.Empty)
+            private readonly GlobalAction action;
+
+            public MusicActionToast(string value, GlobalAction action)
+                : base("播放器", value, string.Empty)
             {
+                this.action = action;
+            }
+
+            [BackgroundDependencyLoader]
+            private void load(OsuConfigManager config)
+            {
+                ShortcutText.Text = config.LookupKeyBindings(action).ToUpperInvariant();
             }
         }
     }

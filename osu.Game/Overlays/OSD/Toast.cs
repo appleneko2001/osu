@@ -17,9 +17,12 @@ namespace osu.Game.Overlays.OSD
         private const int toast_minimum_width = 240;
 
         private readonly Container content;
+
         protected override Container<Drawable> Content => content;
 
         protected readonly OsuSpriteText ValueText;
+
+        protected readonly OsuSpriteText ShortcutText;
 
         protected Toast(string description, string value, string shortcut)
         {
@@ -71,7 +74,7 @@ namespace osu.Game.Overlays.OSD
                     Origin = Anchor.Centre,
                     Text = new LocalisedString((value, value))
                 },
-                new OsuSpriteText
+                ShortcutText = new OsuSpriteText
                 {
                     Anchor = Anchor.BottomCentre,
                     Origin = Anchor.BottomCentre,
