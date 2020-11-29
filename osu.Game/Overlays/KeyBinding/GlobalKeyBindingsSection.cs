@@ -60,7 +60,7 @@ namespace osu.Game.Overlays.KeyBinding
 
         private class EditorKeyBindingsSubsection : KeyBindingsSubsection
         {
-            protected override string Header => "Editor";
+            protected override string Header => "做圖";
 
             public EditorKeyBindingsSubsection(GlobalActionContainer manager)
                 : base(null)

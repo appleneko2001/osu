@@ -52,11 +52,11 @@ namespace osu.Game.Overlays.Music
                         switch (res)
                         {
                             case PreviousTrackResult.Restart:
-                                onScreenDisplay?.Display(new MusicActionToast("重新播放"));
+                                onScreenDisplay?.Display(new MusicActionToast("重新播放", action));
                                 break;
 
                             case PreviousTrackResult.Previous:
-                                onScreenDisplay?.Display(new MusicActionToast("上一首"));
+                                onScreenDisplay?.Display(new MusicActionToast("上一首", action));
                                 break;
                         }
                     });

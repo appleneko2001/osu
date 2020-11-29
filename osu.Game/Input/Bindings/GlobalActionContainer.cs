@@ -198,7 +198,7 @@ namespace osu.Game.Input.Bindings
         [Description("隨機選取皮膚")]
         RandomSkin,
 
-        [Description("Pause / resume replay")]
+        [Description("暫停 / 繼續回放")]
         TogglePauseReplay,
     }
 }
