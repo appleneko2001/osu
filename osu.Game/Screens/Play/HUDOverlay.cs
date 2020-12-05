@@ -179,7 +179,7 @@ namespace osu.Game.Screens.Play
 
                 notificationOverlay?.Post(new SimpleNotification
                 {
-                    Text = @"分數圖層已被關閉. 想要開啓的話請按下 Shift+Tab."
+                    Text = $"分數圖層已被關閉. 想要開啓的話請按下 {config.LookupKeyBindings(GlobalAction.ToggleInGameInterface)}."
                 });
             }
 
