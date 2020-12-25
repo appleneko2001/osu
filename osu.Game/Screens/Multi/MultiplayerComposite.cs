@@ -5,7 +5,7 @@ using System;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics.Containers;
-using osu.Game.Online.Multiplayer;
+using osu.Game.Online.Rooms;
 using osu.Game.Users;
 
 namespace osu.Game.Screens.Multi
@@ -40,12 +40,12 @@ namespace osu.Game.Screens.Multi
         protected Bindable<int?> MaxParticipants { get; private set; }
 
         [Resolved(typeof(Room))]
-        protected Bindable<DateTimeOffset> EndDate { get; private set; }
+        protected Bindable<DateTimeOffset?> EndDate { get; private set; }
 
         [Resolved(typeof(Room))]
         protected Bindable<RoomAvailability> Availability { get; private set; }
 
         [Resolved(typeof(Room))]
-        protected Bindable<TimeSpan> Duration { get; private set; }
+        protected Bindable<TimeSpan?> Duration { get; private set; }
     }
 }

@@ -147,7 +147,7 @@ namespace osu.Game.Screens.Menu
             if (nextScreen != null)
                 LoadComponentAsync(nextScreen);
 
-            currentUser.BindTo(api.LocalUser);
+            ((IBindable<User>)currentUser).BindTo(api.LocalUser);
         }
 
         public override void OnEntering(IScreen last)
@@ -208,10 +208,10 @@ namespace osu.Game.Screens.Menu
                 "大部分線上頁面 (個人資訊, 排名或者其他) 可以在遊戲中直接顯示 (非網頁瀏覽器顯示!)",
                 "試着對圖譜右鍵進行更多操作 比如瀏覽圖譜資訊, 編輯圖譜, 收藏圖譜, 遊玩圖譜以及隱藏!",
                 "所有的刪除圖譜操作在遊戲關閉之前都是暫時的 如果改變主意了可以回到維護選項中復原他們!",
-                "查看 \"時移 (Timeshift)\" 多人遊戲系統，該系統具有本地永久排行榜和播放列表支持!", // [RequestImprove] 不知道怎麼翻譯 用了Google translate 不要打我
+                "Check out the \"playlists\" system, which lets users create their own custom and permanent leaderboards!",
+//                "查看 \"時移 (Timeshift)\" 多人遊戲系統，該系統具有本地永久排行榜和播放列表支持!", // [RequestImprove] 不知道怎麼翻譯 用了Google translate 不要打我
                 "切換效能資訊顯示可以按 Ctrl-F11!",
-                "如果想要知道更詳細的日誌 可以按 Ctrl-F2 在遊戲中顯示他們!",
-                "中文化由 github@appleneko2001 提供! 記得支持一下 osu! 遊戲很棒 不是支持我!",
+                "如果想要知道更詳細的日誌 可以按 Ctrl-F2 在遊戲中顯示他們!", 
             };
 
             return tips[RNG.Next(0, tips.Length)];
