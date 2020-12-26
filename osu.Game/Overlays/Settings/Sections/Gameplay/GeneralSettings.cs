@@ -11,7 +11,7 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
 {
     public class GeneralSettings : SettingsSubsection
     {
-        protected override string Header => "一般設定";
+        protected override string Header => "基本設定";
 
         [BackgroundDependencyLoader]
         private void load(OsuConfigManager config)

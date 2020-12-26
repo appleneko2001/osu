@@ -138,9 +138,7 @@ namespace osu.Game.Database
 
             await Task.WhenAll(tasks.Select(async task =>
             {
-                if (!notification.CancellationToken.IsCancellationRequested)
-                {
-                    notification.CancellationToken.ThrowIfCancellationRequested();
+                notification.CancellationToken.ThrowIfCancellationRequested();
 
                 try
                 {

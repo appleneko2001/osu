@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Graphics;
@@ -9,7 +9,7 @@ namespace osu.Game.Overlays.Settings.Sections
 {
     public class UserInterfaceSection : SettingsSection
     {
-        public override string Header => "User Interface";
+        public override string Header => "界面";
 
         public override Drawable CreateIcon() => new SpriteIcon
         {
