@@ -4,8 +4,10 @@
 #nullable enable
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
@@ -31,7 +33,7 @@ namespace osu.Game.Online.Multiplayer
         /// <summary>
         /// Invoked when any change occurs to the multiplayer room.
         /// </summary>
-        public event Action? RoomChanged;
+        public event Action? RoomUpdated;
 
         /// <summary>
         /// Invoked when the multiplayer server requests the current beatmap to be loaded into play.
@@ -59,9 +61,9 @@ namespace osu.Game.Online.Multiplayer
         public MultiplayerRoom? Room { get; private set; }
 
         /// <summary>
-        /// The users currently in gameplay.
+        /// The users in the joined <see cref="Room"/> which are participating in the current gameplay loop.
         /// </summary>
-        public readonly BindableList<int> PlayingUsers = new BindableList<int>();
+        public readonly BindableList<int> CurrentMatchPlayingUserIds = new BindableList<int>();
 
         [Resolved]
         private UserLookupCache userLookupCache { get; set; } = null!;
@@ -82,7 +84,7 @@ namespace osu.Game.Online.Multiplayer
             IsConnected.BindValueChanged(connected =>
             {
                 // clean up local room state on server disconnect.
-                if (!connected.NewValue)
+                if (!connected.NewValue && Room != null)
                 {
                     Logger.Log("Connection to multiplayer server was lost.", LoggingTarget.Runtime, LogLevel.Important);
                     LeaveRoom().CatchUnobservedExceptions();
@@ -108,8 +110,9 @@ namespace osu.Game.Online.Multiplayer
 
             Debug.Assert(Room != null);
 
-            foreach (var user in Room.Users)
-                await PopulateUser(user);
+            var users = getRoomUsers();
+
+            await Task.WhenAll(users.Select(PopulateUser));
 
             updateLocalRoomSettings(Room.Settings);
         }
@@ -123,13 +126,17 @@ namespace osu.Game.Online.Multiplayer
 
         public virtual Task LeaveRoom()
         {
-            if (Room == null)
-                return Task.CompletedTask;
+            Scheduler.Add(() =>
+            {
+                if (Room == null)
+                    return;
 
-            apiRoom = null;
-            Room = null;
+                apiRoom = null;
+                Room = null;
+                CurrentMatchPlayingUserIds.Clear();
 
-            Schedule(() => RoomChanged?.Invoke());
+                RoomUpdated?.Invoke();
+            }, false);
 
             return Task.CompletedTask;
         }
@@ -184,7 +191,7 @@ namespace osu.Game.Online.Multiplayer
             if (Room == null)
                 return Task.CompletedTask;
 
-            Schedule(() =>
+            Scheduler.Add(() =>
             {
                 if (Room == null)
                     return;
@@ -208,8 +215,8 @@ namespace osu.Game.Online.Multiplayer
                         break;
                 }
 
-                RoomChanged?.Invoke();
-            });
+                RoomUpdated?.Invoke();
+            }, false);
 
             return Task.CompletedTask;
         }
@@ -221,7 +228,7 @@ namespace osu.Game.Online.Multiplayer
 
             await PopulateUser(user);
 
-            Schedule(() =>
+            Scheduler.Add(() =>
             {
                 if (Room == null)
                     return;
@@ -232,8 +239,8 @@ namespace osu.Game.Online.Multiplayer
 
                 Room.Users.Add(user);
 
-                RoomChanged?.Invoke();
-            });
+                RoomUpdated?.Invoke();
+            }, false);
         }
 
         Task IMultiplayerClient.UserLeft(MultiplayerRoomUser user)
@@ -241,16 +248,16 @@ namespace osu.Game.Online.Multiplayer
             if (Room == null)
                 return Task.CompletedTask;
 
-            Schedule(() =>
+            Scheduler.Add(() =>
             {
                 if (Room == null)
                     return;
 
                 Room.Users.Remove(user);
-                PlayingUsers.Remove(user.UserID);
+                CurrentMatchPlayingUserIds.Remove(user.UserID);
 
-                RoomChanged?.Invoke();
-            });
+                RoomUpdated?.Invoke();
+            }, false);
 
             return Task.CompletedTask;
         }
@@ -260,7 +267,7 @@ namespace osu.Game.Online.Multiplayer
             if (Room == null)
                 return Task.CompletedTask;
 
-            Schedule(() =>
+            Scheduler.Add(() =>
             {
                 if (Room == null)
                     return;
@@ -272,8 +279,8 @@ namespace osu.Game.Online.Multiplayer
                 Room.Host = user;
                 apiRoom.Host.Value = user?.User;
 
-                RoomChanged?.Invoke();
-            });
+                RoomUpdated?.Invoke();
+            }, false);
 
             return Task.CompletedTask;
         }
@@ -289,18 +296,17 @@ namespace osu.Game.Online.Multiplayer
             if (Room == null)
                 return Task.CompletedTask;
 
-            Schedule(() =>
+            Scheduler.Add(() =>
             {
                 if (Room == null)
                     return;
 
                 Room.Users.Single(u => u.UserID == userId).State = state;
 
-                if (state != MultiplayerUserState.Playing)
-                    PlayingUsers.Remove(userId);
+                updateUserPlayingState(userId, state);
 
-                RoomChanged?.Invoke();
-            });
+                RoomUpdated?.Invoke();
+            }, false);
 
             return Task.CompletedTask;
         }
@@ -310,13 +316,13 @@ namespace osu.Game.Online.Multiplayer
             if (Room == null)
                 return Task.CompletedTask;
 
-            Schedule(() =>
+            Scheduler.Add(() =>
             {
                 if (Room == null)
                     return;
 
                 LoadRequested?.Invoke();
-            });
+            }, false);
 
             return Task.CompletedTask;
         }
@@ -326,15 +332,13 @@ namespace osu.Game.Online.Multiplayer
             if (Room == null)
                 return Task.CompletedTask;
 
-            Schedule(() =>
+            Scheduler.Add(() =>
             {
                 if (Room == null)
                     return;
 
-                PlayingUsers.AddRange(Room.Users.Where(u => u.State == MultiplayerUserState.Playing).Select(u => u.UserID));
-
                 MatchStarted?.Invoke();
-            });
+            }, false);
 
             return Task.CompletedTask;
         }
@@ -344,13 +348,13 @@ namespace osu.Game.Online.Multiplayer
             if (Room == null)
                 return Task.CompletedTask;
 
-            Schedule(() =>
+            Scheduler.Add(() =>
             {
                 if (Room == null)
                     return;
 
                 ResultsReady?.Invoke();
-            });
+            }, false);
 
             return Task.CompletedTask;
         }
@@ -360,6 +364,31 @@ namespace osu.Game.Online.Multiplayer
         /// </summary>
         /// <param name="multiplayerUser">The <see cref="MultiplayerRoomUser"/> to populate.</param>
         protected async Task PopulateUser(MultiplayerRoomUser multiplayerUser) => multiplayerUser.User ??= await userLookupCache.GetUserAsync(multiplayerUser.UserID);
+
+        /// <summary>
+        /// Retrieve a copy of users currently in the joined <see cref="Room"/> in a thread-safe manner.
+        /// This should be used whenever accessing users from outside of an Update thread context (ie. when not calling <see cref="Drawable.Schedule"/>).
+        /// </summary>
+        /// <returns>A copy of users in the current room, or null if unavailable.</returns>
+        private List<MultiplayerRoomUser>? getRoomUsers()
+        {
+            List<MultiplayerRoomUser>? users = null;
+
+            ManualResetEventSlim resetEvent = new ManualResetEventSlim();
+
+            // at some point we probably want to replace all these schedule calls with Room.LockForUpdate.
+            // for now, as this would require quite some consideration due to the number of accesses to the room instance,
+            // let's just add a manual schedule for the non-scheduled usages instead.
+            Scheduler.Add(() =>
+            {
+                users = Room?.Users.ToList();
+                resetEvent.Set();
+            }, false);
+
+            resetEvent.Wait(100);
+
+            return users;
+        }
 
         /// <summary>
         /// Updates the local room settings with the given <see cref="MultiplayerRoomSettings"/>.
@@ -373,7 +402,7 @@ namespace osu.Game.Online.Multiplayer
             if (Room == null)
                 return;
 
-            Schedule(() =>
+            Scheduler.Add(() =>
             {
                 if (Room == null)
                     return;
@@ -388,13 +417,13 @@ namespace osu.Game.Online.Multiplayer
                 // In-order for the client to not display an outdated beatmap, the playlist is forcefully cleared here.
                 apiRoom.Playlist.Clear();
 
-                RoomChanged?.Invoke();
+                RoomUpdated?.Invoke();
 
                 var req = new GetBeatmapSetRequest(settings.BeatmapID, BeatmapSetLookupType.BeatmapId);
                 req.Success += res => updatePlaylist(settings, res);
 
                 api.Queue(req);
-            });
+            }, false);
         }
 
         private void updatePlaylist(MultiplayerRoomSettings settings, APIBeatmapSet onlineSet)
@@ -422,6 +451,25 @@ namespace osu.Game.Online.Multiplayer
 
             apiRoom.Playlist.Clear(); // Clearing should be unnecessary, but here for sanity.
             apiRoom.Playlist.Add(playlistItem);
+        }
+
+        /// <summary>
+        /// For the provided user ID, update whether the user is included in <see cref="CurrentMatchPlayingUserIds"/>.
+        /// </summary>
+        /// <param name="userId">The user's ID.</param>
+        /// <param name="state">The new state of the user.</param>
+        private void updateUserPlayingState(int userId, MultiplayerUserState state)
+        {
+            bool wasPlaying = CurrentMatchPlayingUserIds.Contains(userId);
+            bool isPlaying = state >= MultiplayerUserState.WaitingForLoad && state <= MultiplayerUserState.FinishedPlay;
+
+            if (isPlaying == wasPlaying)
+                return;
+
+            if (isPlaying)
+                CurrentMatchPlayingUserIds.Add(userId);
+            else
+                CurrentMatchPlayingUserIds.Remove(userId);
         }
     }
 }
