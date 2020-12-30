@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
@@ -73,8 +73,8 @@ namespace osu.Game.Screens.Edit.Timing
             var columns = new List<TableColumn>
             {
                 new TableColumn(string.Empty, Anchor.Centre, new Dimension(GridSizeMode.AutoSize)),
-                new TableColumn("Time", Anchor.Centre, new Dimension(GridSizeMode.AutoSize)),
-                new TableColumn("Attributes", Anchor.Centre),
+                new TableColumn("時間點", Anchor.Centre, new Dimension(GridSizeMode.AutoSize)),
+                new TableColumn("屬性", Anchor.Centre),
             };
 
             return columns.ToArray();
@@ -142,14 +142,14 @@ namespace osu.Game.Screens.Edit.Timing
                 switch (controlPoint)
                 {
                     case TimingControlPoint timing:
-                        return new RowAttribute("timing", () => $"{60000 / timing.BeatLength:n1}bpm {timing.TimeSignature}", colour);
+                        return new RowAttribute("校時", () => $"{60000 / timing.BeatLength:n1}bpm {timing.TimeSignature}", colour);
 
                     case DifficultyControlPoint difficulty:
 
-                        return new RowAttribute("difficulty", () => $"{difficulty.SpeedMultiplier:n2}x", colour);
+                        return new RowAttribute("難度", () => $"{difficulty.SpeedMultiplier:n2}x", colour);
 
                     case EffectControlPoint effect:
-                        return new RowAttribute("effect", () => $"{(effect.KiaiMode ? "Kiai " : "")}{(effect.OmitFirstBarLine ? "NoBarLine " : "")}", colour);
+                        return new RowAttribute("效果", () => $"{(effect.KiaiMode ? "Kiai " : "")}{(effect.OmitFirstBarLine ? "NoBarLine " : "")}", colour);
 
                     case SampleControlPoint sample:
                         return new RowAttribute("sample", () => $"{sample.SampleBank} {sample.SampleVolume}%", colour);

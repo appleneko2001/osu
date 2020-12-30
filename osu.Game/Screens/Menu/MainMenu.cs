@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
@@ -20,6 +20,8 @@ using osu.Game.Screens.Edit;
 using osu.Game.Screens.OnlinePlay.Multiplayer;
 using osu.Game.Screens.OnlinePlay.Playlists;
 using osu.Game.Screens.Select;
+using osu.Framework.Graphics.Sprites;
+using osu.Game.Overlays.Notifications;
 
 namespace osu.Game.Screens.Menu
 {
@@ -57,6 +59,8 @@ namespace osu.Game.Screens.Menu
 
         [Resolved(canBeNull: true)]
         private DialogOverlay dialogOverlay { get; set; }
+        [Resolved(CanBeNull = true)]
+        private NotificationOverlay notifications { get; set; }
 
         private BackgroundScreenDefault background;
 
@@ -105,8 +109,24 @@ namespace osu.Game.Screens.Menu
                                 this.Push(new Editor());
                             },
                             OnSolo = onSolo,
-                            OnMultiplayer = () => this.Push(new Multiplayer()),
-                            OnPlaylists = () => this.Push(new Playlists()),
+                            OnMultiplayer = () =>
+                            {
+                                this.Push(new Multiplayer());
+                                notifications?.Post(new SimpleNotification
+                                {
+                                    Text = "警告: 本版本爲非官方發行版 osu!lazer\n這會影響到遊玩多人模式的功能.",
+                                    Icon = FontAwesome.Solid.ExclamationTriangle
+                                });
+                            },
+                            OnPlaylists = () =>
+                            {
+                                this.Push(new Playlists());
+                                notifications?.Post(new SimpleNotification
+                                {
+                                    Text = "警告: 本版本爲非官方發行版 osu!lazer\n這會影響到遊玩多人模式的功能.",
+                                    Icon = FontAwesome.Solid.ExclamationTriangle
+                                });
+                            },
                             OnExit = confirmAndExit,
                         }
                     }
@@ -119,7 +139,7 @@ namespace osu.Game.Screens.Menu
                     Margin = new MarginPadding { Right = 15, Top = 5 }
                 },
                 exitConfirmOverlay?.CreateProxy() ?? Drawable.Empty()
-            });
+            }) ;
 
             buttons.StateChanged += state =>
             {

@@ -183,13 +183,13 @@ namespace osu.Game.Configuration
 
             return new TrackedSettings
             {
-                new TrackedSetting<bool>(OsuSetting.MouseDisableButtons, v => new SettingDescription(!v, "gameplay mouse buttons", v ? "disabled" : "enabled", LookupKeyBindings(GlobalAction.ToggleGameplayMouseButtons))),
-                new TrackedSetting<HUDVisibilityMode>(OsuSetting.HUDVisibilityMode, m => new SettingDescription(m, "HUD Visibility", m.GetDescription(), $"cycle: {LookupKeyBindings(GlobalAction.ToggleInGameInterface)} quick view: {LookupKeyBindings(GlobalAction.HoldForHUD)}")),
-                new TrackedSetting<ScalingMode>(OsuSetting.Scaling, m => new SettingDescription(m, "scaling", m.GetDescription())),
+                new TrackedSetting<bool>(OsuSetting.MouseDisableButtons, v => new SettingDescription(!v, "遊戲中滑鼠按鍵輸入", v ? "disabled" : "enabled", LookupKeyBindings(GlobalAction.ToggleGameplayMouseButtons))),
+                new TrackedSetting<HUDVisibilityMode>(OsuSetting.HUDVisibilityMode, m => new SettingDescription(m, "遊戲中界面可見性", m.GetDescription(), $"切換鍵: {LookupKeyBindings(GlobalAction.ToggleInGameInterface)} 預覽鍵: {LookupKeyBindings(GlobalAction.HoldForHUD)}")),
+                new TrackedSetting<ScalingMode>(OsuSetting.Scaling, m => new SettingDescription(m, "畫面縮放", m.GetDescription())),
                 new TrackedSetting<int>(OsuSetting.Skin, m =>
                 {
                     string skinName = LookupSkinName(m) ?? string.Empty;
-                    return new SettingDescription(skinName, "skin", skinName, $"random: {LookupKeyBindings(GlobalAction.RandomSkin)}");
+                    return new SettingDescription(skinName, "皮膚", skinName, $"隨機選擇: {LookupKeyBindings(GlobalAction.RandomSkin)}");
                 })
             };
         }

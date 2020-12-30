@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
@@ -111,7 +111,7 @@ namespace osu.Game.Overlays.Chat.Selection
                             {
                                 new OsuSpriteText
                                 {
-                                    Text = @"Chat Channels",
+                                    Text = @"聊天室頻道",
                                     Font = OsuFont.GetFont(size: 20),
                                     Shadow = false,
                                 },
@@ -133,7 +133,7 @@ namespace osu.Game.Overlays.Chat.Selection
                 {
                     new ChannelSection
                     {
-                        Header = "All Channels",
+                        Header = "所有頻道",
                         Channels = channels,
                     },
                 };

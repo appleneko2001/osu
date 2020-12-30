@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
@@ -65,7 +65,7 @@ namespace osu.Game.Screens.OnlinePlay.Playlists
             {
                 failed = true;
 
-                Logger.Error(e, "Failed to retrieve a score submission token.\n\nThis may happen if you are running an old or non-official release of osu! (ie. you are self-compiling).");
+                Logger.Error(e, "無法獲取分數提交令牌.\n\n這可能是因爲你正在遊玩比較遠古或者非官方發行版osu! (比如自編譯版本).");
 
                 Schedule(() =>
                 {

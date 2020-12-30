@@ -115,7 +115,7 @@ namespace osu.Game.Overlays.Settings.Sections.Maintenance
             }
             catch (Exception e)
             {
-                Logger.Log($"遷移失敗: {e.Message}", level: LogLevel.Error);
+                Logger.Log($"Error during migration: {e.Message}", level: LogLevel.Error);
                 return;
             }
 

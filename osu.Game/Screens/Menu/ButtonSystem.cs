@@ -160,7 +160,7 @@ namespace osu.Game.Screens.Menu
             {
                 notifications?.Post(new SimpleNotification
                 {
-                    Text = "You gotta be online to multi 'yo!",
+                    Text = "需要先登入才可以玩多人喔!",
                     Icon = FontAwesome.Solid.Globe,
                     Activated = () =>
                     {

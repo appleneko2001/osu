@@ -31,7 +31,7 @@ namespace osu.Game.Overlays.Settings.Sections.Debug
             };
             Add(new SettingsButton
             {
-                Text = "Import files",
+                Text = "匯入檔案...",
                 Action = () => game?.PerformFromScreen(menu => menu.Push(new FileImportScreen()))
             });
         }

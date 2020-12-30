@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
@@ -88,7 +88,7 @@ namespace osu.Game.Users
 
         public MenuItem[] ContextMenuItems => new MenuItem[]
         {
-            new OsuMenuItem("View Profile", MenuItemType.Highlighted, ViewProfile),
+            new OsuMenuItem("顯示用戶資訊", MenuItemType.Highlighted, ViewProfile),
         };
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using Humanizer;
@@ -11,14 +11,14 @@ namespace osu.Game.Rulesets.Mods
 {
     public abstract class ModEasyWithExtraLives : ModEasy, IApplicableFailOverride, IApplicableToHealthProcessor
     {
-        [SettingSource("Extra Lives", "Number of extra lives")]
+        [SettingSource("機會數")]
         public Bindable<int> Retries { get; } = new BindableInt(2)
         {
             MinValue = 0,
             MaxValue = 10
         };
 
-        public override string SettingDescription => Retries.IsDefault ? string.Empty : $"{"lives".ToQuantity(Retries.Value)}";
+        public override string SettingDescription => Retries.IsDefault ? string.Empty : $"{Retries.Value + 1} 次機會";
 
         private int retries;
 

@@ -40,10 +40,9 @@ namespace osu.Game.Overlays.BeatmapSet.Scores
                     }
                 }
             };
-
-            text.AddText("Click ");
-            text.AddLink("here", "/home/support");
-            text.AddText(" to see all the fancy features that you can get!");
+             
+            text.AddLink("點擊這裏", "/home/support");
+            text.AddText(" 來確定都會得到哪些附加功能!");
         }
     }
 }

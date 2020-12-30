@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
@@ -28,12 +28,12 @@ namespace osu.Game.Screens.Edit.Setup
             {
                 new OsuSpriteText
                 {
-                    Text = "Difficulty settings"
+                    Text = "難度設定"
                 },
                 circleSizeSlider = new LabelledSliderBar<float>
                 {
-                    Label = "Object Size",
-                    Description = "The size of all hit objects",
+                    Label = "物件大小",
+                    Description = "所有可打擊物件的大小",
                     Current = new BindableFloat(Beatmap.Value.BeatmapInfo.BaseDifficulty.CircleSize)
                     {
                         Default = BeatmapDifficulty.DEFAULT_DIFFICULTY,
@@ -44,8 +44,8 @@ namespace osu.Game.Screens.Edit.Setup
                 },
                 healthDrainSlider = new LabelledSliderBar<float>
                 {
-                    Label = "Health Drain",
-                    Description = "The rate of passive health drain throughout playable time",
+                    Label = "枯竭速度",
+                    Description = "遊戲中被動體力枯竭率",
                     Current = new BindableFloat(Beatmap.Value.BeatmapInfo.BaseDifficulty.DrainRate)
                     {
                         Default = BeatmapDifficulty.DEFAULT_DIFFICULTY,
@@ -56,8 +56,8 @@ namespace osu.Game.Screens.Edit.Setup
                 },
                 approachRateSlider = new LabelledSliderBar<float>
                 {
-                    Label = "Approach Rate",
-                    Description = "The speed at which objects are presented to the player",
+                    Label = "縮圈速度",
+                    Description = "以多快的速度出現在畫面中",
                     Current = new BindableFloat(Beatmap.Value.BeatmapInfo.BaseDifficulty.ApproachRate)
                     {
                         Default = BeatmapDifficulty.DEFAULT_DIFFICULTY,
@@ -68,8 +68,8 @@ namespace osu.Game.Screens.Edit.Setup
                 },
                 overallDifficultySlider = new LabelledSliderBar<float>
                 {
-                    Label = "Overall Difficulty",
-                    Description = "The harshness of hit windows and difficulty of special objects (ie. spinners)",
+                    Label = "整體難度",
+                    Description = "打擊判定的嚴格性和部分特殊物件的難度 (比如轉盤)",
                     Current = new BindableFloat(Beatmap.Value.BeatmapInfo.BaseDifficulty.OverallDifficulty)
                     {
                         Default = BeatmapDifficulty.DEFAULT_DIFFICULTY,

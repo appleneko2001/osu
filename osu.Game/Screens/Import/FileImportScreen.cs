@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System.IO;
@@ -101,7 +101,7 @@ namespace osu.Game.Screens.Import
                             },
                             importButton = new TriangleButton
                             {
-                                Text = "Import",
+                                Text = "匯入",
                                 Anchor = Anchor.BottomCentre,
                                 Origin = Anchor.BottomCentre,
                                 RelativeSizeAxes = Axes.X,
@@ -144,7 +144,7 @@ namespace osu.Game.Screens.Import
         private void fileChanged(ValueChangedEvent<FileInfo> selectedFile)
         {
             importButton.Enabled.Value = selectedFile.NewValue != null;
-            currentFileText.Text = selectedFile.NewValue?.Name ?? "Select a file";
+            currentFileText.Text = selectedFile.NewValue?.Name ?? "選擇一個檔案...";
         }
 
         private void startImport(string path)

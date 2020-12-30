@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
@@ -52,11 +52,11 @@ namespace osu.Game.Screens.Edit.Timing
                     {
                         textBox = new LabelledTextBox
                         {
-                            Label = "Time"
+                            Label = "時間點"
                         },
                         button = new TriangleButton
                         {
-                            Text = "Use current time",
+                            Text = "使用當前時間點",
                             RelativeSizeAxes = Axes.X,
                             Action = () => changeSelectedGroupTime(clock.CurrentTime)
                         }

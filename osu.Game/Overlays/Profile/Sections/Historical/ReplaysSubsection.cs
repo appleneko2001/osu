@@ -10,7 +10,7 @@ namespace osu.Game.Overlays.Profile.Sections.Historical
     public class ReplaysSubsection : ChartProfileSubsection
     {
         public ReplaysSubsection(Bindable<User> user)
-            : base(user, "Replays Watched History")
+            : base(user, "被觀看回放記錄")
         {
         }
 

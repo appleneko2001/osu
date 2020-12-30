@@ -202,7 +202,7 @@ namespace osu.Game.Input.Bindings
         [Description("暫停 / 繼續回放")]
         TogglePauseReplay,
 
-        [Description("Toggle in-game interface")]
+        [Description("切換遊戲中界面")]
         ToggleInGameInterface,
     }
 }

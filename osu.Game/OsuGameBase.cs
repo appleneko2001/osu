@@ -217,7 +217,7 @@ namespace osu.Game
                 }
             });
 
-            EndpointConfiguration endpoints = UseDevelopmentServer ? (EndpointConfiguration)new DevelopmentEndpointConfiguration() : new ProductionEndpointConfiguration();
+            EndpointConfiguration endpoints = false ? (EndpointConfiguration)new DevelopmentEndpointConfiguration() : new ProductionEndpointConfiguration();
 
             dependencies.CacheAs(API ??= new APIAccess(LocalConfig, endpoints));
 

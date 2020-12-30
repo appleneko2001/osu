@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
@@ -116,11 +116,11 @@ namespace osu.Game.Rulesets.Edit
                     Spacing = new Vector2(10),
                     Children = new Drawable[]
                     {
-                        new ToolboxGroup("toolbox (1-9)")
+                        new ToolboxGroup("工具箱 (1-9)")
                         {
                             Child = toolboxCollection = new RadioButtonCollection { RelativeSizeAxes = Axes.X }
                         },
-                        new ToolboxGroup("toggles (Q~P)")
+                        new ToolboxGroup("開關 (Q~P)")
                         {
                             Child = togglesCollection = new FillFlowContainer
                             {
